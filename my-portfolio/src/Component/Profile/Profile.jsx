@@ -1,6 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import TypedText from '../TypedText/TypedText'
+import SpaceAnimation from './SpaceAnimation'
 
 const Profile = () => {
   const roles = [
@@ -11,16 +12,13 @@ const Profile = () => {
 
   return (
     <div className='profile'>
+        <SpaceAnimation />
         <div className="profile-stage">
             {/* <div className="profile-pic-container">
                 <img className="profile-pic" src="src/assets/WhatsApp_Image_2025-04-04_at_09.30.12_89ba444b-removebg-preview.png" alt="" />
             </div> */}
             <div className='profile-pic-container'>
-                <div className="profile-background">
-                    <img className='background-image' src="src/assets/Binary Code Background Of The In Digital….jpeg" alt="" />
-
-
-                </div>
+                {/* Removed the old background image */}
                 <img className="profile-pictu" src="src/assets/istockphoto-625389694-612x612-removebg-preview.png" alt="Profile" />
             </div>
         </div>
