@@ -67,13 +67,13 @@
 /* Profile Picture Container */
 .profile-pic-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, #00a2ff, #ff0064, #00ff88, #ff6b00);
+    background: linear-gradient(45deg, #1f4c08, #1b215e, #041145, #ff6b00);
     background-size: 400% 400%;
     animation: gradientRotate 4s ease-in-out infinite;
     padding: 8px;
@@ -94,8 +94,8 @@
 
 /* Profile Picture */
 .profile-pic {
-    width: 390px;
-    height: 390px;
+    width: 300px;
+    height: 300px;
     border-radius: 20%;
     object-fit: cover;
     object-position: center;
@@ -108,7 +108,36 @@
     animation: floatAnimation 3s ease-in-out infinite;
     
 }
+.profile-pictu{
+    width: auto;
+    height: 450px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8)) 
+           drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
+    transition: all 0.5s ease;
+    animation: floatAnimation 5s ease-in-out infinite, shadowPulse 5s ease-in-out infinite;
+}
 
+.profile-pictu:hover {
+    filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.9))
+           drop-shadow(0 15px 20px rgba(0, 0, 0, 0.7));
+    transform: translateY(-5px) scale(1.02);
+}
+
+@keyframes shadowPulse {
+    0%, 100% { 
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8))
+               drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6)); 
+    }
+    50% { 
+        filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.9))
+               drop-shadow(0 12px 18px rgba(0, 0, 0, 0.7)); 
+    }
+}
+.background-image{
+    height: 400px;
+    width: auto;
+    max-width: 100%;
+}
 .profile-pic:hover {
     transform: scale(1.02);
     box-shadow: 
@@ -267,6 +296,12 @@
     .profile-pic {
         width: 284px;
         height: 284px;
+    }
+    
+    .profile-pictu {
+        height: 350px;
+        width: auto;
+        max-width: 90%;
     }
     
     .profile-content {
