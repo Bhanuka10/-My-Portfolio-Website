@@ -7,6 +7,7 @@ import Profile from './Component/Profile/Profile'
 import About from './Component/About/About'
 import Chatbot from './Component/Chatbot/Chatbot'
 import AboutMe from './Page/AboutMe'
+import Education from './Component/Education/Education'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <Navigation />  
         <Profile />
        <AboutMe />
+       <Education />
       </div>
     </>
   )

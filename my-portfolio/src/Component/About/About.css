@@ -38,6 +38,8 @@
   max-width: 350px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }

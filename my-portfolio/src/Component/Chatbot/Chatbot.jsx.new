@@ -1,15 +1,17 @@
 // Chatbot.jsx
 import React, { useState, useRef, useEffect } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import "./Chatbot.css";
 
-// Initialize the Google GenerativeAI with your API key
-const ai = new GoogleGenerativeAI("AIzaSyDG3oilceI9-RfZvLGYBlji7MiU8Me8HlA");
+// Initialize the Google GenAI with your API key
+const ai = new GoogleGenAI({
+  apiKey: "AIzaSyDG3oilceI9-RfZvLGYBlji7MiU8Me8HlA"
+});
 
 // Portfolio information for context
 const PORTFOLIO_CONTEXT = `
-About Sahan Bhanuka Bandaranayake:
-- Name: Sahan Bhanuka Bandaranayake
+About Bhanuka:
+- Name: Bhanuka Koongahage
 - Expertise: ML & AI Enthusiast, Full Stack Developer
 - Skills: React, Node.js, Laravel, JavaScript, Python, Machine Learning, AI, Deep Learning, MongoDB, MySQL
 - Currently exploring: AI-powered solutions, deep learning models, building scalable web applications
@@ -19,15 +21,19 @@ About Sahan Bhanuka Bandaranayake:
 - Notable Projects: [Add key projects]
 - Contact: [Add contact information]
 
-You are Bhanuka's AI assistant. Respond to questions about Bhanuka's background, skills, projects, or provide helpful information related to his areas of expertise.
+You are Bhanuka\'s AI assistant. Respond to questions about Bhanuka\'s background, skills, projects, or provide helpful information related to his areas of expertise.
 `;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { id: 1, from: "bot", text: "Hi! I'm Bhanuka's AI assistant powered by Gemini 2.5 Flash. How can I help you today?" },
+    { id: 1, from: "bot", text: "Hi! I\'m Bhanuka\'s AI assistant powered by Gemini 2.5 Flash. How can I help you today?" },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [conversationHistory, setConversationHistory] = useState([
+    { role: "user", parts: [{ text: PORTFOLIO_CONTEXT }] },
+    { role: "model", parts: [{ text: "Hi! I\'m Bhanuka\'s AI assistant powered by Gemini 2.5 Flash. How can I help you today?" }] }
+  ]);
   const listRef = useRef(null);
 
   useEffect(() => {
@@ -36,45 +42,49 @@ export default function Chatbot() {
   }, [messages]);
 
   // Function to generate response using Gemini API
-  const generateGeminiResponse = async (userText) => {
+  const generateGeminiResponse = async (prompt, history) => {
     try {
-      // Get the Gemini 2.5 Flash model
-      const model = ai.getGenerativeModel({
-        model: "gemini-2.5-flash"
+      // Convert history to a format the new API expects
+      const formattedHistory = history.map(msg => {
+        if (msg.role === "system") {
+          return { role: "user", parts: msg.parts };
+        }
+        return msg;
       });
-      
-      // Format the user query with context
-      const chat = model.startChat({
-        history: [
-          {
-            role: "user",
-            parts: [{ text: PORTFOLIO_CONTEXT }],
-          },
-          {
-            role: "model",
-            parts: [{ text: "I'm ready to help answer questions about Bhanuka." }],
-          },
-        ],
-        generationConfig: {
+
+      // Create the contents for the API request
+      const contents = [
+        ...formattedHistory.map(msg => ({
+          role: msg.role === "model" ? "model" : "user",
+          parts: [{ text: msg.parts[0].text }]
+        })),
+        { role: "user", parts: [{ text: prompt }] }
+      ];
+
+      // Create content using Gemini 2.5 Flash model
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: contents,
+        config: {
           temperature: 0.7,
           topP: 0.8,
           topK: 40,
           maxOutputTokens: 500,
+          thinkingConfig: {
+            thinkingBudget: 0, // Disable thinking for faster responses
+          },
         }
       });
       
-      // Send the user's message to the chat
-      const result = await chat.sendMessage(userText);
-      const response = await result.response;
-      
-      if (!response.text()) {
-        throw new Error("Empty response from API");
+      // Handle potential response errors
+      if (!response || !response.text) {
+        throw new Error("Received empty response from API");
       }
-
-      return response.text();
+      
+      return response.text;
     } catch (error) {
       console.error("Error calling Gemini API:", error);
-      return "I'm having trouble connecting right now. Please try again in a moment.";
+      return "I\'m having trouble connecting to my brain right now. Please try again in a moment.";
     }
   };
 
@@ -87,17 +97,27 @@ export default function Chatbot() {
     setMessages((m) => [...m, userMsg]);
     setInput("");
 
+    // Keep conversation history manageable (last 10 messages only)
+    const limitedHistory = conversationHistory.slice(-10);
+
     // Show typing indicator
     setIsTyping(true);
     
     try {
       // Get response from Gemini
-      const response = await generateGeminiResponse(text);
+      const response = await generateGeminiResponse(text, limitedHistory);
       
       // Add bot message to chat
       setMessages((m) => [
         ...m,
         { id: Date.now() + 1, from: "bot", text: response }
+      ]);
+      
+      // Update conversation history with both user message and bot response
+      setConversationHistory([
+        ...limitedHistory,
+        { role: "user", parts: [{ text: text }] },
+        { role: "model", parts: [{ text: response }] }
       ]);
     } catch (error) {
       console.error("Error in sendMessage:", error);
