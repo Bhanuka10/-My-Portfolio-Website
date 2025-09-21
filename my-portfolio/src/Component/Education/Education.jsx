@@ -1,38 +1,57 @@
-import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
-const Earth = () => {
-  const texture = new THREE.TextureLoader().load("/textures/earth.jpg");
+function FloatingStars() {
+  const points = useRef();
+  const count = 2000;
+  const positions = new Float32Array(count * 3);
+
+  for (let i = 0; i < count * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 200; // spread in 3D space
+  }
+
+  useFrame(() => {
+    if (points.current) {
+      points.current.rotation.y += 0.0005; // slow rotation
+      points.current.rotation.x += 0.0003;
+    }
+  });
 
   return (
-    <mesh rotation={[0, 0, 0]}>
-      <sphereGeometry args={[2.5, 64, 64]} />
-      <meshStandardMaterial map={texture} />
-    </mesh>
+    <Points ref={points} positions={positions}>
+      <PointMaterial
+        color="#6ec6ff"
+        size={0.3}
+        sizeAttenuation
+        depthWrite={false}
+        transparent
+      />
+    </Points>
   );
-};
+}
 
-const EarthBackground = () => {
+const SpaceBackground = () => {
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0, zIndex: -1 }}>
-      <Canvas>
-        {/* Lights */}
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-
-        {/* Earth */}
-        <Earth />
-
-        {/* Stars for space vibe */}
-        <Stars radius={100} depth={50} count={5000} factor={4} fade />
-
-        {/* Auto Rotation */}
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        background: "black",
+      }}
+    >
+      <Canvas camera={{ position: [0, 0, 50], fov: 60 }}>
+        <ambientLight intensity={0.5} />
+        <FloatingStars />
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );
 };
 
-export default EarthBackground;
+export default SpaceBackground;
