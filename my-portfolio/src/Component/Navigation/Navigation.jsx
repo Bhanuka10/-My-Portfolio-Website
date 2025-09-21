@@ -78,7 +78,7 @@ const Navigation = () => {
         <div className="nav-logo">
           <span className="logo-text">
             <span className="logo-icon">⚡</span>
-            <span className="logo-name">Portfolio</span>
+            <span className="logo-name">BHANUKA</span>
           </span>
         </div>
         

@@ -1,0 +1,79 @@
+/* About.css - Modern 3-box About Section */
+
+.about {
+  max-height: 100vh;
+  height:90vh ;
+  padding: 20px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* dark gradient */
+  color: #fff;
+  text-align: center;
+  border: solid 1px rgb(32, 32, 32);
+  border-radius: 20px;
+  box-shadow: inset 0 0 1;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #3b82f6, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.about-boxes {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  background: rgba(255, 255, 255, 0.05); /* glass look */
+  border-radius: 15px;
+  padding: 30px 25px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.about-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+}
+
+.about-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #3b82f6; /* blue title */
+}
+
+.about-box p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+.highlight {
+  color: #ef4444; /* red highlight */
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
