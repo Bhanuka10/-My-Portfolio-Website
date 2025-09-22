@@ -16,8 +16,9 @@
     overflow: hidden;
     margin: 0;
     box-sizing: border-box;
-    
-    background: #050817; /* Dark background for space effect */
+    border-radius: 10px;
+    background: #05081762;
+     /* Dark background for space effect */
 }
 
 /* Space Animation Container */

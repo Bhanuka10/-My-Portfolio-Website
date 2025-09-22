@@ -1,82 +1,287 @@
-.skill-container {
+.skill-section {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  padding-left: 80px;
-  font-family: Arial, sans-serif;
-  /* background: #1a1a1a; */
-  color: #fff;
+  padding: 80px 40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Circle Section */
-.circle-section {
-  position: relative;
-  width: 300px;
-  height: 300px;
+/* Horizontal Topics Navigation */
+.topics-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.circle-line {
-  width: 100%;
-  height: 100%;
-  border: 2px dashed #007bff;
-  border-radius: 50%;
+  gap: 50px;
+  margin-bottom: 50px;
   position: relative;
-  transform-origin: center center;
+  width: 100%;
 }
 
-/* Topic Dots */
-.topic-dot {
+.topics-nav::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: -120px center;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 123, 255, 0.3), #007bff, rgba(0, 123, 255, 0.3));
+  border-radius: 2px;
+}
+
+/* Topic items */
+.topic-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 15px;
 }
 
-.topic-dot .dot {
-  width: 14px;
-  height: 14px;
-  background: #007bff;
+.topic-item .topic-dot {
+  width: 20px;
+  height: 20px;
+  background: #bbb;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,123,255,0.6);
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
-.topic-dot .label {
-  color: #fff;
+.topic-item .topic-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.topic-item::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #007bff transparent;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Active state */
+.topic-item.active .topic-dot {
+  background: #007bff;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+.topic-item.active .topic-label {
+  color: #007bff;
   font-weight: 600;
-  white-space: nowrap;
 }
 
-.topic-dot.active .dot {
-  background: #ff4d4f;
-  box-shadow: 0 0 18px rgba(255,77,79,0.7);
+.topic-item.active::after {
+  opacity: 1;
 }
 
-/* Details Box */
+/* Content details box */
 .details-box {
-  margin-left: 80px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 25px 30px;
-  border-radius: 14px;
-  max-width: 400px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-  color: #fff;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 0px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  color: #222;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.details-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #00c6ff);
 }
 
 .details-box h2 {
-  margin-bottom: 10px;
-  color: #ff4d4f;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #007bff;
+  position: relative;
+  display: inline-block;
 }
 
 .details-box p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+/* Education Roadmap Styles */
+.education-roadmap {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.education-roadmap::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #007bff, #00c6ff);
+}
+
+.roadmap-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.roadmap-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.roadmap-item.completed::before {
+  background: #007bff;
+}
+
+.roadmap-item.current::before {
+  background: #fff;
+  border: 3px solid #007bff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+.roadmap-content {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.roadmap-item:hover .roadmap-content {
+  transform: translateX(5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.roadmap-content h3 {
+  margin: 0 0 8px 0;
+  color: #007bff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.roadmap-content .years {
+  font-size: 0.9rem;
+  color: #1c2237;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.roadmap-content .status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.roadmap-item.completed .status {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}
+
+.roadmap-item.current .status {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .skill-section {
+    padding: 60px 20px;
+  }
+  
+  .topics-nav {
+    gap: 30px;
+  }
+  
+  .topic-item .topic-label {
+    font-size: 0.9rem;
+  }
+  
+  .details-box {
+    padding: 25px;
+  }
+  
+  .roadmap-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topics-nav {
+    gap: 20px;
+  }
+  
+  .topic-item .topic-dot {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .topic-item .topic-label {
+    font-size: 0.8rem;
+  }
+  
+  .details-box h2 {
+    font-size: 1.5rem;
+  }
+  
+  .roadmap-content h3 {
+    font-size: 1rem;
+  }
 }
