@@ -7,7 +7,7 @@ const Contact = () => {
     <div className='contact' id='contact'>
       <div className="contact-container">
         <div className="contact-header">
-          <h1>Get In Touch</h1>
+          
           <div className="header-underline"></div>
         </div>
 
@@ -30,6 +30,9 @@ const Contact = () => {
               <a href="https://www.facebook.com/sahan.bhanuka.5" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
                 <FaFacebookF />
               </a>
+            </div>
+            <div className='icons'>
+                
             </div>
           </div>
       
