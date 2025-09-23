@@ -102,18 +102,12 @@
 
 .languages-row {
   display: grid;
-  grid-template-columns: repeat(7, minmax(75px, 1fr)); /* Default 7 columns for row 1 and 3 */
+  grid-template-columns: repeat(7, minmax(75px, 1fr)); /* Reduced minmax width for smaller icons */
   gap: 10px; /* Reduced gap */
   max-width: 1000px; /* Slightly reduced max width */
   margin: 0 auto 12px; /* Reduced bottom margin */
   position: relative;
   z-index: 1;
-}
-
-/* Special class for row 2 with 6 icons */
-.languages-row.row-6 {
-  grid-template-columns: repeat(6, minmax(75px, 1fr));
-  width: 95%; /* Makes row 2 slightly narrower for better centering */
 }
 
 /* For backward compatibility */
@@ -206,22 +200,12 @@
     grid-template-columns: repeat(7, minmax(70px, 1fr));
     gap: 8px;
   }
-  
-  .languages-row.row-6 {
-    grid-template-columns: repeat(6, minmax(70px, 1fr));
-    width: 95%;
-  }
 }
 
 @media (max-width: 768px) {
   .languages-row {
     grid-template-columns: repeat(4, minmax(65px, 1fr));
     gap: 8px;
-  }
-  
-  .languages-row.row-6 {
-    grid-template-columns: repeat(3, minmax(65px, 1fr));
-    width: 100%;
   }
   
   .languages-grid {
@@ -247,10 +231,6 @@
   .languages-row {
     grid-template-columns: repeat(3, minmax(55px, 1fr));
     gap: 6px;
-  }
-  
-  .languages-row.row-6 {
-    grid-template-columns: repeat(3, minmax(55px, 1fr));
   }
   
   .languages-grid {

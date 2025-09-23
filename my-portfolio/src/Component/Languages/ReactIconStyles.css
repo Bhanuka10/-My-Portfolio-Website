@@ -24,14 +24,14 @@
   opacity: 1;
 }
 
-/* Bootstrap icon special effect - replacing the blade effect */
-.skill-card:nth-child(6) .icon-circle {
-  position: relative;
-  overflow: hidden;
+/* Blade icon diamond effect */
+.skill-card:nth-child(6) .icon-circle svg {
+  filter: drop-shadow(0 0 3px rgba(255, 45, 32, 0.5));
+  transform-origin: center;
 }
 
-.skill-card:nth-child(6):hover .icon-circle::before {
-  opacity: 0.7;
+.skill-card:nth-child(6):hover .icon-circle svg {
+  animation: rotate-diamond 1.5s infinite linear;
 }
 
 /* Postman icon special effect */
@@ -47,7 +47,7 @@
   animation: bounce 0.6s ease infinite alternate;
 }
 
-/* IntelliJ IDEA special effect - Position updated after removing Blade */
+/* IntelliJ IDEA special effect */
 .skill-card:nth-child(6) .icon-circle {
   position: relative;
   overflow: hidden;
@@ -78,7 +78,14 @@
   }
 }
 
-/* Removed rotate-diamond animation since it was for Blade icon */
+@keyframes rotate-diamond {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @keyframes bounce {
   0% {
