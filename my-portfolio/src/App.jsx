@@ -11,6 +11,8 @@ import Education from './Component/Education/Education'
 import Skill from './Component/Skill/Skill'
 import Contact from './Component/Contact/Contact'
 
+import Languages from './Component/Languages/Languages'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -21,7 +23,9 @@ function App() {
         <Profile />
        <AboutMe />
        <Contact />
+       <Languages />
        <Education />
+
        <Skill />
       </div>
     </>

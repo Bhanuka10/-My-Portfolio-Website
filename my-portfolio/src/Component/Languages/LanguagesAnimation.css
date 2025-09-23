@@ -1,0 +1,168 @@
+/* Animation for skill cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-card {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.skill-card.animate-in {
+  animation-play-state: running;
+}
+
+/* Staggered animation delay */
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.15s; }
+.skill-card:nth-child(3) { animation-delay: 0.2s; }
+.skill-card:nth-child(4) { animation-delay: 0.25s; }
+.skill-card:nth-child(5) { animation-delay: 0.3s; }
+.skill-card:nth-child(6) { animation-delay: 0.35s; }
+.skill-card:nth-child(7) { animation-delay: 0.4s; }
+.skill-card:nth-child(8) { animation-delay: 0.45s; }
+.skill-card:nth-child(9) { animation-delay: 0.5s; }
+.skill-card:nth-child(10) { animation-delay: 0.55s; }
+.skill-card:nth-child(11) { animation-delay: 0.6s; }
+.skill-card:nth-child(12) { animation-delay: 0.65s; }
+.skill-card:nth-child(13) { animation-delay: 0.7s; }
+.skill-card:nth-child(14) { animation-delay: 0.75s; }
+.skill-card:nth-child(15) { animation-delay: 0.8s; }
+.skill-card:nth-child(16) { animation-delay: 0.85s; }
+.skill-card:nth-child(17) { animation-delay: 0.9s; }
+.skill-card:nth-child(18) { animation-delay: 0.95s; }
+.skill-card:nth-child(19) { animation-delay: 1s; }
+.skill-card:nth-child(20) { animation-delay: 1.05s; }
+
+/* 3D hover effect */
+.skill-card {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon animations */
+@keyframes pulse-glow {
+  0% { filter: drop-shadow(0 0 2px currentColor); }
+  50% { filter: drop-shadow(0 0 8px currentColor); }
+  100% { filter: drop-shadow(0 0 2px currentColor); }
+}
+
+/* Floating animation */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Icon animations */
+.icon-circle {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.skill-card i {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.skill-card:hover i {
+  animation-play-state: paused;
+}
+
+.skill-card i.devicon-html5-plain.colored {
+  color: #E44D26;
+  text-shadow: 0 0 15px rgba(228, 77, 38, 0.4);
+}
+
+.skill-card i.devicon-css3-plain.colored {
+  color: #264DE4;
+  text-shadow: 0 0 15px rgba(38, 77, 228, 0.4);
+}
+
+.skill-card i.devicon-javascript-plain.colored {
+  color: #F7DF1E;
+  text-shadow: 0 0 15px rgba(247, 223, 30, 0.4);
+}
+
+.skill-card i.devicon-react-original.colored {
+  color: #61DAFB;
+  text-shadow: 0 0 15px rgba(97, 218, 251, 0.4);
+}
+
+.skill-card i.devicon-nodejs-plain.colored {
+  color: #8CC84B;
+  text-shadow: 0 0 15px rgba(140, 200, 75, 0.4);
+}
+
+.skill-card i.devicon-mongodb-plain.colored {
+  color: #4DB33D;
+  text-shadow: 0 0 15px rgba(77, 179, 61, 0.4);
+}
+
+.skill-card i.devicon-java-plain.colored {
+  color: #F89820;
+  text-shadow: 0 0 15px rgba(248, 152, 32, 0.4);
+}
+
+.skill-card i.devicon-python-plain.colored {
+  color: #3776AB;
+  text-shadow: 0 0 15px rgba(55, 118, 171, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .languages-section {
+    min-height: initial;
+    max-height: 49vh;
+    padding: 30px 15px;
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 12px 6px;
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  
+  .skill-card span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 10px;
+  }
+  
+  .skill-card {
+    padding: 10px 5px;
+  }
+  
+  .skill-card i {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .skill-card span {
+    font-size: 0.7rem;
+  }
+}

@@ -128,7 +128,7 @@ export default function Chatbot() {
           <div className="brand">
             <span className="dot red" />
             <span className="dot blue" />
-            <span className="title">Bhanuka Bot (Gemini 2.5)</span>
+            <span className="title">Bhanuka Bot </span>
           </div>
           <div className="controls">
             <button className="icon-btn" aria-label="minimize"></button>

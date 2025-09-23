@@ -1,0 +1,115 @@
+/* Icon-specific styling */
+
+/* Add subtle glow effects for each icon */
+.skill-card:hover .icon-circle {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Icon color-specific glow effects */
+.skill-card i.devicon-html5-plain.colored {
+  color: #E44D26;
+}
+.skill-card:hover .icon-circle[style*="color: #E44D26"] {
+  box-shadow: 0 0 15px rgba(228, 77, 38, 0.4);
+}
+
+.skill-card i.devicon-css3-plain.colored {
+  color: #264DE4;
+}
+.skill-card:hover .icon-circle[style*="color: #264DE4"] {
+  box-shadow: 0 0 15px rgba(38, 77, 228, 0.4);
+}
+
+.skill-card i.devicon-javascript-plain.colored {
+  color: #F7DF1E;
+}
+.skill-card:hover .icon-circle[style*="color: #F7DF1E"] {
+  box-shadow: 0 0 15px rgba(247, 223, 30, 0.4);
+}
+
+.skill-card i.devicon-react-original.colored {
+  color: #61DAFB;
+}
+.skill-card:hover .icon-circle[style*="color: #61DAFB"] {
+  box-shadow: 0 0 15px rgba(97, 218, 251, 0.4);
+}
+
+.skill-card i.devicon-nodejs-plain.colored {
+  color: #8CC84B;
+}
+.skill-card:hover .icon-circle[style*="color: #8CC84B"] {
+  box-shadow: 0 0 15px rgba(140, 200, 75, 0.4);
+}
+
+.skill-card i.devicon-mongodb-plain.colored {
+  color: #4DB33D;
+}
+.skill-card:hover .icon-circle[style*="color: #4DB33D"] {
+  box-shadow: 0 0 15px rgba(77, 179, 61, 0.4);
+}
+
+.skill-card i.devicon-java-plain.colored {
+  color: #F89820;
+}
+.skill-card:hover .icon-circle[style*="color: #F89820"] {
+  box-shadow: 0 0 15px rgba(248, 152, 32, 0.4);
+}
+
+.skill-card i.devicon-python-plain.colored {
+  color: #3776AB;
+}
+.skill-card:hover .icon-circle[style*="color: #3776AB"] {
+  box-shadow: 0 0 15px rgba(55, 118, 171, 0.4);
+}
+
+.skill-card i.devicon-laravel-plain.colored {
+  color: #FF2D20;
+}
+.skill-card:hover .icon-circle[style*="color: #FF2D20"] {
+  box-shadow: 0 0 15px rgba(255, 45, 32, 0.4);
+}
+
+.skill-card i.devicon-tailwindcss-plain.colored {
+  color: #06B6D4;
+}
+.skill-card:hover .icon-circle[style*="color: #06B6D4"] {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+.skill-card i.devicon-figma-plain.colored {
+  color: #F24E1E;
+}
+.skill-card:hover .icon-circle[style*="color: #F24E1E"] {
+  box-shadow: 0 0 15px rgba(242, 78, 30, 0.4);
+}
+
+.skill-card i.devicon-git-plain.colored {
+  color: #F05032;
+}
+.skill-card:hover .icon-circle[style*="color: #F05032"] {
+  box-shadow: 0 0 15px rgba(240, 80, 50, 0.4);
+}
+
+.skill-card i.devicon-bootstrap-plain.colored {
+  color: #7952B3;
+}
+.skill-card:hover .icon-circle[style*="color: #7952B3"] {
+  box-shadow: 0 0 15px rgba(121, 82, 179, 0.4);
+}
+
+.skill-card i.devicon-vscode-plain.colored {
+  color: #007ACC;
+}
+.skill-card:hover .icon-circle[style*="color: #007ACC"] {
+  box-shadow: 0 0 15px rgba(0, 122, 204, 0.4);
+}
+
+/* Special animation for React icon */
+@keyframes react-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.skill-card:hover i.devicon-react-original.colored {
+  animation: react-spin 10s linear infinite;
+}
