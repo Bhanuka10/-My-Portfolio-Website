@@ -4,6 +4,7 @@ import './Navigation.css'
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,30 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (
+        navMenu && 
+        !navMenu.contains(event.target) && 
+        !hamburger.contains(event.target) &&
+        isMobileMenuOpen
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   const handleLinkClick = (linkName, e) => {
     e.preventDefault();
@@ -44,32 +69,15 @@ const Navigation = () => {
     }
   };
 
-  const handleButtonClick = (e) => {
-    e.preventDefault();
-    
-    // Create button ripple effect
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
-    
-    ripple.className = 'button-ripple';
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    
-    e.currentTarget.appendChild(ripple);
-    
-    setTimeout(() => {
-      ripple.remove();
-    }, 800);
+  // Simple navigation function is now directly in the button's onClick
 
-    // Add success feedback
-    e.currentTarget.classList.add('clicked');
-    setTimeout(() => {
-      e.currentTarget.classList.remove('clicked');
-    }, 300);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+  
+  const handleMobileLinkClick = (linkName, e) => {
+    handleLinkClick(linkName, e);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -82,13 +90,13 @@ const Navigation = () => {
           </span>
         </div>
         
-        <div className="nav-menu">
+        <div className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
               <a 
                 href="#home" 
                 className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={(e) => handleLinkClick('home', e)}
+                onClick={(e) => handleMobileLinkClick('home', e)}
               >
                 <span className="link-text">Home</span>
                 <span className="link-dot"></span>
@@ -99,7 +107,7 @@ const Navigation = () => {
               <a 
                 href="#about" 
                 className={`nav-link ${activeLink === 'about' ? 'active' : ''}`}
-                onClick={(e) => handleLinkClick('about', e)}
+                onClick={(e) => handleMobileLinkClick('about', e)}
               >
                 <span className="link-text">About</span>
                 <span className="link-dot"></span>
@@ -110,7 +118,7 @@ const Navigation = () => {
               <a 
                 href="#projects" 
                 className={`nav-link ${activeLink === 'projects' ? 'active' : ''}`}
-                onClick={(e) => handleLinkClick('projects', e)}
+                onClick={(e) => handleMobileLinkClick('projects', e)}
               >
                 <span className="link-text">Projects</span>
                 <span className="link-dot"></span>
@@ -121,7 +129,7 @@ const Navigation = () => {
               <a 
                 href="#contact" 
                 className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                onClick={(e) => handleLinkClick('contact', e)}
+                onClick={(e) => handleMobileLinkClick('contact', e)}
               >
                 <span className="link-text">Contact</span>
                 <span className="link-dot"></span>
@@ -131,16 +139,23 @@ const Navigation = () => {
           </ul>
         </div>
         
+        <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          <div className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        
         <div className="nav-cta">
-          <button className="hire-btn" onClick={handleButtonClick}>
-            <span className="btn-gradient"></span>
+          <button className="hire-btn" onClick={(e) => {
+            e.preventDefault();
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>
             <span className="btn-text">Let's Work</span>
-            <span className="btn-shine"></span>
-            <span className="btn-particles">
-              <span className="particle"></span>
-              <span className="particle"></span>
-              <span className="particle"></span>
-            </span>
           </button>
         </div>
       </div>

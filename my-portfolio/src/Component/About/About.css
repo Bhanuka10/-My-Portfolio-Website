@@ -43,6 +43,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
+.about-box h1{
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  
+}
 
 .about-box:hover {
   transform: translateY(-10px);

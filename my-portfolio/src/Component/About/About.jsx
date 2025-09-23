@@ -8,7 +8,7 @@ const About = () => {
       <div className="about-boxes">
         
         <div className="about-box">
-          <h2>👨‍💻 Who I Am</h2>
+          <h2>    Who I Am</h2>
           <p>
             Hi, I’m <span className="highlight">Bhanuka</span>, an aspiring 
             <span className="highlight"> ML & AI Enthusiast</span> and 
@@ -21,7 +21,7 @@ const About = () => {
         </div>
 
         <div className="about-box">
-          <h2>⚡ What I Do</h2>
+          <h2>    What I Do</h2>
           <p>
             I specialize in <span className="highlight">React.js</span>, 
             <span className="highlight"> Node.js</span>, and 
