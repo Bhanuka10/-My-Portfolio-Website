@@ -4,7 +4,7 @@
   align-items: center;
   padding: 80px 40px;
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #333;
+  color: #333333;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -95,13 +95,13 @@
 /* Content details box */
 .details-box {
   width: 80%;
-  background: rgba(255, 255, 255, 0.15);
+  background:linear-gradient(45deg, #1c22377f, #1a1f35d7);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 0px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  color: #222;
+  color: #cbc5c5;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -193,7 +193,7 @@
 }
 
 .roadmap-content {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.091);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 8px;
@@ -210,14 +210,14 @@
 
 .roadmap-content h3 {
   margin: 0 0 8px 0;
-  color: #007bff;
+  color: #dbdcde;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 .roadmap-content .years {
   font-size: 0.9rem;
-  color: #1c2237;
+  color: #6f7eb8;
   margin: 0 0 10px 0;
   font-style: italic;
 }

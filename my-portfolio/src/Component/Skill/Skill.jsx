@@ -117,7 +117,7 @@ const Skill = () => {
       <div className="skills-container" ref={skillsRef}>
         <div className="skills-header">
           <h2>My Technical Skills</h2>
-          <p>A comprehensive overview of my technical proficiency across various domains.</p>
+          
         </div>
         
         <div className={`skills-categories ${isVisible ? 'visible' : ''}`}>
