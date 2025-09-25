@@ -14,9 +14,9 @@ import { DiIntellij } from "react-icons/di";
 import { VscCode } from "react-icons/vsc";
 
 const Skill = () => {
-  const [active, setActive] = useState("passion");
+  const [active, setActive] = useState("skills");
   const skillsRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Set to true by default
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -136,7 +136,13 @@ const Skill = () => {
                       {skill.name}
                     </div>
                     <div className="skill-bar">
-                      <div className="skill-level" style={{ '--skill-width': `${skill.proficiency}%` }}></div>
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -159,7 +165,13 @@ const Skill = () => {
                       {skill.name}
                     </div>
                     <div className="skill-bar">
-                      <div className="skill-level" style={{ '--skill-width': `${skill.proficiency}%` }}></div>
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -182,7 +194,13 @@ const Skill = () => {
                       {skill.name}
                     </div>
                     <div className="skill-bar">
-                      <div className="skill-level" style={{ '--skill-width': `${skill.proficiency}%` }}></div>
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -205,7 +223,13 @@ const Skill = () => {
                       {skill.name}
                     </div>
                     <div className="skill-bar">
-                      <div className="skill-level" style={{ '--skill-width': `${skill.proficiency}%` }}></div>
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -228,7 +252,13 @@ const Skill = () => {
                       {skill.name}
                     </div>
                     <div className="skill-bar">
-                      <div className="skill-level" style={{ '--skill-width': `${skill.proficiency}%` }}></div>
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
                     </div>
                   </div>
                 </div>
