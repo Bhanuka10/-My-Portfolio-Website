@@ -14,7 +14,7 @@ import { DiIntellij } from "react-icons/di";
 import { VscCode } from "react-icons/vsc";
 
 const Skill = () => {
-  const [active, setActive] = useState("skills");
+  const [active, setActive] = useState("passion");
   const skillsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   
@@ -240,23 +240,104 @@ const Skill = () => {
     ),
     passion: (
       <div className="passion-container">
-        <h3>My Passion</h3>
-        <p className="passion-text">
-          I am passionate about creating elegant solutions to complex problems. My goal is to build
-          applications that are not only functional but also provide an exceptional user experience.
-          I thrive in collaborative environments where I can learn from others and contribute my
-          expertise to develop innovative products.
-        </p>
-        <p className="passion-focus">
-          <strong>Areas of Focus:</strong>
-        </p>
-        <ul className="passion-list">
-          <li>Full-Stack Web Development</li>
-          <li>Responsive and Interactive User Interfaces</li>
-          <li>AI-Powered Applications</li>
-          <li>Database Design and Optimization</li>
-          <li>Clean Code and Best Practices</li>
-        </ul>
+        
+
+        <div className="passion-body">
+          <div className="passion-story">
+            <h3 className="section-title">My Journey</h3>
+            <p className="story-text">
+              I am deeply passionate about creating elegant solutions to complex problems. 
+              My journey in technology began with curiosity and has evolved into a mission to build 
+              applications that not only function flawlessly but also provide exceptional user experiences. 
+              I believe that great software is born from the intersection of technical excellence and human empathy.
+            </p>
+          </div>
+
+          <div className="passion-values">
+            <h3 className="section-title">Core Values</h3>
+            <div className="values-grid">
+              <div className="value-card">
+                <div className="value-icon">💡</div>
+                <h4>Innovation</h4>
+                <p>Constantly exploring new technologies and approaches to solve modern challenges.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">🎯</div>
+                <h4>Excellence</h4>
+                <p>Committed to writing clean, maintainable code and delivering high-quality solutions.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">🤝</div>
+                <h4>Collaboration</h4>
+                <p>Thriving in team environments where knowledge sharing drives collective growth.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">📚</div>
+                <h4>Learning</h4>
+                <p>Embracing continuous learning as the foundation of professional development.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="passion-focus">
+            <h3 className="section-title">Areas of Expertise & Interest</h3>
+            <div className="focus-areas">
+              <div className="focus-category">
+                <h4 className="category-name">
+                  <span className="category-icon">🌐</span>
+                  Web Development
+                </h4>
+                <ul className="focus-list">
+                  <li>Full-Stack Application Development</li>
+                  <li>Responsive & Progressive Web Apps</li>
+                  <li>Modern Frontend Frameworks (React, Vue)</li>
+                  <li>RESTful API Design & Implementation</li>
+                </ul>
+              </div>
+              
+              <div className="focus-category">
+                <h4 className="category-name">
+                  <span className="category-icon">🤖</span>
+                  Emerging Technologies
+                </h4>
+                <ul className="focus-list">
+                  <li>AI-Powered Applications</li>
+                  <li>Machine Learning Integration</li>
+                  <li>Cloud Computing & DevOps</li>
+                  <li>Internet of Things (IoT) Solutions</li>
+                </ul>
+              </div>
+              
+              <div className="focus-category">
+                <h4 className="category-name">
+                  <span className="category-icon">🎨</span>
+                  Design & UX
+                </h4>
+                <ul className="focus-list">
+                  <li>User Interface Design</li>
+                  <li>User Experience Optimization</li>
+                  <li>Design Systems & Components</li>
+                  <li>Accessibility & Inclusive Design</li>
+                </ul>
+              </div>
+              
+              <div className="focus-category">
+                <h4 className="category-name">
+                  <span className="category-icon">⚡</span>
+                  Performance & Quality
+                </h4>
+                <ul className="focus-list">
+                  <li>Database Design & Optimization</li>
+                  <li>Application Performance Tuning</li>
+                  <li>Test-Driven Development</li>
+                  <li>Clean Code & Best Practices</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
       </div>
     )
   };
