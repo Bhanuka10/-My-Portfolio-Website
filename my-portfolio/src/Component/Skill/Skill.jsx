@@ -257,22 +257,22 @@ const Skill = () => {
             <h3 className="section-title">Core Values</h3>
             <div className="values-grid">
               <div className="value-card">
-                <div className="value-icon">💡</div>
+                <div className="value-icon"></div>
                 <h4>Innovation</h4>
                 <p>Constantly exploring new technologies and approaches to solve modern challenges.</p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🎯</div>
+                <div className="value-icon"></div>
                 <h4>Excellence</h4>
                 <p>Committed to writing clean, maintainable code and delivering high-quality solutions.</p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🤝</div>
+                <div className="value-icon"></div>
                 <h4>Collaboration</h4>
                 <p>Thriving in team environments where knowledge sharing drives collective growth.</p>
               </div>
               <div className="value-card">
-                <div className="value-icon">📚</div>
+                <div className="value-icon"></div>
                 <h4>Learning</h4>
                 <p>Embracing continuous learning as the foundation of professional development.</p>
               </div>
