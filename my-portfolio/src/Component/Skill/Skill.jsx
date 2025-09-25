@@ -290,7 +290,7 @@ const Skill = () => {
                 <ul className="focus-list">
                   <li>Full-Stack Application Development</li>
                   <li>Responsive & Progressive Web Apps</li>
-                  <li>Modern Frontend Frameworks (React, Vue)</li>
+                  <li>Modern Frontend Frameworks </li>
                   <li>RESTful API Design & Implementation</li>
                 </ul>
               </div>
@@ -303,8 +303,8 @@ const Skill = () => {
                 <ul className="focus-list">
                   <li>AI-Powered Applications</li>
                   <li>Machine Learning Integration</li>
-                  <li>Cloud Computing & DevOps</li>
-                  <li>Internet of Things (IoT) Solutions</li>
+                  <li>Artificial Intelligence & Machine Learning Solutions</li>
+                  <li>Deployment of AI Models into Web & Mobile Applications</li>
                 </ul>
               </div>
               
@@ -328,6 +328,7 @@ const Skill = () => {
                 </h4>
                 <ul className="focus-list">
                   <li>Database Design & Optimization</li>
+                  <li>Databases & Data Handling</li>
                   <li>Application Performance Tuning</li>
                   <li>Test-Driven Development</li>
                   <li>Clean Code & Best Practices</li>
