@@ -237,6 +237,7 @@
   transition: all 0.3s ease;
   border-radius: 8px;
   margin-bottom: 0.3rem;
+  text-align: left;
 }
 
 .focus-list li:before {
