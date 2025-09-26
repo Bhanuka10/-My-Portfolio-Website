@@ -1,19 +1,19 @@
 const projectsData = [
   {
     id: 1,
-    title: "AgriWave",
-    description: "A digital platform connecting farmers directly with buyers.",
+    title: "Personalized Learning Web Application",
+    description: "Personalized Learning Web Application designed to help learners become experts in their chosen field. The system analyzes user profiles—such as educational background, skills, and learning goals—and recommends the most relevant online courses and resources.",
     image: "/images/agriwave.png",
-    techStack: ["React", "Node.js", "MongoDB"],
-    link: "https://github.com/yourusername/agriwave"
+    techStack: ["React", "Firebase", "JavaScript","HTML","CSS","Gemini API","git","figma"],
+    link: "https://github.com/Bhanuka10/Capstone"
   },
   {
     id: 2,
-    title: "TravelTailor",
-    description: "A travel client portal with personalized trip planning.",
+    title: "Hostel Management System",
+    description: "A Laravel-based Hostel Management System that streamlines operations by managing student registration, room allocation, fee tracking, and staff records. It provides administrators with reporting and payment tools, while students can easily view their details, reducing manual work and improving efficiency.",
     image: "/images/traveltailor.png",
-    techStack: ["React", "Express", "MySQL"],
-    link: "https://github.com/yourusername/traveltailor"
+    techStack: ["Laravel", "PHP", "MySQL", "Blade", "HTML", "CSS", "JavaScript","git"],
+    link: "https://github.com/Bhanuka10/Hostel-Management-System-Laravel-"
   },
 ];
 
