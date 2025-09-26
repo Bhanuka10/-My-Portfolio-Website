@@ -2,6 +2,7 @@ import React from 'react'
 import './Profile.css'
 import TypedText from '../TypedText/TypedText'
 import SpaceAnimation from './SpaceAnimation'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const Profile = () => {
   const roles = [
@@ -13,6 +14,10 @@ const Profile = () => {
   return (
     <div className='profile'>
         <SpaceAnimation />
+        <div className="location-info">
+          <FaMapMarkerAlt className="location-icon" />
+          <span className="location-text">Kandy, Sri Lanka</span>
+        </div>
         <div className="profile-stage">
             {/* <div className="profile-pic-container">
                 <img className="profile-pic" src="src/assets/WhatsApp_Image_2025-04-04_at_09.30.12_89ba444b-removebg-preview.png" alt="" />
