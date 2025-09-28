@@ -19,7 +19,7 @@ const projectsData = [
   id: 3,
   title: "Latest Movies Library",
   description: "A React-based web application that fetches and displays popular movies using a movie API. The app presents movie posters, titles, and details in a responsive layout with smooth navigation. It helps users explore trending films in an interactive and visually engaging way.",
-  image: "/images/moviesapp.png",
+  image: "src/assets/Movie-Hub/Screenshot (306).png",
   techStack: ["React", "JavaScript", "HTML", "CSS", "API Integration", "Git"],
   link: "https://github.com/Bhanuka10/Movies-collection"
 }
