@@ -1,15 +1,19 @@
 /* Projects Container */
 .projects-container {
-  padding: 2rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #0f172ac9 0%, #1e293bbf 100%);
   min-height: 100vh;
+}
+.projects-container h1{
+    color: white;
+    font-size: 2.5rem
 }
 
 /* Projects List */
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -72,6 +76,7 @@
 
 .project-header {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .project-title {
@@ -80,12 +85,39 @@
   margin-bottom: 0.5rem;
   color: #e2e8f0;
   line-height: 1.3;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  opacity: 0;
 }
 
 .project-description {
   color: #94a3b8;
   font-size: 0.95rem;
   line-height: 1.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Description hover effects */
+.project-description-short {
+  opacity: 1;
+}
+
+.project-description-full {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.project-card:hover .project-description-short  {
+  opacity: 0;
+}
+
+.project-card:hover .project-description-full {
+  opacity: 1;
 }
 
 /* Tech Stack */
@@ -146,8 +178,18 @@
 /* Project Actions */
 .project-actions {
   display: flex;
+  
+  padding-bottom: 100px;
   gap: 1rem;
   margin-top: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-actions {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .action-btn {

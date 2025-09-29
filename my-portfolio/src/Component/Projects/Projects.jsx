@@ -37,6 +37,7 @@ const Projects = () => {
 
   return (
     <div className="projects-container">
+      <h1>Web Projects</h1>
       <div className="projects-list">
         {projectsData.map((project) => (
           <div className="project-card" key={project.id}>
@@ -47,8 +48,11 @@ const Projects = () => {
             <div className="project-content">
               <div className="project-header">
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">
+                <p className="project-description project-description-short">
                   {truncateDescription(project.description)}
+                </p>
+                <p className="project-description project-description-full">
+                  {project.description}
                 </p>
               </div>
               
