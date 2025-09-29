@@ -4,7 +4,7 @@ import "./LanguagesAnimation.css";
 import "./IconStyles.css";
 import "./ReactIconStyles.css"; // Add our new special styles for React Icons
 // Import React Icons for unique icons
-import { SiPostman, SiLaravel, SiIntellijidea } from "react-icons/si";
+import { SiPostman, SiLaravel, SiIntellijidea, SiMysql } from "react-icons/si";
 import { GiCutDiamond } from "react-icons/gi";
 import { VscCode } from "react-icons/vsc";
 
@@ -28,8 +28,8 @@ const row2 = [
   { name: "MongoDB", icon: "devicon-mongodb-plain colored", color: "#4DB33D", bgColor: "rgba(77, 179, 61, 0.15)" },
   // Using React Icons for Laravel instead of devicon
   { name: "Laravel", iconComponent: SiLaravel, color: "#FF2D20", bgColor: "rgba(255, 45, 32, 0.15)" },
-  // Using a diamond icon from React Icons to represent Blade templates
-  { name: "Blade", iconComponent: GiCutDiamond, color: "#FF2D20", bgColor: "rgba(255, 45, 32, 0.15)" },
+  // Using MySQL icon from React Icons to represent SQL
+  { name: "SQL", iconComponent: SiMysql, color: "#4479A1", bgColor: "rgba(68, 121, 161, 0.15)" },
   { name: "Bootstrap", icon: "devicon-bootstrap-plain colored", color: "#7952B3", bgColor: "rgba(121, 82, 179, 0.15)" },
 ];
 
@@ -94,7 +94,7 @@ const Languages = () => {
   return (
     <section className="languages-section" ref={sectionRef}>
       <div className="section-content">
-        <h2 className="title">⚡ My Tech Stack</h2>
+        <h2 className="title"> My Tech Stack</h2>
         
         {/* First row - 7 icons */}
         <div className="languages-row">
