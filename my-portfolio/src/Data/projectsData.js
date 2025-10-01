@@ -46,7 +46,7 @@ const UisData=[
     image: "src/assets/UI/wet/Home page.png",
     techStack: ["Figma"],
     explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit"
-  }
+  },
 
   {
     id: 3,
