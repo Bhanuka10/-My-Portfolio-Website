@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import projectsData, { UisData } from "../../Data/projectsData";
 import { 
@@ -9,6 +10,7 @@ import { SiMysql, SiBlazor, SiJavascript, SiFirebase } from "react-icons/si";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('web');
+  const navigate = useNavigate();
   // Function to get tech stack icon
   const getTechIcon = (tech) => {
     const techLower = tech.toLowerCase();
@@ -38,6 +40,11 @@ const Projects = () => {
 
   // Get current data based on active tab
   const currentData = activeTab === 'web' ? projectsData : UisData;
+
+  // Function to handle explore button click
+  const handleExploreClick = (project) => {
+    navigate('/explore-project', { state: { project } });
+  };
 
   return (
     <div className="projects-container">
@@ -101,15 +108,13 @@ const Projects = () => {
                     GitHub
                   </a>
                 )}
-                <a 
-                  href={activeTab === 'web' ? project.link : project.explore_link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <button 
+                  onClick={() => handleExploreClick(project)}
                   className="action-btn explore-btn"
                 >
                   <FaExternalLinkAlt className="btn-icon" />
                   Explore
-                </a>
+                </button>
               </div>
             </div>
           </div>

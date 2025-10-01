@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,26 +11,38 @@ import AboutMe from './Page/AboutMe'
 import Education from './Component/Education/Education'
 import Skill from './Component/Skill/Skill'
 import Contact from './Component/Contact/Contact'
-
 import Languages from './Component/Languages/Languages'
 import Projects from './Component/Projects/Projects'
+import Explore_project from './Component/Explore_project/Explore_project'
+
+// Home component that contains all your main sections
+const Home = () => {
+  return (
+    <>
+      <Navigation />  
+      <Profile />
+      <AboutMe />
+      <Contact />
+      <Languages />
+      <Education />
+      <Skill />
+      <Projects />
+    </>
+  );
+};
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <Router>
       <div>
-        <Navigation />  
-        <Profile />
-       <AboutMe />
-       <Contact />
-       <Languages />
-       <Education />
-       <Skill />
-       <Projects />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/explore-project" element={<Explore_project />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   )
 }
 
