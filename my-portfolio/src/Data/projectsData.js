@@ -62,3 +62,4 @@ const UisData=[
 ]
 
 export default projectsData;
+export { UisData };

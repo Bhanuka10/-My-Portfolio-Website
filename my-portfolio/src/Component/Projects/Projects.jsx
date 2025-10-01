@@ -1,39 +1,11 @@
 import React, { useState } from "react";
 import "./Projects.css";
-import projectsData from "../../Data/projectsData";
+import projectsData, { UisData } from "../../Data/projectsData";
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaPhp, FaGitAlt, FaFigma,
   FaGithub, FaExternalLinkAlt, FaDatabase, FaLaravel 
 } from "react-icons/fa";
 import { SiMysql, SiBlazor, SiJavascript, SiFirebase } from "react-icons/si";
-
-// Import UisData from the same file
-const UisData = [
-  {
-    id: 1,
-    title: "Capstone Interface Design",
-    description: "The UI/UX design of Skill Forge was created using Figma, focusing on delivering a clean, modern, and user-friendly experience for learners. The design process followed a user-centered approach, ensuring intuitive navigation and accessibility across devices",
-    image: "src/assets/UI/Capstone/Desktop - 1.png",
-    techStack: ["Figma"],
-    explore_link: "https://github.com/Bhanuka10/UI-Designs"
-  },
-  {
-    id: 2,
-    title: "Wet",
-    description: "I created the UI/UX design for the WET Hospital system in Figma, ensuring a clear and professional interface for both patients and administrators. The design includes pages such as the home page, apply for medicine, doctor dashboard all connected with interactive prototypes to reflect a smooth hospital workflow.",
-    image: "src/assets/UI/wet/Home page.png",
-    techStack: ["Figma"],
-    explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit"
-  },
-  {
-    id: 3,
-    title: "Learning web",
-    description: "A modern and user-friendly UI/UX design for a learning web application, created using Figma. The design focuses on intuitive navigation, clean layouts, and engaging visuals to enhance the user experience for learners.",
-    image: "src/assets/UI/class/Desktop - 2.png",
-    techStack: ["Figma"],
-    explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit"
-  }
-];
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('web');
