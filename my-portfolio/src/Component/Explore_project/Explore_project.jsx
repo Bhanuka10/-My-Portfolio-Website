@@ -133,13 +133,33 @@ const Explore_project = () => {
         {/* About the Project */}
         <section className="content-section">
           <h2 className="section-title">
-            <span className="section-icon">📋</span>
+            
             About the Project
           </h2>
           <div className="section-content">
-            <p className="project-details">
-              {project.indetails || project.description}
-            </p>
+            {(() => {
+              const content = project.indetails || project.description;
+              if (!content) return <p className="project-details">No description available.</p>;
+              
+              // Split content into paragraphs based on sentences or natural breaks
+              const sentences = content.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0);
+              const paragraphs = [];
+              
+              // Group sentences into 3-4 paragraphs
+              const sentencesPerParagraph = Math.ceil(sentences.length / 3);
+              
+              for (let i = 0; i < sentences.length; i += sentencesPerParagraph) {
+                const paragraphSentences = sentences.slice(i, i + sentencesPerParagraph);
+                const paragraph = paragraphSentences.join('. ').trim() + '.';
+                paragraphs.push(paragraph);
+              }
+              
+              return paragraphs.map((paragraph, index) => (
+                <p key={index} className="project-details">
+                  {paragraph}
+                </p>
+              ));
+            })()}
           </div>
         </section>
 
@@ -151,9 +171,29 @@ const Explore_project = () => {
               My Contribution
             </h2>
             <div className="section-content">
-              <p className="project-contribution">
-                {project.prompt}
-              </p>
+              {(() => {
+                const content = project.prompt;
+                if (!content) return <p className="project-contribution">No contribution details available.</p>;
+                
+                // Split content into paragraphs based on sentences or natural breaks
+                const sentences = content.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0);
+                const paragraphs = [];
+                
+                // Group sentences into 2-3 paragraphs for contribution section
+                const sentencesPerParagraph = Math.ceil(sentences.length / 2);
+                
+                for (let i = 0; i < sentences.length; i += sentencesPerParagraph) {
+                  const paragraphSentences = sentences.slice(i, i + sentencesPerParagraph);
+                  const paragraph = paragraphSentences.join('. ').trim() + '.';
+                  paragraphs.push(paragraph);
+                }
+                
+                return paragraphs.map((paragraph, index) => (
+                  <p key={index} className="project-contribution">
+                    {paragraph}
+                  </p>
+                ));
+              })()}
             </div>
           </section>
         )}
@@ -161,7 +201,7 @@ const Explore_project = () => {
         {/* Tech Stack */}
         <section className="content-section">
           <h2 className="section-title">
-            <span className="section-icon">🛠️</span>
+            
             Tech Stack
           </h2>
           <div className="section-content">
@@ -179,38 +219,7 @@ const Explore_project = () => {
         </section>
 
         {/* Project Links */}
-        <section className="content-section">
-          <h2 className="section-title">
-            <span className="section-icon">🔗</span>
-            Project Links
-          </h2>
-          <div className="section-content">
-            <div className="project-links">
-              {project.link && (
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="project-link-btn primary"
-                >
-                  <FaGitAlt />
-                  View on GitHub
-                </a>
-              )}
-              {project.explore_link && (
-                <a 
-                  href={project.explore_link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="project-link-btn secondary"
-                >
-                  <FaDatabase />
-                  Explore Project
-                </a>
-              )}
-            </div>
-          </div>
-        </section>
+       
       </div>
     </div>
   );
