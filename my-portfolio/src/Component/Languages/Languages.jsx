@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./Languages.css";
 import "./LanguagesAnimation.css";
 import "./IconStyles.css";
@@ -50,37 +50,6 @@ const row3 = [
 const skills = [...row1, ...row2, ...row3];
 
 const Languages = () => {
-  const sectionRef = useRef(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add staggered animation to cards
-            const cards = document.querySelectorAll('.skill-card');
-            cards.forEach((card, i) => {
-              setTimeout(() => {
-                card.classList.add('animate-in');
-              }, i * 50);
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   // Render function for icon - handles both class-based icons and React Icon components
   const renderIcon = (skill) => {
     if (skill.iconComponent) {
@@ -92,7 +61,7 @@ const Languages = () => {
   };
 
   return (
-    <section className="languages-section" ref={sectionRef}>
+    <section className="languages-section">
       <div className="section-content">
         <h2 className="title"> My Tech Stack</h2>
         
@@ -103,7 +72,6 @@ const Languages = () => {
               className="skill-card" 
               key={`row1-${index}`}
               style={{ 
-                animationDelay: `${index * 0.05}s`,
                 background: `radial-gradient(circle at center, ${skill.bgColor} 0%, rgba(15, 23, 42, 0.6) 70%)`
               }}
             >
@@ -122,7 +90,6 @@ const Languages = () => {
               className="skill-card" 
               key={`row2-${index}`}
               style={{ 
-                animationDelay: `${(index + row1.length) * 0.05}s`,
                 background: `radial-gradient(circle at center, ${skill.bgColor} 0%, rgba(15, 23, 42, 0.6) 70%)`
               }}
             >
@@ -141,7 +108,6 @@ const Languages = () => {
               className="skill-card" 
               key={`row3-${index}`}
               style={{ 
-                animationDelay: `${(index + row1.length + row2.length) * 0.05}s`,
                 background: `radial-gradient(circle at center, ${skill.bgColor} 0%, rgba(15, 23, 42, 0.6) 70%)`
               }}
             >
