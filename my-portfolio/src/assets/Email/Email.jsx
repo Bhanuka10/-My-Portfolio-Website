@@ -58,9 +58,7 @@ const Email = () => {
       <div className="email-container">
         <div className="contact-header">
           <h2 className="contact-title">Let's Work Together</h2>
-          <p className="contact-subtitle">
-            Ready to bring your ideas to life? Let's collaborate and create something amazing!
-          </p>
+          
         </div>
 
         <div className="contact-content">
@@ -76,15 +74,7 @@ const Email = () => {
               </div>
             </div>
             
-            <div className="info-card">
-              <div className="info-icon message-icon">
-                <FiMessageSquare />
-              </div>
-              <div className="info-details">
-                <h4>Let's Connect</h4>
-                <p>Available for exciting projects</p>
-              </div>
-            </div>
+            
           </div>
 
           {/* Contact Form */}
