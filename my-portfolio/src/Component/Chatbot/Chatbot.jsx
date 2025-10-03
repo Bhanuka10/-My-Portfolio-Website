@@ -28,6 +28,7 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const listRef = useRef(null);
 
   useEffect(() => {
@@ -121,61 +122,138 @@ export default function Chatbot() {
     }
   }
 
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
+  const closeChatOverlay = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsChatOpen(false);
+    }
+  };
+
   return (
-    <div className="chatbot-shell">
-      <div className="chatbot-card">
-        <div className="chatbot-header">
-          <div className="brand">
-            <span className="dot red" />
-            <span className="dot blue" />
-            <span className="title">Bhanuka Bot </span>
-          </div>
-          <div className="controls">
-            <button className="icon-btn" aria-label="minimize"></button>
-            <button className="icon-btn" aria-label="close"></button>
-          </div>
-        </div>
+    <>
+      {/* Mobile chat toggle button */}
+      <button className="chat-toggle-btn" onClick={toggleChat} aria-label="Open Chat">
+        💬
+      </button>
 
-        <div className="chatbot-body" ref={listRef}>
-          {messages.map((m) => (
-            <div key={m.id} className={`msg ${m.from}`}>
-              <div className="bubble">
-                <div className="text">{m.text}</div>
+      {/* Mobile overlay */}
+      <div className={`chatbot-overlay ${isChatOpen ? 'active' : ''}`} onClick={closeChatOverlay}>
+        <div className="chatbot-shell">
+          <div className="chatbot-card">
+            <div className="chatbot-header">
+              <div className="brand">
+                <span className="dot red" />
+                <span className="dot blue" />
+                <span className="title">Bhanuka Bot </span>
+              </div>
+              <div className="controls">
+                <button className="icon-btn" aria-label="minimize"></button>
+                <button className="icon-btn" onClick={() => setIsChatOpen(false)} aria-label="close">✕</button>
               </div>
             </div>
-          ))}
 
-          {isTyping && (
-            <div className="msg bot">
-              <div className="bubble typing">
-                <span className="dot-typing" />
-                <span className="dot-typing" />
-                <span className="dot-typing" />
-              </div>
+            <div className="chatbot-body" ref={listRef}>
+              {messages.map((m) => (
+                <div key={m.id} className={`msg ${m.from}`}>
+                  <div className="bubble">
+                    <div className="text">{m.text}</div>
+                  </div>
+                </div>
+              ))}
+
+              {isTyping && (
+                <div className="msg bot">
+                  <div className="bubble typing">
+                    <span className="dot-typing" />
+                    <span className="dot-typing" />
+                    <span className="dot-typing" />
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
 
-        <div className="chatbot-footer">
-          <textarea
-            className="chat-input"
-            placeholder="Ask me anything about Bhanuka... (Press Enter to send)"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKey}
-            rows={1}
-            disabled={isTyping}
-          />
-          <button 
-            className="send-btn" 
-            onClick={sendMessage} 
-            aria-label="send"
-            disabled={isTyping || !input.trim()}
-          >
-            Send
-          </button>
+            <div className="chatbot-footer">
+              <textarea
+                className="chat-input"
+                placeholder="Ask me anything about Bhanuka... (Press Enter to send)"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKey}
+                rows={1}
+                disabled={isTyping}
+              />
+              <button 
+                className="send-btn" 
+                onClick={sendMessage} 
+                aria-label="send"
+                disabled={isTyping || !input.trim()}
+              >
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Desktop chatbot (hidden on mobile) */}
+      <div className="chatbot-shell desktop-only">
+        <div className="chatbot-card">
+          <div className="chatbot-header">
+            <div className="brand">
+              <span className="dot red" />
+              <span className="dot blue" />
+              <span className="title">Bhanuka Bot </span>
+            </div>
+            <div className="controls">
+              <button className="icon-btn" aria-label="minimize"></button>
+              <button className="icon-btn" aria-label="close"></button>
+            </div>
+          </div>
+
+          <div className="chatbot-body" ref={listRef}>
+            {messages.map((m) => (
+              <div key={m.id} className={`msg ${m.from}`}>
+                <div className="bubble">
+                  <div className="text">{m.text}</div>
+                </div>
+              </div>
+            ))}
+
+            {isTyping && (
+              <div className="msg bot">
+                <div className="bubble typing">
+                  <span className="dot-typing" />
+                  <span className="dot-typing" />
+                  <span className="dot-typing" />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="chatbot-footer">
+            <textarea
+              className="chat-input"
+              placeholder="Ask me anything about Bhanuka... (Press Enter to send)"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKey}
+              rows={1}
+              disabled={isTyping}
+            />
+            <button 
+              className="send-btn" 
+              onClick={sendMessage} 
+              aria-label="send"
+              disabled={isTyping || !input.trim()}
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
