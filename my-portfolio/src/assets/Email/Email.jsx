@@ -16,9 +16,9 @@ const Email = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    const fieldName = name === 'From_name1' ? 'firstName' : 
-                     name === 'From_name2' ? 'lastName' : 
-                     name === 'From_email' ? 'email' : 
+    const fieldName = name === 'name1' ? 'firstName' : 
+                     name === 'name2' ? 'lastName' : 
+                     name === 'email' ? 'email' : 
                      name === 'message' ? 'message' : name;
     
     setFormData(prev => ({
@@ -33,7 +33,7 @@ const Email = () => {
     setStatus(null);
 
     emailjs
-      .sendForm('service_6ki5pu7', 'template_sj3v7qe', form.current, {
+      .sendForm('service_a3i0xx9', 'template_jxwslrk', form.current, {
         publicKey: '9fN_lMMZSKDsisrJb',
       })
       .then(
@@ -98,7 +98,7 @@ const Email = () => {
                   </label>
                   <input
                     type="text"
-                    name="From_name1"
+                    name="name1"
                     value={formData.firstName}
                     onChange={handleInputChange}
                     className="form-input"
@@ -114,7 +114,7 @@ const Email = () => {
                   </label>
                   <input
                     type="text"
-                    name="From_name2"
+                    name="name2"
                     value={formData.lastName}
                     onChange={handleInputChange}
                     className="form-input"
@@ -131,7 +131,7 @@ const Email = () => {
                 </label>
                 <input
                   type="email"
-                  name="From_email"
+                  name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   className="form-input"
