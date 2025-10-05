@@ -26,9 +26,11 @@
         gap: 20px;
         padding: 15px 10px;
         align-items: stretch;
-        min-height: 180vh;
+        min-height: 100vh;
         height: auto;
         overflow: visible;
+        background-color: rgb(41, 42, 105);
+        
     }
 }
 
@@ -40,5 +42,6 @@
         min-height: 200vh;
         height: auto;
         overflow: visible;
+        
     }
 }
