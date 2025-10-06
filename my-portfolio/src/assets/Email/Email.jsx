@@ -70,7 +70,7 @@ const Email = () => {
               </div>
               <div className="info-details">
                 <h4>Email Me</h4>
-                <p>bhanukaperera2020@gmail.com</p>
+                <p>sahanbhanuka10@gmail.com</p>
               </div>
             </div>
             
@@ -140,7 +140,7 @@ const Email = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   className="form-textarea"
-                  placeholder="Tell me about your project or just say hello!"
+                  placeholder="Looking forward to collaborating with you! "
                   rows="5"
                   required
                 />
