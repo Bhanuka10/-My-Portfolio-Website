@@ -24,7 +24,7 @@ const row2 = [
   { name: "MongoDB", icon: "devicon-mongodb-plain colored", color: "#4DB33D", bgColor: "rgba(77, 179, 61, 0.15)" },
   { name: "Laravel", iconComponent: SiLaravel, color: "#FF2D20", bgColor: "rgba(255, 45, 32, 0.15)", specialClass: "laravel-icon" },
   { name: "SQL", iconComponent: SiMysql, color: "#4479A1", bgColor: "rgba(68, 121, 161, 0.15)" },
-  { name: "Bootstrap", icon: "devicon-bootstrap-plain colored", color: "#7952B3", bgColor: "rgba(121, 82, 179, 0.15)" },
+  { name: "Jupyter", icon: "devicon-jupyter-plain colored", color: "#F37626", bgColor: "rgba(243, 118, 38, 0.15)" },
 ];
 
 // Row 3: Tools & Others
@@ -43,7 +43,7 @@ const Languages = () => {
   const renderIcon = (skill) => {
     if (skill.iconComponent) {
       const IconComponent = skill.iconComponent;
-      return <IconComponent style={{ color: skill.color, fontSize: '1.8rem' }} />;
+      return <IconComponent style={{ color: skill.color }} />;
     }
     return <i className={skill.icon} style={{ color: skill.color }}></i>;
   };
