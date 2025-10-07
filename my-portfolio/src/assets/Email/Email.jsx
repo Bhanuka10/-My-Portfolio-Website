@@ -57,7 +57,7 @@ const Email = () => {
     <section className="email-contact-section">
       <div className="email-container">
         <div className="email-contact-header">
-          <h2 className="email-contact-title-main">Reach Out</h2>
+          <h2 className="email-contact-title-main">Get In Touch</h2>
           
         </div>
 
@@ -174,11 +174,11 @@ const Email = () => {
             </form>
           </div>
 
-          {/* Beautiful Professional Contact Info Section */}
+          {/* c */}
           <div className="email-contact-info-section">
             <div className="contact-info-divider">
               <div className="info-divider-line"></div>
-              <div className="info-divider-text">Get in Touch</div>
+              <div className="info-divider-text">Reach Me Directly</div>
               <div className="info-divider-line"></div>
             </div>
             

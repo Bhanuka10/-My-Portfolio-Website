@@ -6,8 +6,10 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const Profile = () => {
   const roles = [
+    "Front-End Developer",
     "Fullstack Developer",
     "Aspiring ML & AI Enthusiast",
+    "AI-Powered Web Developer",
     "Lifelong Learner"
   ];
 

@@ -15,6 +15,7 @@ import Languages from './Component/Languages/Languages'
 import Projects from './Component/Projects/Projects'
 import Explore_project from './Component/Explore_project/Explore_project'
 import Email from './assets/Email/Email'
+import Footer from './Component/Footer/Footer'
 
 // Home component that contains all your main sections
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
       <Skill />
       <Projects />
       <Email />
+      <Footer />
     </>
   );
 };
