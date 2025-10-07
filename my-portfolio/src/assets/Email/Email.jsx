@@ -56,30 +56,15 @@ const Email = () => {
   return (
     <section className="email-contact-section">
       <div className="email-container">
-        <div className="contact-header">
-          <h2 className="contact-title">Reach Out</h2>
+        <div className="email-contact-header">
+          <h2 className="email-contact-title-main">Reach Out</h2>
           
         </div>
 
-        <div className="contact-content">
-          {/* Contact Info Cards */}
-           <div className="email-contact-info">
-            <div className="email-info-card">
-              <div className="email-info-icon email-icon">
-                <FiMail />
-              </div>
-              <div className="email-info-details">
-                <h4>Email Me</h4>
-                <p>sahanbhanuka10@gmail.com</p>
-              </div>
-            </div>
-            
-            
-          </div>
-
-          {/* Contact Form */}
-          <div className="form-container">
-            <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <div className="email-contact-content">
+          {/* Email Contact Form */}
+          <div className="email-form-container">
+            <form ref={form} onSubmit={sendEmail} className="email-contact-form">
               <div className="form-row">
                 <div className="input-group">
                   <label className="input-label">
@@ -187,6 +172,36 @@ const Email = () => {
                 </div>
               )}
             </form>
+          </div>
+
+          {/* Beautiful Professional Contact Info Section */}
+          <div className="email-contact-info-section">
+            <div className="contact-info-divider">
+              <div className="info-divider-line"></div>
+              <div className="info-divider-text">Get in Touch</div>
+              <div className="info-divider-line"></div>
+            </div>
+            
+            <div className="contact-info-grid">
+              <div className="contact-info-card email-card">
+                <div className="card-background-glow"></div>
+                <div className="info-card-content">
+                  <div className="info-icon-container">
+                    <div className="info-icon-wrapper">
+                      <FiMail className="info-icon" />
+                    </div>
+                    <div className="icon-ripple"></div>
+                  </div>
+                  <div className="info-details">
+                    <h3 className="info-title">Email Address</h3>
+                    <a href="mailto:sahanbhanuka10@gmail.com" className="info-link">
+                      sahanbhanuka10@gmail.com
+                    </a>
+                    <p className="info-description">Available 24/7 for inquiries</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
