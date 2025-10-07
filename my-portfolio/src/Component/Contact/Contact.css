@@ -349,26 +349,38 @@
     }
     
     .contact-item {
-        padding: 12px;
-        min-height: 70px;
-        max-height: 90px;
+        padding: 8px 10px;
+        min-height: 50px;
+        max-height: 65px;
         display: flex;
         flex-direction: row;
-        gap: 12px;
+        gap: 10px;
         align-items: center;
         justify-content: flex-start;
     }
     
     .contact-icon {
         margin-bottom: 0;
-        margin-right: 8px;
+        margin-right: 6px;
         flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
     }
     
     .contact-text {
         align-items: flex-start;
         text-align: left;
         flex-grow: 1;
+    }
+    
+    .contact-text h3 {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    
+    .contact-text p {
+        font-size: 0.85rem;
     }
     
     .social-icon {
@@ -433,19 +445,19 @@
     }
     
     .contact-item {
-        min-height: 60px;
-        max-height: 80px;
-        padding: 12px;
-        margin-bottom: 6px;
+        min-height: 45px;
+        max-height: 60px;
+        padding: 8px 10px;
+        margin-bottom: 4px;
         display: flex;
         flex-direction: row;
-        gap: 14px;
+        gap: 10px;
         align-items: center;
         justify-content: flex-start;
         border-left: 3px solid #00a2ff;
-        border-radius: 8px 12px 12px 8px;
+        border-radius: 6px 10px 10px 6px;
         background: linear-gradient(to right, rgba(0, 162, 255, 0.08), rgba(255, 255, 255, 0.03));
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
         transition: all 0.3s ease;
         overflow: visible;
         position: relative;
@@ -533,31 +545,31 @@
     }
     
     .contact-item {
-        min-height: 55px;
-        max-height: 75px;
-        padding: 10px 12px 10px 10px;
+        min-height: 40px;
+        max-height: 55px;
+        padding: 6px 8px;
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
         justify-content: flex-start;
-        border-radius: 6px 10px 10px 6px;
+        border-radius: 4px 8px 8px 4px;
         overflow: visible;
     }
     
     .contact-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-        min-width: 28px;
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+        min-width: 24px;
     }
     
     .contact-text h3 {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .contact-text p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     .social-icons {

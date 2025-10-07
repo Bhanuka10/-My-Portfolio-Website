@@ -57,18 +57,18 @@ const Email = () => {
     <section className="email-contact-section">
       <div className="email-container">
         <div className="contact-header">
-          <h2 className="contact-title">Let's Work Together</h2>
+          <h2 className="contact-title">Reach Out</h2>
           
         </div>
 
         <div className="contact-content">
           {/* Contact Info Cards */}
-          <div className="contact-info">
-            <div className="info-card">
-              <div className="info-icon email-icon">
+           <div className="email-contact-info">
+            <div className="email-info-card">
+              <div className="email-info-icon email-icon">
                 <FiMail />
               </div>
-              <div className="info-details">
+              <div className="email-info-details">
                 <h4>Email Me</h4>
                 <p>sahanbhanuka10@gmail.com</p>
               </div>
