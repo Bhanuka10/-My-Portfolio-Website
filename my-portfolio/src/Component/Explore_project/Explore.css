@@ -589,3 +589,321 @@
 .content-section:nth-child(2) { animation-delay: 0.2s; }
 .content-section:nth-child(3) { animation-delay: 0.3s; }
 .content-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================
+   UI/UX SHOWCASE TEMPLATE STYLES
+   ======================================== */
+
+.ui-showcase {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: #f8fafc;
+}
+
+/* UI Hero Section */
+.ui-hero-section {
+  max-width: 1000px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.ui-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ui-main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.ui-main-description {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ui-tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  border-radius: 50px;
+  color: #f43f5e;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* UI Showcase Section */
+.ui-showcase-section {
+  max-width: 1400px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
+}
+
+.ui-main-display {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ui-image-frame {
+  position: relative;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ui-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.ui-image-label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* UI Gallery Grid */
+.ui-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ui-thumbnail {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ui-thumbnail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.ui-thumbnail.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.ui-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ui-thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+.ui-thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ui-thumbnail:hover .ui-thumbnail-overlay {
+  opacity: 1;
+}
+
+.ui-thumbnail-number {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* UI Details Section */
+.ui-details-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.ui-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ui-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.ui-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 2px;
+}
+
+.ui-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ui-detail-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin: 0;
+  text-align: justify;
+}
+
+.ui-link-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.ui-explore-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+}
+
+.ui-explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.4);
+  background: linear-gradient(135deg, #e11d48 0%, #dc2626 100%);
+}
+
+/* Responsive Design for UI Template */
+@media (max-width: 1024px) {
+  .ui-main-title {
+    font-size: 2.8rem;
+  }
+  
+  .ui-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui-hero-section {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .ui-main-title {
+    font-size: 2.2rem;
+  }
+  
+  .ui-main-description {
+    font-size: 1rem;
+  }
+  
+  .ui-image-frame {
+    padding: 1rem;
+  }
+  
+  .ui-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .ui-details-section {
+    padding: 2rem 1rem;
+  }
+  
+  .ui-section-title {
+    font-size: 2rem;
+  }
+  
+  .ui-detail-paragraph {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .ui-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ui-image-label {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+}

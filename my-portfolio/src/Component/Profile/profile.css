@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     padding: 80px 0;
-    min-height: 90vh;
+    min-height: 80vh;
     /* background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%); */
     /* background:url('src/assets/Video/istockphoto-1289196092-640_adpp_is.mp4') ; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -85,7 +85,9 @@
     margin-left: 80px;
     max-width: 50%;
     z-index: 2; /* Ensure it appears above the space animation */
+   
 }
+
 
 /* Background Container */
 .background-container {
@@ -210,15 +212,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-height: 90vh;
     max-width: 50%;
     position: relative;
     z-index: 2; /* Ensure content appears above the space animation */
+    
+    
+   
 }
 
 .profile-content h1 {
     font-size: 2.8rem;
     font-weight: 300;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     background: linear-gradient(135deg, #00d4ff 0%, #090979 35%, #00d4ff 100%);
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -232,7 +238,7 @@
 
 .profile-content h2 {
     font-size: 2.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #f8fafc;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -254,7 +260,7 @@
 .profile-content h3 {
     font-size: 1.8rem;
     color: #e2e8f0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-weight: 400;
     letter-spacing: 0.3px;
     opacity: 0;

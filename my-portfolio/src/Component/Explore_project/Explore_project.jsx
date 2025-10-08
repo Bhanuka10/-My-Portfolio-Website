@@ -82,6 +82,112 @@ const Explore_project = () => {
   // Prepare images array (main image + additional images)
   const allImages = [project.image, ...(project.o_image || [])];
 
+  // Check if this is a UI/UX project
+  const isUIProject = project.explore_link || (project.techStack && project.techStack.some(tech => tech.toLowerCase() === 'figma'));
+
+  // UI/UX Project Template
+  if (isUIProject) {
+    return (
+      <div className="explore-container ui-showcase">
+        {/* Header with Back Button */}
+        <div className="explore-header">
+          <button onClick={() => navigate(-1)} className="back-btn">
+            <FaArrowLeft />
+            <span>Back to Designs</span>
+          </button>
+        </div>
+
+        {/* UI Project Hero Section */}
+        <div className="ui-hero-section">
+          <div className="ui-hero-content">
+            <h1 className="ui-main-title">{project.title}</h1>
+            <p className="ui-main-description">{project.description}</p>
+            <div className="ui-tech-badge">
+              <FaFigma style={{ color: '#f24e1e' }} />
+              <span>UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+
+        {/* UI Image Showcase */}
+        <div className="ui-showcase-section">
+          <div className="ui-main-display">
+            <div className="ui-image-frame">
+              <img 
+                src={allImages[selectedImage]} 
+                alt={`${project.title} - Design ${selectedImage + 1}`}
+                className="ui-main-image"
+              />
+              <div className="ui-image-label">
+                Design {selectedImage + 1} of {allImages.length}
+              </div>
+            </div>
+          </div>
+          
+          {allImages.length > 1 && (
+            <div className="ui-gallery-grid">
+              {allImages.map((image, index) => (
+                <div 
+                  key={index}
+                  className={`ui-thumbnail ${selectedImage === index ? 'active' : ''}`}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <img src={image} alt={`Design ${index + 1}`} />
+                  <div className="ui-thumbnail-overlay">
+                    <span className="ui-thumbnail-number">{index + 1}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* UI Details Section */}
+        <div className="ui-details-section">
+          <div className="ui-details-content">
+            <h2 className="ui-section-title">Design Details</h2>
+            <div className="ui-description">
+              {(() => {
+                const content = project.indetails || project.description;
+                if (!content) return <p>No details available.</p>;
+                
+                const sentences = content.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0);
+                const paragraphs = [];
+                const sentencesPerParagraph = Math.ceil(sentences.length / 2);
+                
+                for (let i = 0; i < sentences.length; i += sentencesPerParagraph) {
+                  const paragraphSentences = sentences.slice(i, i + sentencesPerParagraph);
+                  const paragraph = paragraphSentences.join('. ').trim() + '.';
+                  paragraphs.push(paragraph);
+                }
+                
+                return paragraphs.map((paragraph, index) => (
+                  <p key={index} className="ui-detail-paragraph">
+                    {paragraph}
+                  </p>
+                ));
+              })()}
+            </div>
+
+            {project.explore_link && (
+              <div className="ui-link-section">
+                <a 
+                  href={project.explore_link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="ui-explore-btn"
+                >
+                  <FaFigma />
+                  <span>View Design Files</span>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="explore-container">
       {/* Header with Back Button */}
