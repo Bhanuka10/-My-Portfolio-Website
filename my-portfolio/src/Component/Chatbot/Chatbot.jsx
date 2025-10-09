@@ -52,32 +52,170 @@ ${UisData.map((ui, index) => `
 **About Bhanuka:**
 Sahan Bhanuka Bandaranayake is a passionate Full Stack Developer and ML & AI Enthusiast. He loves tackling challenging problems, collaborating on innovative projects, and expanding his knowledge in AI and fullstack development. He has experience leading development teams, creating user-centered designs, and building scalable applications with modern technologies.
 
-You are Bhanuka's AI assistant. Respond to questions about Bhanuka's background, skills, projects, or provide helpful information related to his areas of expertise. Be professional, informative, and engaging while highlighting his technical skills and project achievements.
+**IMPORTANT FORMATTING INSTRUCTIONS:**
+You are Bhanuka's AI assistant. When responding to questions:
+- Always format responses in clear bullet points or numbered lists
+- Use proper markdown formatting with headers, bullet points, and emphasis
+- Break down complex information into digestible points
+- Use emojis sparingly but effectively for visual appeal
+- Keep responses well-structured and easy to scan
+- For project discussions, organize information into: Overview, Tech Stack, Key Features, Your Role
+- For skills questions, categorize by Frontend, Backend, Database, etc.
+- Always be professional, informative, and engaging while highlighting technical skills and achievements
+
+Example response format:
+## 🚀 Project Name
+**Overview:**
+• Brief description point 1
+• Brief description point 2
+
+**Tech Stack:**
+• Technology 1 - Purpose
+• Technology 2 - Purpose
+
+**Key Features:**
+• Feature 1
+• Feature 2
+
+**Bhanuka's Role:**
+• Responsibility 1
+• Responsibility 2
 `;
 
 // Fallback responses for when API is unavailable
 const FALLBACK_RESPONSES = {
-  skills: "Bhanuka is a Full Stack Developer with expertise in React, Node.js, Laravel, JavaScript, Python, Machine Learning, AI, Deep Learning, MongoDB, MySQL, and Firebase. He's passionate about building AI-powered solutions and scalable web applications.",
+  skills: `## 💻 Bhanuka's Technical Skills
+
+**Frontend Development:**
+• React.js - Component-based UI development
+• JavaScript (ES6+) - Modern web programming
+• HTML5 & CSS3 - Responsive web design
+• Responsive Design - Mobile-first approach
+
+**Backend Development:**
+• Node.js & Express.js - Server-side applications
+• Laravel & PHP - Web application frameworks
+• RESTful APIs - Backend service integration
+
+**Databases:**
+• MongoDB - NoSQL database management
+• MySQL - Relational database design
+• Firebase - Real-time database & authentication
+
+**AI/ML & Tools:**
+• Machine Learning & Deep Learning
+• AI Integration (Gemini API, OpenAI)
+• Git & Version Control
+• Figma - UI/UX Design
+• API Integration & Optimization`,
   
-  projects: `Bhanuka has worked on several impressive projects:
+  projects: `## 🚀 Bhanuka's Key Projects
+
+**1. Personalized Learning Web Application**
+• **Tech Stack:** React, Firebase, Gemini API, YouTube Data API
+• **Features:** AI-powered course recommendations, progress tracking
+• **Role:** Team Lead, Full-stack developer, UI/UX designer
+
+**2. Hostel Management System**
+• **Tech Stack:** Laravel, PHP, MySQL, Blade templates
+• **Features:** Student registration, room allocation, fee tracking
+• **Role:** Project architect, backend developer, team coordinator
+
+**3. Latest Movies Library**
+• **Tech Stack:** React, JavaScript, Movie API integration
+• **Features:** Responsive movie browsing, real-time data fetching
+• **Role:** Frontend developer, API integration specialist
+
+**UI/UX Design Portfolio:**
+• Capstone Interface Design (Figma)
+• WET Hospital System (Figma)
+• Learning Web Application (Figma)
+
+🔗 **GitHub:** https://github.com/Bhanuka10`,
   
-  1. **Personalized Learning Web Application** - A React and Firebase-based platform with AI-powered recommendations using Gemini API and YouTube Data API integration.
+  contact: `## 📞 Contact Bhanuka
+
+**Primary Contact:**
+• **Email:** sahanbhanuka10@gmail.com
+• **Phone:** +94 77 898 8024
+
+**Professional Profiles:**
+• **LinkedIn:** https://www.linkedin.com/in/bhanuka-bandaranayake-0a1968302
+• **GitHub:** https://github.com/Bhanuka10
+
+**Location:**
+• **Address:** 71/123 Hewahata Road, Thalwaththa, Kandy, Sri Lanka
+
+💬 **Always open to:** New opportunities, collaborations, and technical discussions!`,
   
-  2. **Hostel Management System** - A comprehensive Laravel-based system for managing student registration, room allocation, and fee tracking.
+  experience: `## 👨‍💻 Bhanuka's Professional Experience
+
+**Current Focus:**
+• ML & AI Enthusiast & Full Stack Developer
+• Exploring AI-powered solutions and deep learning models
+• Building scalable web applications with modern technologies
+
+**Leadership Experience:**
+• **Team Leadership:** Led multiple development teams
+• **Project Management:** Coordinated sprints and deliverables
+• **Technical Architecture:** Designed scalable application structures
+
+**Development Expertise:**
+• **Frontend:** React-based user interfaces
+• **Backend:** Laravel and Node.js applications
+• **Database Design:** MongoDB and MySQL optimization
+• **AI Integration:** Gemini API and machine learning models`,
   
-  3. **Latest Movies Library** - A React application that fetches and displays popular movies using movie APIs with responsive design.
+  education: `## 🎓 Learning & Development
+
+**Continuous Learning Focus:**
+• **AI & Machine Learning:** Deep learning, neural networks
+• **Full-Stack Development:** Modern frameworks and tools
+• **UI/UX Design:** User-centered design principles
+• **API Integration:** Third-party services and optimization
+
+**Technical Growth:**
+• **Hands-on Experience:** Multiple real-world projects
+• **Framework Expertise:** React, Laravel, Firebase
+• **Problem-Solving:** Complex technical challenges
+• **Innovation:** AI-powered application development`,
   
-  Plus UI/UX designs created in Figma for various applications. Check out his GitHub: https://github.com/Bhanuka10`,
+  about: `## 👋 Meet Bhanuka
+
+**Professional Profile:**
+• **Name:** Sahan Bhanuka Bandaranayake
+• **Role:** Full Stack Developer & ML/AI Enthusiast
+• **Location:** Kandy, Sri Lanka
+
+**Passion & Expertise:**
+• **Problem Solving:** Tackling challenging technical problems
+• **Team Collaboration:** Leading and mentoring development teams
+• **Innovation:** Building AI-powered applications
+• **Technology:** Modern web development and machine learning
+
+**Core Strengths:**
+• **Technical Leadership:** Guiding teams through complex projects
+• **Full-Stack Development:** End-to-end application development
+• **UI/UX Design:** Creating user-centered interfaces
+• **Continuous Learning:** Staying updated with latest technologies`,
   
-  contact: "You can reach Bhanuka at: Email: sahanbhanuka10@gmail.com, Phone: +94 77 898 8024, LinkedIn: https://www.linkedin.com/in/bhanuka-bandaranayake-0a1968302",
-  
-  experience: "Bhanuka is an ML & AI Enthusiast and Full Stack Developer with extensive experience leading development teams, designing user interfaces in Figma, and building scalable applications with modern technologies like React, Laravel, and AI integration.",
-  
-  education: "Bhanuka is passionate about continuous learning in AI, machine learning, and full-stack development. He's always expanding his knowledge in these cutting-edge technologies and has hands-on experience with various frameworks and APIs.",
-  
-  about: "Sahan Bhanuka Bandaranayake is a passionate Full Stack Developer and ML & AI Enthusiast from Kandy, Sri Lanka. He loves tackling challenging problems, collaborating on innovative projects, and has experience with AI-powered applications, team leadership, and modern web technologies.",
-  
-  default: "I can tell you that Bhanuka is a skilled Full Stack Developer and AI enthusiast with projects ranging from AI-powered learning platforms to hostel management systems. Feel free to ask about his specific projects, skills, or contact information!"
+  default: `## 🤖 About Bhanuka's Portfolio
+
+**Quick Overview:**
+• **Role:** Full Stack Developer & AI Enthusiast
+• **Specialties:** React, Laravel, AI integration, UI/UX design
+• **Experience:** Team leadership, project architecture, scalable applications
+
+**Notable Projects:**
+• **AI-Powered Learning Platform** - React + Gemini API
+• **Hostel Management System** - Laravel + MySQL
+• **Movie Library Application** - React + API integration
+
+**Get in Touch:**
+• **Email:** sahanbhanuka10@gmail.com
+• **GitHub:** https://github.com/Bhanuka10
+
+💡 **Ask me about:** Specific projects, technical skills, or contact information!`
 };
 
 // Function to get fallback response based on user input
@@ -103,7 +241,18 @@ const getFallbackResponse = (userText) => {
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { id: 1, from: "bot", text: "Hi! I'm Bhanuka's AI assistant powered by Gemini 2.5 Flash. How can I help you today?" },
+    { id: 1, from: "bot", text: `## 👋 Hi! I'm Bhanuka's AI Assistant
+
+**Powered by:** Gemini 2.5 Flash AI
+
+**I can help you with:**
+• **Projects** - Details about Bhanuka's development work
+• **Skills** - Technical expertise and technologies
+• **Experience** - Professional background and leadership
+• **Contact** - How to reach Bhanuka
+• **UI/UX Designs** - Figma projects and design work
+
+💬 **Ask me anything about Bhanuka's portfolio!**` },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -198,6 +347,56 @@ export default function Chatbot() {
         return `🤖 I'm experiencing technical difficulties. Here's some basic info:\n\n${fallbackResponse}\n\nFor more detailed assistance, please reach out to Bhanuka directly!`;
       }
     }
+  };
+
+  // Helper function to format text with basic markdown-like rendering
+  const formatMessage = (text) => {
+    if (!text) return text;
+    
+    // Split text into lines and process each line
+    const lines = text.split('\n');
+    
+    return lines.map((line, index) => {
+      // Handle headers (##)
+      if (line.startsWith('## ')) {
+        return (
+          <h3 key={index} style={{ margin: '10px 0 5px 0', fontSize: '16px', fontWeight: 'bold', color: '#4a9eff' }}>
+            {line.replace('## ', '')}
+          </h3>
+        );
+      }
+      
+      // Handle bold text (**)
+      if (line.includes('**') && line.trim().startsWith('**') && line.trim().endsWith('**')) {
+        return (
+          <p key={index} style={{ margin: '8px 0 4px 0', fontWeight: 'bold', color: '#e0e0e0' }}>
+            {line.replace(/\*\*/g, '')}
+          </p>
+        );
+      }
+      
+      // Handle bullet points (•)
+      if (line.trim().startsWith('• ')) {
+        return (
+          <div key={index} style={{ margin: '3px 0 3px 15px', color: '#d0d0d0' }}>
+            <span style={{ color: '#4a9eff', marginRight: '8px' }}>•</span>
+            {line.replace('• ', '')}
+          </div>
+        );
+      }
+      
+      // Handle regular text
+      if (line.trim()) {
+        return (
+          <p key={index} style={{ margin: '5px 0', color: '#e0e0e0', lineHeight: '1.4' }}>
+            {line}
+          </p>
+        );
+      }
+      
+      // Handle empty lines
+      return <br key={index} />;
+    });
   };
 
   async function sendMessage() {
@@ -332,7 +531,7 @@ export default function Chatbot() {
               {messages.map((m) => (
                 <div key={m.id} className={`msg ${m.from}`}>
                   <div className="bubble">
-                    <div className="text">{m.text}</div>
+                    <div className="text">{formatMessage(m.text)}</div>
                   </div>
                 </div>
               ))}
@@ -390,7 +589,7 @@ export default function Chatbot() {
             {messages.map((m) => (
               <div key={m.id} className={`msg ${m.from}`}>
                 <div className="bubble">
-                  <div className="text">{m.text}</div>
+                  <div className="text">{formatMessage(m.text)}</div>
                 </div>
               </div>
             ))}
