@@ -9,77 +9,123 @@ const ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 // Portfolio information for context
 const PORTFOLIO_CONTEXT = `
-You are Bhanuka's portfolio AI assistant. Here's detailed information about Bhanuka Bandaranayake:
+You are Bhanuka's portfolio AI assistant. Provide concise, specific answers based on what users ask.
 
-**Personal Information:**
-- Full Name: Sahan Bhanuka Bandaranayake
-- Role: Full Stack Developer & ML/AI Enthusiast
-- Contact: sahanbhanuka10@gmail.com
-- Phone: +94 77 898 8024
-- Location: 71/123 Hewahata Road, Thalwaththa, Kandy, Sri Lanka
-- LinkedIn: https://www.linkedin.com/in/bhanuka-bandaranayake-0a1968302
-- GitHub: https://github.com/Bhanuka10
+**RESPONSE GUIDELINES:**
+- Keep answers brief and focused
+- Use bullet points for clarity
+- Only provide information that directly answers the question
+- For project questions: Give project names with short descriptions
+- For skills questions: List relevant technologies only
+- For contact questions: Provide specific contact details only
 
-**Skills & Technologies:**
-- Frontend: React, JavaScript, HTML, CSS, responsive design
-- Backend: Node.js, Express.js, Laravel, PHP
-- Database: MongoDB, MySQL, Firebase
-- AI/ML: Machine Learning, Deep Learning, AI integration
-- Tools: Git, Figma, API Integration
-- Other: Web optimization, deployment, UI/UX Design
+**About Bhanuka:**
+Sahan Bhanuka Bandaranayake - Full Stack Developer & ML/AI Enthusiast from Kandy, Sri Lanka
 
-**Detailed Projects:**
+**Contact:**
+• Email: sahanbhanuka10@gmail.com
+• Phone: +94 77 898 8024
+• LinkedIn: https://www.linkedin.com/in/bhanuka-bandaranayake-0a1968302
+• GitHub: https://github.com/Bhanuka10
 
-${projectsData.map((project, index) => `
-**Project ${index + 1}: ${project.title}**
-- Description: ${project.description}
-- Technology Stack: ${project.techStack.join(', ')}
-- GitHub Link: ${project.link}
-- Detailed Information: ${project.indetails}
-- Role & Contributions: ${project.prompt}
-`).join('\n')}
+**Skills:**
+Frontend: React, JavaScript, HTML, CSS
+Backend: Node.js, Express.js, Laravel, PHP
+Database: MongoDB, MySQL, Firebase
+AI/ML: Machine Learning, Deep Learning
+Tools: Git, Figma, API Integration
 
-**UI/UX Design Projects:**
+**Projects:**
+1. **Personalized Learning Web Application**
+   • AI-powered learning platform with course recommendations
+   • Tech: React, Firebase, Gemini API, YouTube API
+   • GitHub: https://github.com/Bhanuka10/Capstone
 
-${UisData.map((ui, index) => `
-**UI Design ${index + 1}: ${ui.title}**
-- Description: ${ui.description}
-- Technology Used: ${ui.techStack.join(', ')}
-- GitHub Link: ${ui.explore_link}
-- Detailed Information: ${ui.indetails}
-`).join('\n')}
+2. **Hostel Management System**
+   • Complete hostel administration and student management
+   • Tech: Laravel, PHP, MySQL
+   • GitHub: https://github.com/Bhanuka10/Hostel-Management-System-Laravel-
+
+3. **Latest Movies Library**
+   • Movie browsing app with API integration
+   • Tech: React, JavaScript, Movie API
+   • GitHub: https://github.com/Bhanuka10/Movies-collection
+
+**UI/UX Designs:**
+1. **Capstone Interface Design** - Learning platform UI (Figma)
+2. **WET Hospital System** - Hospital management UI (Figma)
+3. **Learning Web Application** - Educational app UI (Figma)
+
+IMPORTANT: Answer only what is asked. Keep responses concise and specific.
+`;
+
+// Fallback responses for when API is unavailable
+`;
 
 **About Bhanuka:**
 Sahan Bhanuka Bandaranayake is a passionate Full Stack Developer and ML & AI Enthusiast. He loves tackling challenging problems, collaborating on innovative projects, and expanding his knowledge in AI and fullstack development. He has experience leading development teams, creating user-centered designs, and building scalable applications with modern technologies.
+ Age: 24 years old
+
 
 **IMPORTANT FORMATTING INSTRUCTIONS:**
 You are Bhanuka's AI assistant. When responding to questions:
-- Always format responses in clear bullet points or numbered lists
-- Use proper markdown formatting with headers, bullet points, and emphasis
-- Break down complex information into digestible points
-- Use emojis sparingly but effectively for visual appeal
-- Keep responses well-structured and easy to scan
-- For project discussions, organize information into: Overview, Tech Stack, Key Features, Your Role
-- For skills questions, categorize by Frontend, Backend, Database, etc.
-- Always be professional, informative, and engaging while highlighting technical skills and achievements
 
-Example response format:
-## 🚀 Project Name
+**RESPONSE STRUCTURE REQUIREMENTS:**
+- Always format responses in clear bullet points or numbered lists
+- Use proper markdown formatting with headers (##), bullet points (•), and emphasis
+- Break down complex information into digestible, scannable points
+- Use emojis strategically for visual appeal and categorization
+- Keep responses well-structured, professional, and easy to read
+- Be specific and tailored to what the user is asking about
+
+**RESPONSE FORMATTING TEMPLATES:**
+
+For PROJECT questions, use this structure:
+## 🚀 [Project Name]
 **Overview:**
-• Brief description point 1
-• Brief description point 2
+• Key point about the project
+• Main purpose and impact
 
 **Tech Stack:**
-• Technology 1 - Purpose
-• Technology 2 - Purpose
+• Technology 1 - Specific use case
+• Technology 2 - Specific use case
 
 **Key Features:**
-• Feature 1
-• Feature 2
+• Feature 1 with brief description
+• Feature 2 with brief description
 
 **Bhanuka's Role:**
-• Responsibility 1
-• Responsibility 2
+• Leadership/technical responsibility 1
+• Leadership/technical responsibility 2
+
+For SKILLS questions, use this structure:
+## 💻 Technical Skills
+**Frontend:**
+• React.js - Component-based development
+• JavaScript - Modern ES6+ features
+
+**Backend:**
+• Node.js - Server-side applications
+• Laravel - PHP framework expertise
+
+For CONTACT questions, use this structure:
+## � Contact Information
+**Primary:**
+• Email: sahanbhanuka10@gmail.com
+• Phone: +94 77 898 8024
+
+**Professional:**
+• LinkedIn: [link]
+• GitHub: [link]
+
+**TONE & STYLE:**
+- Be conversational yet professional
+- Highlight Bhanuka's expertise and achievements
+- Use active voice and engaging language
+- Always end with a call-to-action or invitation for more questions
+- If asked about specific projects, focus only on those projects
+- If asked about specific skills, focus only on those skills
+- Match the specificity of the question with the specificity of the answer
 `;
 
 // Fallback responses for when API is unavailable
@@ -241,18 +287,15 @@ const getFallbackResponse = (userText) => {
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { id: 1, from: "bot", text: `## 👋 Hi! I'm Bhanuka's AI Assistant
+    { id: 1, from: "bot", text: `👋 **Hi! I'm Bhanuka's AI Assistant**
 
-**Powered by:** Gemini 2.5 Flash AI
+🤖 **Ask me about:**
+• Projects & technical work
+• Skills & technologies  
+• Contact information
+• UI/UX designs
 
-**I can help you with:**
-• **Projects** - Details about Bhanuka's development work
-• **Skills** - Technical expertise and technologies
-• **Experience** - Professional background and leadership
-• **Contact** - How to reach Bhanuka
-• **UI/UX Designs** - Figma projects and design work
-
-💬 **Ask me anything about Bhanuka's portfolio!**` },
+💬 Just ask specific questions and I'll give you focused answers!` },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -296,23 +339,44 @@ export default function Chatbot() {
         model: "gemini-2.5-flash"
       });
       
-      // Format the user query with context
+      // Format the user query with context and enhanced prompt
+      const enhancedPrompt = `${PORTFOLIO_CONTEXT}
+
+USER QUESTION: "${userText}"
+
+RESPONSE RULES:
+1. ONLY answer what is specifically asked
+2. Be concise and specific - no generic information
+3. Use bullet points (•) for clarity
+4. For projects: Give project names with brief descriptions only
+5. For skills: List relevant technologies only
+6. For contact: Provide specific contact details only
+7. Keep responses short and scannable
+8. Use emojis strategically for visual appeal
+
+Example formats:
+- If asked about projects: "🚀 **Projects:** • Project Name - Brief description • Project Name - Brief description"
+- If asked about skills: "🛠️ **Skills:** • Technology 1 • Technology 2 • Technology 3"
+- If asked about contact: "📧 **Contact:** • Email: address • Phone: number"
+
+Provide a direct, point-wise answer based on their specific question.`;
+
       const chat = model.startChat({
         history: [
           {
             role: "user",
-            parts: [{ text: PORTFOLIO_CONTEXT }],
+            parts: [{ text: enhancedPrompt }],
           },
           {
             role: "model",
-            parts: [{ text: "I'm ready to help answer questions about Bhanuka." }],
+            parts: [{ text: "I understand. I'll provide structured, point-wise responses that directly address user questions about Bhanuka's portfolio, using proper markdown formatting with headers, bullet points, and relevant emojis." }],
           },
         ],
         generationConfig: {
-          temperature: 0.7,
+          temperature: 0.2,
           topP: 0.8,
-          topK: 40,
-          maxOutputTokens: 500,
+          topK: 30,
+          maxOutputTokens: 300,
         }
       });
       
@@ -349,7 +413,7 @@ export default function Chatbot() {
     }
   };
 
-  // Helper function to format text with basic markdown-like rendering
+  // Helper function to format text with enhanced markdown-like rendering
   const formatMessage = (text) => {
     if (!text) return text;
     
@@ -360,17 +424,46 @@ export default function Chatbot() {
       // Handle headers (##)
       if (line.startsWith('## ')) {
         return (
-          <h3 key={index} style={{ margin: '10px 0 5px 0', fontSize: '16px', fontWeight: 'bold', color: '#4a9eff' }}>
+          <h3 key={index} style={{ 
+            margin: '12px 0 8px 0', 
+            fontSize: '16px', 
+            fontWeight: '700', 
+            color: '#4ade80',
+            borderBottom: '2px solid #4ade8033',
+            paddingBottom: '4px',
+            textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+          }}>
             {line.replace('## ', '')}
           </h3>
         );
       }
       
-      // Handle bold text (**)
+      // Handle subheadings/bold sections (**)
       if (line.includes('**') && line.trim().startsWith('**') && line.trim().endsWith('**')) {
         return (
-          <p key={index} style={{ margin: '8px 0 4px 0', fontWeight: 'bold', color: '#e0e0e0' }}>
+          <h4 key={index} style={{ 
+            margin: '10px 0 5px 0', 
+            fontWeight: '600', 
+            color: '#60a5fa',
+            fontSize: '14px',
+            textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+          }}>
             {line.replace(/\*\*/g, '')}
+          </h4>
+        );
+      }
+      
+      // Handle inline bold text
+      if (line.includes('**') && !line.trim().startsWith('**')) {
+        const parts = line.split(/(\*\*.*?\*\*)/);
+        return (
+          <p key={index} style={{ margin: '4px 0', color: '#e0e0e0', lineHeight: '1.5' }}>
+            {parts.map((part, partIndex) => {
+              if (part.startsWith('**') && part.endsWith('**')) {
+                return <strong key={partIndex} style={{ color: '#fbbf24', fontWeight: '600' }}>{part.slice(2, -2)}</strong>;
+              }
+              return part;
+            })}
           </p>
         );
       }
@@ -378,24 +471,84 @@ export default function Chatbot() {
       // Handle bullet points (•)
       if (line.trim().startsWith('• ')) {
         return (
-          <div key={index} style={{ margin: '3px 0 3px 15px', color: '#d0d0d0' }}>
-            <span style={{ color: '#4a9eff', marginRight: '8px' }}>•</span>
+          <div key={index} style={{ 
+            margin: '3px 0 3px 20px', 
+            color: '#d0d0d0',
+            fontSize: '13px',
+            lineHeight: '1.5'
+          }}>
+            <span style={{ color: '#a78bfa', marginRight: '8px', fontWeight: 'bold' }}>•</span>
             {line.replace('• ', '')}
           </div>
+        );
+      }
+      
+      // Handle numbered points (1., 2., etc.)
+      if (/^\d+\.\s/.test(line.trim())) {
+        return (
+          <div key={index} style={{ 
+            margin: '3px 0 3px 20px', 
+            color: '#d0d0d0',
+            fontSize: '13px',
+            lineHeight: '1.5'
+          }}>
+            <span style={{ color: '#a78bfa', marginRight: '8px', fontWeight: 'bold' }}>
+              {line.match(/^\d+\./)[0]}
+            </span>
+            {line.replace(/^\d+\.\s/, '')}
+          </div>
+        );
+      }
+      
+      // Handle links
+      if (line.includes('http')) {
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        const parts = line.split(urlRegex);
+        return (
+          <p key={index} style={{ margin: '4px 0', color: '#e0e0e0', lineHeight: '1.5' }}>
+            {parts.map((part, partIndex) => {
+              if (urlRegex.test(part)) {
+                return (
+                  <a 
+                    key={partIndex} 
+                    href={part} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ 
+                      color: '#fbbf24', 
+                      textDecoration: 'underline',
+                      fontWeight: '500',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = '#f59e0b'}
+                    onMouseLeave={(e) => e.target.style.color = '#fbbf24'}
+                  >
+                    {part}
+                  </a>
+                );
+              }
+              return part;
+            })}
+          </p>
         );
       }
       
       // Handle regular text
       if (line.trim()) {
         return (
-          <p key={index} style={{ margin: '5px 0', color: '#e0e0e0', lineHeight: '1.4' }}>
+          <p key={index} style={{ 
+            margin: '4px 0', 
+            color: '#e0e0e0', 
+            lineHeight: '1.5',
+            fontSize: '13px'
+          }}>
             {line}
           </p>
         );
       }
       
-      // Handle empty lines
-      return <br key={index} />;
+      // Handle empty lines for spacing
+      return <div key={index} style={{ height: '8px' }}></div>;
     });
   };
 

@@ -339,3 +339,82 @@
     gap: 10px;
   }
 }
+
+/* Message Content Formatting */
+.bubble .message-content {
+  line-height: 1.6;
+}
+
+/* Main Headings (Bold text starting with **) */
+.bubble .message-content .main-heading {
+  color: #4ade80; /* Green accent color */
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 8px 0 4px 0;
+  display: block;
+}
+
+/* Secondary Headings */
+.bubble .message-content .sub-heading {
+  color: #60a5fa; /* Blue accent color */
+  font-weight: 600;
+  margin: 6px 0 3px 0;
+  display: block;
+}
+
+/* Bullet Points */
+.bubble .message-content .bullet-point {
+  margin: 2px 0;
+  padding-left: 4px;
+}
+
+/* Links in messages */
+.bubble .message-content .message-link {
+  color: #fbbf24; /* Yellow accent for links */
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.bubble .message-content .message-link:hover {
+  opacity: 1;
+  color: #f59e0b;
+}
+
+/* Technology stack styling */
+.bubble .message-content .tech-stack {
+  color: #a78bfa; /* Purple accent for tech stack */
+  font-weight: 500;
+}
+
+/* Emphasis text */
+.bubble .message-content .emphasis {
+  color: #fb7185; /* Pink accent for emphasis */
+  font-weight: 600;
+}
+
+/* Code or technical terms */
+.bubble .message-content .code-text {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #fde047;
+}
+
+/* User messages - different color scheme */
+.msg.user .bubble .message-content .main-heading {
+  color: #38bdf8; /* Lighter blue for user messages */
+}
+
+.msg.user .bubble .message-content .sub-heading {
+  color: #7dd3fc;
+}
+
+.msg.user .bubble .message-content .emphasis {
+  color: #fca5a5;
+}
+
+.msg.user .bubble .message-content .tech-stack {
+  color: #c4b5fd;
+}
