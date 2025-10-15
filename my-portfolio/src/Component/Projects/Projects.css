@@ -315,6 +315,9 @@
 .tech-icon.php { color: #777bb4; }
 .tech-icon.laravel { color: #ff2d20; }
 .tech-icon.mysql { color: #4479a1; }
+.tech-icon.mongodb { color: #47a248; }
+.tech-icon.express { color: #000000; }
+.tech-icon.nodejs { color: #339933; }
 .tech-icon.firebase { color: #ffca28; }
 .tech-icon.git { color: #f05032; }
 .tech-icon.figma { color: #f24e1e; }
