@@ -61,7 +61,7 @@ const projectsData = [
   prompt: "I was responsible for designing, developing, and integrating both the frontend and backend of the Expense Tracker System using the MERN stack. On the frontend, I used React.js to create reusable components for forms, transaction lists, and summary dashboards, ensuring a responsive and intuitive user experience. I implemented dynamic state management using React hooks such as useState and useEffect to update balances and transaction lists in real time. On the backend, I built RESTful APIs using Node.js and Express.js to handle CRUD operations securely and efficiently. MongoDB was used as the database to store user transactions and categories with schema validation and indexing for fast data retrieval." +
 
   "I implemented routes for adding, deleting, and updating transactions while maintaining data consistency and validation at both frontend and backend levels. Additionally, I focused on authentication and middleware logic to ensure secure access and data privacy. The system also includes data visualization features like spending distribution charts to help users analyze their financial patterns. Styling was handled using modern CSS techniques, maintaining a clean and minimal layout. Finally, I deployed and tested the system to ensure performance, scalability, and cross-browser compatibility. This project demonstrates proficiency in full-stack development, API integration, and end-to-end system design using the MERN stack.",
-  link: "https://github.com/Bhanuka10/Expense-Tracker"
+  link: "https://github.com/Bhanuka10/MERN-Expense-Tracker-"
 },
 {
   id: 5,
@@ -77,7 +77,7 @@ const projectsData = [
   indetails: "This project is my very first website — a fully interactive platform that displays brand details and shop information in an elegant and user-friendly layout. Built with pure HTML, CSS, and JavaScript, it allows users to explore different brands through smooth transitions, animations, and clickable sections. Each brand section includes shop details, product highlights, and styled visual components to maintain a modern and professional appearance. The site emphasizes clean structure, responsive design, and basic interactivity, laying the foundation for my journey into web development.",
   techStack: ["HTML", "CSS", "JavaScript"],
   prompt: "As my very first web project, I took responsibility for designing and developing the entire site structure using HTML and CSS. I implemented JavaScript to add interactivity, such as hover animations, clickable brand sections, and dynamic content displays. The website highlights various brands and their associated shop details with a focus on clean presentation and easy navigation. Through this project, I learned the fundamentals of web structure, responsive design, and user interface interaction. It marked the beginning of my journey as a web developer and helped me build a strong foundation in front-end development concepts.",
-  link: "https://github.com/Bhanuka10/Brand-Website"
+  link: "https://github.com/Bhanuka10/Bar_website"
 },
 {
   id: 6,
@@ -90,7 +90,7 @@ const projectsData = [
   indetails: "The School Management System is a dynamic web application built using the Laravel framework to simplify and automate key school management tasks. It includes modules for managing students, teachers, classes, attendance, and subjects within a single platform. The system provides role-based access, allowing administrators, teachers, and students to interact through tailored dashboards. Built with Laravel Blade templates, it ensures a clean and responsive UI, while Eloquent ORM manages efficient database communication. Features such as CRUD operations, data validation, and authentication ensure security and reliability. The project emphasizes structured backend logic, smooth navigation, and a scalable architecture suitable for educational institutions.",
   techStack: ["Laravel", "PHP", "MySQL", "Blade Templates", "HTML", "CSS", "JavaScript"],
   prompt: "I developed this full-featured web application using the Laravel framework, handling both backend logic and frontend integration. I designed the database schema using MySQL and implemented models, controllers, and routes to manage core operations such as student registration, teacher allocation, and attendance recording. Using Laravel’s authentication system, I added secure login and role-based access control for different user types. I created Blade template views for a clean, consistent, and responsive interface. The project also includes validation, session handling, and CRUD functionalities for managing academic data efficiently. Through this system, I strengthened my understanding of MVC architecture, Laravel routing, and backend web application development.",
-  link: "https://github.com/Bhanuka10/School-Management-System"
+  link: "https://github.com/Yasithb/EduBridge"
 }
 
 
@@ -131,10 +131,19 @@ const UisData=[
     o_image:["src/assets/UI/class/Desktop - 2.png"],
     image: "src/assets/UI/class/Desktop - 2.png",
     techStack: ["Figma"],
-    explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit"
+    explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit" 
+  },
+  {
+  id: 4,
+  title: "Soul Sync – Emotional AI Companion App",
+  description: "A mobile app UI/UX design for Soul Sync, an AI-powered emotional companion that provides empathy, support, and connection through realistic avatars and voices.",
+  indetails: "Soul Sync’s Figma design showcases a sleek, emotionally engaging interface for an AI companion mobile app. The design includes key screens such as onboarding, emotion setup, avatar and voice selection, chat interface, and digital twin creation. Each element focuses on emotional comfort, simplicity, and personalization. Soft gradients, warm tones, and fluid layouts were used to evoke calmness and trust, while smooth transitions enhance user engagement. The design ensures users feel connected, supported, and safe while interacting with their AI companion.",
+  o_image: ["src/assets/UI/HackX/Register.jpg", "src/assets/UI/HackX/Register2.jpg", "src/assets/UI/HackX/Avetar style selector3.jpg", "src/assets/UI/HackX/voice selector.png", "src/assets/UI/HackX/Avetar style selector.jpg", "src/assets/UI/HackX/Avetar style selector2.jpg", "src/assets/UI/HackX/Avetar style selector3.jpg", "src/assets/UI/HackX/Avetar style selector4.jpg", "src/assets/UI/HackX/Emotions.jpg", "src/assets/UI/HackX/Help Center.jpg", "src/assets/UI/HackX/Help Center1.jpg", "src/assets/UI/HackX/Login.jpg", "src/assets/UI/HackX/Login2.jpg", "src/assets/UI/HackX/Main chat interface.png", "src/assets/UI/HackX/onboding.png"],
+  image: "src/assets/UI/HackX/onboding.png",
+  techStack: ["Figma"],
+  explore_link: "https://www.figma.com/file/your-soul-sync-design-link"
+}
 
-    
-  }
 ]
 
 export default projectsData;

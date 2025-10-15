@@ -174,7 +174,7 @@ const Explore_project = () => {
               })()}
             </div>
 
-            {project.explore_link && (
+            {/* {project.explore_link && (
               <div className="ui-link-section">
                 <a 
                   href={project.explore_link} 
@@ -186,7 +186,7 @@ const Explore_project = () => {
                   <span>View Design Files</span>
                 </a>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
