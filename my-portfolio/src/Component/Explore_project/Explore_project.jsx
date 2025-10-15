@@ -51,6 +51,7 @@ const Explore_project = () => {
     const techLower = tech.toLowerCase();
     const iconMap = {
       'react': <FaReact style={{ color: '#61dafb' }} />,
+      'react.js': <FaReact style={{ color: '#61dafb' }} />,
       'html': <FaHtml5 style={{ color: '#e34f26' }} />,
       'html5': <FaHtml5 style={{ color: '#e34f26' }} />,
       'css': <FaCss3Alt style={{ color: '#1572b6' }} />,
@@ -64,6 +65,7 @@ const Explore_project = () => {
       'tailwindcss': <SiTailwindcss style={{ color: '#06b6d4' }} />,
       'tailwind': <SiTailwindcss style={{ color: '#06b6d4' }} />,
       'express': <SiExpress style={{ color: '#000000' }} />,
+      'express.js': <SiExpress style={{ color: '#000000' }} />,
       'mongodb': <SiMongodb style={{ color: '#47a248' }} />,
       'node.js': <SiNodedotjs style={{ color: '#339933' }} />,
       'nodejs': <SiNodedotjs style={{ color: '#339933' }} />,
@@ -71,9 +73,12 @@ const Explore_project = () => {
       'figma': <FaFigma style={{ color: '#f24e1e' }} />,
       'bootstrap': <FaBootstrap style={{ color: '#7952b3' }} />,
       'blade': <FaLaravel style={{ color: '#ff2d20' }} />,
+      'blade templates': <FaLaravel style={{ color: '#ff2d20' }} />,
       'gemini api': <FaDatabase style={{ color: '#4285f4' }} />,
       'api integration': <FaDatabase style={{ color: '#4285f4' }} />,
-      'api': <FaDatabase style={{ color: '#4285f4' }} />
+      'api': <FaDatabase style={{ color: '#4285f4' }} />,
+      'rest api': <FaDatabase style={{ color: '#4285f4' }} />,
+      'restful api': <FaDatabase style={{ color: '#4285f4' }} />
     };
     
     return iconMap[techLower] || <span style={{ color: '#6c757d', fontWeight: 'bold' }}>⚡</span>;

@@ -45,7 +45,55 @@ const projectsData = [
 
 "I integrated the movie API to deliver trending and popular films while handling asynchronous data loading, errors, and performance optimizations for a smooth user experience. Interactive features such as hover effects, transitions, and filtering options were added to enhance usability and engagement. I optimized rendering performance using React’s virtual DOM and conditional components, minimizing unnecessary re-renders and API calls. The entire application was styled using responsive CSS techniques to ensure consistency across devices. Finally, I conducted comprehensive testing and debugging to ensure data accuracy and cross-browser compatibility, followed by deployment setup, asset optimization, and documentation for seamless maintenance and scalability.",
   link: "https://github.com/Bhanuka10/Movies-collection"
+},
+{
+  id: 4,
+  title: "Expense Tracker System",
+  description: "A MERN stack-based expense management system that enables users to track income and expenses with real-time updates and data persistence. It provides a secure backend, an intuitive frontend interface, and insightful financial overviews through charts and categorized summaries.",
+  image: "src/assets/Expenses tracker/Screenshot (314).png",
+  o_image: [
+    "src/assets/Expenses tracker/Screenshot (315).png",
+    "src/assets/Expenses tracker/Screenshot (316).png"
+    
+  ],
+  indetails: "The Expense Tracker System is a full-stack web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) to simplify personal financial management. It allows users to securely add, edit, and delete transactions while automatically calculating total income, expenses, and remaining balance. All data is stored in a MongoDB database through an Express and Node backend, ensuring persistence and security. The frontend, built in React, offers a modern and responsive dashboard that displays categorized transactions, charts for spending patterns, and a clean overview of financial activity. Real-time updates, RESTful API integration, and authentication features make the system reliable and user-friendly. This project emphasizes both frontend interactivity and backend efficiency, showcasing complete full-stack development capability.",
+  techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "REST API", "JavaScript", "CSS", "Git"],
+  prompt: "I was responsible for designing, developing, and integrating both the frontend and backend of the Expense Tracker System using the MERN stack. On the frontend, I used React.js to create reusable components for forms, transaction lists, and summary dashboards, ensuring a responsive and intuitive user experience. I implemented dynamic state management using React hooks such as useState and useEffect to update balances and transaction lists in real time. On the backend, I built RESTful APIs using Node.js and Express.js to handle CRUD operations securely and efficiently. MongoDB was used as the database to store user transactions and categories with schema validation and indexing for fast data retrieval." +
+
+  "I implemented routes for adding, deleting, and updating transactions while maintaining data consistency and validation at both frontend and backend levels. Additionally, I focused on authentication and middleware logic to ensure secure access and data privacy. The system also includes data visualization features like spending distribution charts to help users analyze their financial patterns. Styling was handled using modern CSS techniques, maintaining a clean and minimal layout. Finally, I deployed and tested the system to ensure performance, scalability, and cross-browser compatibility. This project demonstrates proficiency in full-stack development, API integration, and end-to-end system design using the MERN stack.",
+  link: "https://github.com/Bhanuka10/Expense-Tracker"
+},
+{
+  id: 5,
+  title: "Interactive Brand Website",
+  description: "An engaging, interactive website built using HTML, CSS, and JavaScript that showcases various brands and their shop details. Designed with smooth navigation, hover effects, and responsive layouts to provide a visually appealing browsing experience.",
+  image: "src/assets/Bar site/Screenshot (194).png",
+  o_image: [
+    "src/assets/Bar site/Screenshot (196).png",
+    "src/assets/Bar site/Screenshot (197).png",
+    "src/assets/Bar site/Screenshot (198).png",
+    "src/assets/Bar site/Screenshot (199).png"
+  ],
+  indetails: "This project is my very first website — a fully interactive platform that displays brand details and shop information in an elegant and user-friendly layout. Built with pure HTML, CSS, and JavaScript, it allows users to explore different brands through smooth transitions, animations, and clickable sections. Each brand section includes shop details, product highlights, and styled visual components to maintain a modern and professional appearance. The site emphasizes clean structure, responsive design, and basic interactivity, laying the foundation for my journey into web development.",
+  techStack: ["HTML", "CSS", "JavaScript"],
+  prompt: "As my very first web project, I took responsibility for designing and developing the entire site structure using HTML and CSS. I implemented JavaScript to add interactivity, such as hover animations, clickable brand sections, and dynamic content displays. The website highlights various brands and their associated shop details with a focus on clean presentation and easy navigation. Through this project, I learned the fundamentals of web structure, responsive design, and user interface interaction. It marked the beginning of my journey as a web developer and helped me build a strong foundation in front-end development concepts.",
+  link: "https://github.com/Bhanuka10/Brand-Website"
+},
+{
+  id: 6,
+  title: "School Management System",
+  description: "A Laravel-powered web application designed to manage school operations efficiently. It streamlines student registration, teacher management, class scheduling, and attendance tracking through a secure and user-friendly dashboard.",
+  image: "src/assets/School management/images.jpeg",
+  o_image: [
+   
+  ],
+  indetails: "The School Management System is a dynamic web application built using the Laravel framework to simplify and automate key school management tasks. It includes modules for managing students, teachers, classes, attendance, and subjects within a single platform. The system provides role-based access, allowing administrators, teachers, and students to interact through tailored dashboards. Built with Laravel Blade templates, it ensures a clean and responsive UI, while Eloquent ORM manages efficient database communication. Features such as CRUD operations, data validation, and authentication ensure security and reliability. The project emphasizes structured backend logic, smooth navigation, and a scalable architecture suitable for educational institutions.",
+  techStack: ["Laravel", "PHP", "MySQL", "Blade Templates", "HTML", "CSS", "JavaScript"],
+  prompt: "I developed this full-featured web application using the Laravel framework, handling both backend logic and frontend integration. I designed the database schema using MySQL and implemented models, controllers, and routes to manage core operations such as student registration, teacher allocation, and attendance recording. Using Laravel’s authentication system, I added secure login and role-based access control for different user types. I created Blade template views for a clean, consistent, and responsive interface. The project also includes validation, session handling, and CRUD functionalities for managing academic data efficiently. Through this system, I strengthened my understanding of MVC architecture, Laravel routing, and backend web application development.",
+  link: "https://github.com/Bhanuka10/School-Management-System"
 }
+
+
 
 ];
 const UisData=[

@@ -4,9 +4,9 @@ import "./Projects.css";
 import projectsData, { UisData } from "../../Data/projectsData";
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaPhp, FaGitAlt, FaFigma,
-  FaGithub, FaExternalLinkAlt, FaDatabase, FaLaravel 
+  FaGithub, FaExternalLinkAlt, FaDatabase, FaLaravel, FaNodeJs 
 } from "react-icons/fa";
-import { SiMysql, SiBlazor, SiJavascript, SiFirebase } from "react-icons/si";
+import { SiMysql, SiBlazor, SiJavascript, SiFirebase, SiMongodb, SiExpress, SiNodedotjs } from "react-icons/si";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('web');
@@ -16,18 +16,31 @@ const Projects = () => {
     const techLower = tech.toLowerCase();
     switch (techLower) {
       case 'react': return <FaReact className="tech-icon react" />;
+      case 'react.js': return <FaReact className="tech-icon react" />;
       case 'html': return <FaHtml5 className="tech-icon html" />;
+      case 'html5': return <FaHtml5 className="tech-icon html" />;
       case 'css': return <FaCss3Alt className="tech-icon css" />;
+      case 'css3': return <FaCss3Alt className="tech-icon css" />;
       case 'javascript': return <FaJs className="tech-icon javascript" />;
+      case 'js': return <FaJs className="tech-icon javascript" />;
       case 'php': return <FaPhp className="tech-icon php" />;
       case 'laravel': return <FaLaravel className="tech-icon laravel" />;
       case 'mysql': return <SiMysql className="tech-icon mysql" />;
+      case 'mongodb': return <SiMongodb className="tech-icon mongodb" />;
+      case 'express': return <SiExpress className="tech-icon express" />;
+      case 'express.js': return <SiExpress className="tech-icon express" />;
+      case 'node.js': return <SiNodedotjs className="tech-icon nodejs" />;
+      case 'nodejs': return <SiNodedotjs className="tech-icon nodejs" />;
       case 'firebase': return <SiFirebase className="tech-icon firebase" />;
       case 'git': return <FaGitAlt className="tech-icon git" />;
       case 'figma': return <FaFigma className="tech-icon figma" />;
       case 'blade': return <SiBlazor className="tech-icon blade" />;
+      case 'blade templates': return <SiBlazor className="tech-icon blade" />;
       case 'gemini api': return <FaDatabase className="tech-icon api" />;
       case 'api integration': return <FaDatabase className="tech-icon api" />;
+      case 'api': return <FaDatabase className="tech-icon api" />;
+      case 'rest api': return <FaDatabase className="tech-icon api" />;
+      case 'restful api': return <FaDatabase className="tech-icon api" />;
       default: return <span className="tech-icon default">•</span>;
     }
   };

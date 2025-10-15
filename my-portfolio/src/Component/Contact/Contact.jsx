@@ -27,7 +27,7 @@ const Contact = () => {
               <a href="https://github.com/Bhanuka10" target="_blank" rel="noopener noreferrer" className="social-icon github">
                 <FaGithub />
               </a>
-              <a href="https://www.facebook.com/sahan.bhanuka.5" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
+              <a href="https://web.facebook.com/profile.php?id=61575244409434" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
                 <FaFacebookF />
               </a>
             </div>

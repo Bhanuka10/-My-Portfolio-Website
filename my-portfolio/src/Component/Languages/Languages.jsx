@@ -29,7 +29,7 @@ const row2 = [
 
 // Row 3: Tools & Others
 const row3 = [
-  { name: "TailwindCSS", icon: "devicon-tailwindcss-plain colored", color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.15)" },
+  { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", color: "#FF9900", bgColor: "rgba(255, 153, 0, 0.15)" },
   { name: "Flask", icon: "devicon-flask-original", color: "#ffffff", bgColor: "rgba(255, 255, 255, 0.15)" },
   { name: "Git", icon: "devicon-git-plain colored", color: "#F05032", bgColor: "rgba(240, 80, 50, 0.15)" },
   { name: "Postman", iconComponent: SiPostman, color: "#FF6C37", bgColor: "rgba(255, 108, 55, 0.15)", specialClass: "postman-icon" },
