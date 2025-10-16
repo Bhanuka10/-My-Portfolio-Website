@@ -159,6 +159,12 @@ const Navigation = () => {
           </button>
         </div>
       </div>
+      
+      {/* Mobile Backdrop */}
+      <div 
+        className={`mobile-backdrop ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      ></div>
     </nav>
   )
 }
