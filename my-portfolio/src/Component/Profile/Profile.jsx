@@ -38,7 +38,7 @@ const Profile = () => {
             {/* Profile pic container */}
             <div className='profile-pic-container'>
                 {/* Removed the old background image */}
-                <img className="profile-pictu" src="src/assets/istockphoto-625389694-612x612-removebg-preview.png" alt="Profile" />
+                <img className="profile-picture" src="src\assets\Full body.png" alt="Profile" />
             </div>
         </div>
         <div className="profile-content">
