@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-left">
             <div className="contact-image">
-              <img src="src/assets/WhatsApp_Image_2025-04-04_at_09.30.12_89ba444b-removebg-preview.png" alt="Profile" />
+              <img src="src\assets\profile.png" alt="Profile" />
             </div>
             
             <div className='social-icons'>
