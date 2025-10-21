@@ -1,0 +1,84 @@
+/* Keyword positioning classes */
+/* Ensure keywords are visible by default on desktop */
+.tech-keyword {
+    display: block;
+}
+
+.keyword-top-left {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.keyword-top-right {
+    position: absolute;
+    top: 17%;
+    right: 10%;
+}
+
+.keyword-bottom-left {
+    position: absolute;
+    bottom: 15%;
+    left: 0%;
+}
+
+.keyword-bottom-right {
+    position: absolute;
+    bottom: 19%;
+    right: 10%;
+}
+
+/* Responsive positions for the keywords */
+@media (max-width: 1200px) {
+    .keyword-top-left {
+        top: 15%;
+        left: 8%;
+    }
+    
+    .keyword-top-right {
+        top: 17%;
+        right: 8%;
+    }
+    
+    .keyword-bottom-left {
+        bottom: 15%;
+        left: 0;
+    }
+    
+    .keyword-bottom-right {
+        bottom: 19%;
+        right: 8%;
+    }
+}
+
+@media (max-width: 992px) {
+    .keyword-top-left {
+        top: 12%;
+        left: 5%;
+    }
+    
+    .keyword-top-right {
+        top: 12%;
+        right: 5%;
+    }
+    
+    .keyword-bottom-left {
+        bottom: 12%;
+        left: 0;
+    }
+    
+    .keyword-bottom-right {
+        bottom: 12%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide keywords on mobile devices and tablets */
+    .tech-keyword {
+        display: none !important;
+    }
+}
+
+/* These media queries are not needed since keywords are hidden on mobile */
+/* We're keeping the desktop and tablet (992px+) positioning */

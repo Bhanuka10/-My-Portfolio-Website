@@ -1,5 +1,6 @@
 import React from 'react'
 import './Profile.css'
+import './KeywordPositions.css'
 import TypedText from '../TypedText/TypedText'
 import SpaceAnimation from './SpaceAnimation'
 import { FaMapMarkerAlt } from 'react-icons/fa'
@@ -22,16 +23,68 @@ const Profile = () => {
         </div>
         <div className="profile-stage">
             {/* Tech keywords floating around */}
-            <span className="tech-keyword" style={{position: 'absolute', top: '15%', left: '10%', background: 'rgba(15, 23, 42, 0.7)', padding: '8px 16px', borderRadius: '10px', backdropFilter: 'blur(10px)', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', border: '1px solid rgba(66, 153, 225, 0.2)', fontSize: '0.8rem', fontWeight: '600', letterSpacing: '0.5px', color: '#fff', textTransform: 'uppercase', animation: 'float 8s infinite ease-in-out'}}>
+            <span className="tech-keyword keyword-top-left" style={{
+                background: 'rgba(15, 23, 42, 0.7)', 
+                padding: '8px 16px', 
+                borderRadius: '10px', 
+                backdropFilter: 'blur(10px)', 
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', 
+                border: '1px solid rgba(66, 153, 225, 0.2)', 
+                fontSize: '0.8rem', 
+                fontWeight: '600', 
+                letterSpacing: '0.5px', 
+                color: '#fff', 
+                textTransform: 'uppercase', 
+                animation: 'float 8s infinite ease-in-out'
+            }}>
                 Model Training
             </span>
-            <span className="tech-keyword" style={{position: 'absolute', top: '17%', right: '10%', background: 'rgba(15, 23, 42, 0.7)', padding: '8px 16px', borderRadius: '10px', backdropFilter: 'blur(10px)', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', border: '1px solid rgba(139, 92, 246, 0.3)', fontSize: '0.8rem', fontWeight: '600', letterSpacing: '0.5px', color: '#fff', textTransform: 'uppercase', animation: 'float 8s infinite ease-in-out 2s'}}>
+            <span className="tech-keyword keyword-top-right" style={{
+                background: 'rgba(15, 23, 42, 0.7)', 
+                padding: '8px 16px', 
+                borderRadius: '10px', 
+                backdropFilter: 'blur(10px)', 
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', 
+                border: '1px solid rgba(139, 92, 246, 0.3)', 
+                fontSize: '0.8rem', 
+                fontWeight: '600', 
+                letterSpacing: '0.5px', 
+                color: '#fff', 
+                textTransform: 'uppercase', 
+                animation: 'float 8s infinite ease-in-out 2s'
+            }}>
                 Generative AI
             </span>
-            <span className="tech-keyword" style={{position: 'absolute', bottom: '15%', left: '0%', background: 'rgba(15, 23, 42, 0.7)', padding: '8px 16px', borderRadius: '10px', backdropFilter: 'blur(10px)', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', border: '1px solid rgba(16, 185, 129, 0.3)', fontSize: '0.8rem', fontWeight: '600', letterSpacing: '0.5px', color: '#fff', textTransform: 'uppercase', animation: 'float 8s infinite ease-in-out 4s'}}>
-               AI-Integrated Web Development
+            <span className="tech-keyword keyword-bottom-left" style={{
+                background: 'rgba(15, 23, 42, 0.7)', 
+                padding: '8px 16px', 
+                borderRadius: '10px', 
+                backdropFilter: 'blur(10px)', 
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', 
+                border: '1px solid rgba(16, 185, 129, 0.3)', 
+                fontSize: '0.8rem', 
+                fontWeight: '600', 
+                letterSpacing: '0.5px', 
+                color: '#fff', 
+                textTransform: 'uppercase', 
+                animation: 'float 8s infinite ease-in-out 4s'
+            }}>
+                AI-Integrated Web Development
             </span>
-            <span className="tech-keyword" style={{position: 'absolute', bottom: '19%', right: '10%', background: 'rgba(15, 23, 42, 0.7)', padding: '8px 16px', borderRadius: '10px', backdropFilter: 'blur(10px)', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', border: '1px solid rgba(239, 68, 68, 0.3)', fontSize: '0.8rem', fontWeight: '600', letterSpacing: '0.5px', color: '#fff', textTransform: 'uppercase', animation: 'float 8s infinite ease-in-out 6s'}}>
+            <span className="tech-keyword keyword-bottom-right" style={{
+                background: 'rgba(15, 23, 42, 0.7)', 
+                padding: '8px 16px', 
+                borderRadius: '10px', 
+                backdropFilter: 'blur(10px)', 
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)', 
+                border: '1px solid rgba(239, 68, 68, 0.3)', 
+                fontSize: '0.8rem', 
+                fontWeight: '600', 
+                letterSpacing: '0.5px', 
+                color: '#fff', 
+                textTransform: 'uppercase', 
+                animation: 'float 8s infinite ease-in-out 6s'
+            }}>
                 Deep Learning
             </span>
             

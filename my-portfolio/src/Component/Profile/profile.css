@@ -74,7 +74,7 @@
     z-index: 0;
 }
 
-/* Profile Stage - Contains the profile picture */
+/* Profile Stage - Contains the profile picture and floating keywords */
 .profile-stage {
     flex: 1;
     display: flex;
@@ -85,6 +85,9 @@
     margin-left: 80px;
     max-width: 50%;
     z-index: 2; /* Ensure it appears above the space animation */
+    min-height: 450px; /* Give enough space for the tech keywords */
+    overflow: visible; /* Make sure the tech keywords don't get cut off */
+    position: relative; /* Make sure absolute positioning of keywords is relative to this container */
 }
 
 
@@ -164,7 +167,18 @@
         0 0 30px rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     animation: floatAnimation 3s ease-in-out infinite;
+    align-items: center;
     
+}
+.profile-picture {
+    width: auto;
+    height: 400px;
+    margin-left: 20px;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+    animation: floatAnimation 3s ease-in-out infinite;
+    z-index: 2; /* Ensure it's above the background but below the floating keywords */
 }
 .profile-pictu{
     width: auto;
@@ -486,7 +500,7 @@
     }
     
     .location-info {
-        top: 40px;
+        top: 50px;
         left: 20px;
         padding: 6px 12px;
     }
@@ -504,6 +518,9 @@
         margin-left: 0;
         margin-bottom: 40px;
         max-width: 100%;
+        min-height: 400px; /* Reduced height since keywords are hidden on mobile */
+        position: relative;
+        overflow: visible;
     }
     
     .profile-pic-container {
@@ -562,6 +579,7 @@
     
     .profile-stage {
         margin-bottom: 30px;
+        min-height: 350px; /* Reduced height since keywords are hidden */
     }
     
     .profile-pic-container {
@@ -627,6 +645,7 @@
     
     .profile-stage {
         margin-bottom: 25px;
+        min-height: 300px; /* Smaller height for mobile as keywords are hidden */
     }
     
     .profile-pic-container {
@@ -718,9 +737,10 @@
     }
 }
 
-/* Hover effect for tech keywords */
+/* Base styles for tech keywords */
 .tech-keyword {
     transition: all 0.3s ease-out !important;
+    z-index: 3 !important; /* Ensure keywords are above the profile picture */
 }
 
 .tech-keyword:hover {
@@ -743,6 +763,20 @@
         padding: 5px 10px !important;
         font-size: 0.65rem !important;
     }
+    
+    /* Make the profile stage responsive on tablets */
+    .profile-stage .tech-keyword {
+        transform: scale(0.95);
+    }
+    
+    /* Adjust keywords closer to the profile pic on smaller screens */
+    .tech-keyword[style*="left: '10%'"] {
+        left: 5% !important;
+    }
+    
+    .tech-keyword[style*="right: '10%'"] {
+        right: 5% !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -750,12 +784,35 @@
         padding: 4px 8px !important;
         font-size: 0.6rem !important;
     }
+    
+    /* Make the profile stage responsive on mobile */
+    .profile-stage .tech-keyword {
+        transform: scale(0.9);
+    }
 }
 
 @media (max-width: 576px) {
     .tech-keyword {
         padding: 3px 6px !important;
         font-size: 0.55rem !important;
-        opacity: 0.7 !important;
+        opacity: 0.8 !important;
+    }
+    
+    /* Make the profile stage responsive on small mobile */
+    .profile-stage .tech-keyword {
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .tech-keyword {
+        padding: 2px 5px !important;
+        font-size: 0.5rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .profile-stage .tech-keyword {
+        transform: scale(0.8);
     }
 }
