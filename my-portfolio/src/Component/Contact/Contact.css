@@ -39,7 +39,7 @@
 .contact-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 1   00px; /* Increased gap from 150px to 200px */
+    gap: 70px; /* Increased gap from 150px to 200px */
     align-items: stretch; /* Changed from center to stretch for equal height */
     height: 85vh;
     width: 100%;
