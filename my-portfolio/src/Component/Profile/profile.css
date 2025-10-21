@@ -85,7 +85,6 @@
     margin-left: 80px;
     max-width: 50%;
     z-index: 2; /* Ensure it appears above the space animation */
-   
 }
 
 
@@ -704,5 +703,59 @@
     .btn {
         padding: 8px 16px;
         font-size: 0.75rem;
+    }
+}
+
+/* Floating animation for tech keywords */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* Hover effect for tech keywords */
+.tech-keyword {
+    transition: all 0.3s ease-out !important;
+}
+
+.tech-keyword:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3) !important;
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Responsive tech keywords */
+@media (max-width: 1200px) {
+    .tech-keyword {
+        padding: 6px 12px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .tech-keyword {
+        padding: 5px 10px !important;
+        font-size: 0.65rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-keyword {
+        padding: 4px 8px !important;
+        font-size: 0.6rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .tech-keyword {
+        padding: 3px 6px !important;
+        font-size: 0.55rem !important;
+        opacity: 0.7 !important;
     }
 }
