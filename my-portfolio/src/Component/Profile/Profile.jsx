@@ -11,7 +11,8 @@ const Profile = () => {
     "Fullstack Developer",
     "Aspiring ML & AI Enthusiast",
     "AI-Powered Web Developer",
-    "Lifelong Learner"
+    "Lifelong Learner",
+    "Data Science Enthusiast"
   ];
 
   return (

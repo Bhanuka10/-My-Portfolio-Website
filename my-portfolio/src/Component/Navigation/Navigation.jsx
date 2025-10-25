@@ -43,6 +43,7 @@ const Navigation = () => {
   const handleLinkClick = (linkName, e) => {
     e.preventDefault();
     setActiveLink(linkName);
+    scrollToSection(linkName);
     
     // Create ripple effect
     const rect = e.currentTarget.getBoundingClientRect();
@@ -61,11 +62,39 @@ const Navigation = () => {
     setTimeout(() => {
       ripple.remove();
     }, 600);
+  };
 
-    // Smooth scroll to section
-    const targetElement = document.querySelector(`#${linkName}`);
+  const scrollToSection = (linkName) => {
+    let targetElement;
+    
+    // Map navigation links to actual component sections
+    switch(linkName) {
+      case 'home':
+        // Scroll to Profile component (top of page)
+        targetElement = document.querySelector('.profile') || document.body;
+        break;
+      case 'about':
+        // Scroll to AboutMe component
+        targetElement = document.querySelector('.about-me') || document.querySelector('.about');
+        break;
+      case 'projects':
+        // Scroll to Projects component
+        targetElement = document.querySelector('.projects-container') || document.querySelector('.projects');
+        break;
+      case 'skills':
+        // Scroll to Skill component
+        targetElement = document.querySelector('.skill-section') || document.querySelector('.skills');
+        break;
+      case 'contact':
+        // Scroll to Contact component
+        targetElement = document.querySelector('.contact') || document.querySelector('#contact');
+        break;
+      default:
+        targetElement = document.querySelector(`#${linkName}`);
+    }
+    
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -125,6 +154,17 @@ const Navigation = () => {
                 <span className="link-bg"></span>
               </a>
             </li>
+             <li className="nav-item">
+              <a 
+                href="#skills" 
+                className={`nav-link ${activeLink === 'skills' ? 'active' : ''}`}
+                onClick={(e) => handleMobileLinkClick('skills', e)}
+              >
+                <span className="link-text">Skills</span>
+                <span className="link-dot"></span>
+                <span className="link-bg"></span>
+              </a>
+            </li>
             <li className="nav-item">
               <a 
                 href="#contact" 
@@ -150,10 +190,8 @@ const Navigation = () => {
         <div className="nav-cta">
           <button className="hire-btn" onClick={(e) => {
             e.preventDefault();
-            const contactSection = document.querySelector('#contact');
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            setActiveLink('contact');
+            scrollToSection('contact');
           }}>
             <span className="btn-text">Let's Work</span>
           </button>
