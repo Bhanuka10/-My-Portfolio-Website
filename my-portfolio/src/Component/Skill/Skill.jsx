@@ -8,7 +8,8 @@ import {
 } from "react-icons/fa";
 import { 
   SiFlask, SiExpress, SiMysql, SiMongodb, 
-  SiPostman, SiTailwindcss, SiJupyter
+  SiPostman, SiTailwindcss, SiJupyter, SiPytorch,
+  SiPandas, SiNumpy, SiScipy
 } from "react-icons/si";
 import { DiIntellij } from "react-icons/di";
 import { VscCode } from "react-icons/vsc";
@@ -43,12 +44,12 @@ const Skill = () => {
   // Frontend skills with proficiency percentages
   const frontendSkills = [
     { name: "HTML", icon: <FaHtml5 />, proficiency: 80 },
-    { name: "CSS", icon: <FaCss3Alt />, proficiency: 80 },
+    // { name: "CSS", icon: <FaCss3Alt />, proficiency: 80 },
     { name: "Tailwind CSS", icon: <SiTailwindcss />, proficiency: 75 },
     { name: "JavaScript", icon: <FaJs />, proficiency: 60 },
     { name: "React", icon: <FaReact />, proficiency: 75 },
-    { name: "Bootstrap", icon: <FaBootstrap />, proficiency: 70 },
-    { name: "Figma", icon: <FaFigma />, proficiency: 75 },
+    // { name: "Bootstrap", icon: <FaBootstrap />, proficiency: 70 },
+    // { name: "Figma", icon: <FaFigma />, proficiency: 75 },
     { name: "Blade", icon: <FaCode />, proficiency: 70 },
   ];
 
@@ -81,6 +82,16 @@ const Skill = () => {
     { name: "VS Code", icon: <VscCode />, proficiency: 90 },
     { name: "IntelliJ IDEA", icon: <DiIntellij />, proficiency: 70 },
     { name: "Jupyter", icon: <SiJupyter />, proficiency: 90 },
+  ];
+
+  // Machine Learning & Data Science libraries with proficiency percentages
+  const mlDataScienceSkills = [
+    { name: "PyTorch", icon: <SiPytorch />, proficiency: 75 },
+    { name: "Pandas", icon: <SiPandas />, proficiency: 85 },
+    { name: "NumPy", icon: <SiNumpy />, proficiency: 80 },
+    { name: "SciPy", icon: <SiScipy />, proficiency: 70 },
+    { name: "Matplotlib", icon: <FaCode />, proficiency: 75 },
+    { name: "Seaborn", icon: <FaCode />, proficiency: 70 },
   ];
 
   const topics = {
@@ -247,6 +258,35 @@ const Skill = () => {
             <div className="skill-list">
               {toolsSkills.map((skill, index) => (
                 <div className="skill-item" key={`tools-${index}`}>
+                  <div className="skill-info">
+                    <div className="skill-name">
+                      {skill.icon && <span className="skill-icon">{skill.icon}</span>}
+                      {skill.name}
+                    </div>
+                    <div className="skill-bar">
+                      <div 
+                        className="skill-level" 
+                        style={{ 
+                          '--skill-width': `${skill.proficiency}%`,
+                          width: `${skill.proficiency}%` 
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Machine Learning & Data Science Category */}
+          <div className="skill-category">
+            <div className="category-header">
+              <FaCode className="category-icon" />
+              <h3 className="category-title">ML & Data Science</h3>
+            </div>
+            <div className="skill-list">
+              {mlDataScienceSkills.map((skill, index) => (
+                <div className="skill-item" key={`ml-${index}`}>
                   <div className="skill-info">
                     <div className="skill-name">
                       {skill.icon && <span className="skill-icon">{skill.icon}</span>}
