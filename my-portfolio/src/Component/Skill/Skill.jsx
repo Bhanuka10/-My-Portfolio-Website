@@ -377,7 +377,7 @@ const Skill = () => {
                   <li>Development of <span class="highlight">AI-Powered Applications</span></li>
 <li>Hands-on <span class="highlight">Machine Learning Model Training</span> using <span class="highlight">Pandas</span>, <span class="highlight">NumPy</span>, <span class="highlight">Scikit-learn</span>, and other Python libraries</li>
 <li>Designing and optimizing <span class="highlight">AI & ML Models</span> for real-world applications</li>
-<li>Deployment of trained <span class="highlight">AI Models</span> into web and mobile applications</li>
+<li>Deployment of trained <span class="highlight">AI Models</span> into web applications</li>
 <li>Exploration of cutting-edge <span class="highlight">Emerging Technologies</span> and data-driven solutions</li>
 
                 </ul>
@@ -389,10 +389,10 @@ const Skill = () => {
                   Design & UX
                 </h4>
                 <ul className="focus-list">
-                  <li>User Interface Design</li>
-                  <li>User Experience Optimization</li>
-                  <li>Design Systems & Components</li>
-                  <li>Accessibility & Inclusive Design</li>
+                  <li><span class="highlight">User Interface (UI) & User Experience (UX) Design</span> for intuitive digital applications</li>
+<li><span class="highlight">Design Systems & Components</span> for scalable and consistent applications</li>
+<li><span class="highlight">Accessibility & Inclusive Design</span> ensuring usability for all users</li>
+
                 </ul>
               </div>
               
@@ -402,11 +402,10 @@ const Skill = () => {
                   Performance & Quality
                 </h4>
                 <ul className="focus-list">
-                  <li>Database Design & Optimization</li>
-                  <li>Databases & Data Handling</li>
-                  <li>Application Performance Tuning</li>
-                  <li>Test-Driven Development</li>
-                  <li>Clean Code & Best Practices</li>
+                  <li><span class="highlight">Database Design & Optimization</span> for efficient data handling</li>
+<li><span class="highlight">Application Performance Tuning</span> to ensure fast and reliable apps</li>
+<li><span class="highlight">Clean Code, Best Practices & Test-Driven Development</span> for maintainable, high-quality software</li>
+
                 </ul>
               </div>
             </div>
