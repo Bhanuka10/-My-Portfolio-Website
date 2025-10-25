@@ -60,7 +60,11 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+.highligh{
+  color: rgb(70, 224, 157) ;
+  font-weight: bold;
+  
+}
 .topic-item::after {
   content: '';
   position: absolute;

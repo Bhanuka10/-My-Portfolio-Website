@@ -359,11 +359,11 @@ const Skill = () => {
                   Web Development
                 </h4>
                 <ul className="focus-list">
-                  <li>Full-Stack Application Development with <span class="highlight">MERN Stack</span> and <span class="highlight">Laravel</span></li>
-<li>Responsive, Progressive, and <span class="highlight">AI-Powered Web Applications</span></li>
-<li>Modern Frontend Frameworks: <span class="highlight">React.js</span>, etc.</li>
-<li>RESTful API Design, Integration, and <span class="highlight">Data-Driven Solutions</span></li>
-<li>Machine Learning & <span class="highlight">AI Model Integration</span> in Web Applications</li>
+                  <li>Full-Stack Application Development with <span class="highligh">MERN Stack</span> and <span class="highligh">Laravel</span></li>
+<li>Responsive, Progressive, and <span class="highligh">AI-Powered Web Applications</span></li>
+<li>Modern Frontend Frameworks: <span class="highligh">React.js</span>, etc.</li>
+<li>RESTful API Design, Integration, and <span class="highligh">Data-Driven Solutions</span></li>
+<li>Machine Learning & <span class="highligh">AI Model Integration</span> in Web Applications</li>
 
                 </ul>
               </div>
@@ -374,11 +374,11 @@ const Skill = () => {
                   Emerging Technologies
                 </h4>
                 <ul className="focus-list">
-                  <li>Development of <span class="highlight">AI-Powered Applications</span></li>
-<li>Hands-on <span class="highlight">Machine Learning Model Training</span> using <span class="highlight">Pandas</span>, <span class="highlight">NumPy</span>, <span class="highlight">Scikit-learn</span>, and other Python libraries</li>
-<li>Designing and optimizing <span class="highlight">AI & ML Models</span> for real-world applications</li>
-<li>Deployment of trained <span class="highlight">AI Models</span> into web applications</li>
-<li>Exploration of cutting-edge <span class="highlight">Emerging Technologies</span> and data-driven solutions</li>
+                  <li>Development of <span class="highligh">AI-Powered Applications</span></li>
+<li>Hands-on <span class="highligh">Machine Learning Model Training</span> using <span class="highligh">Pandas</span>, <span class="highligh">NumPy</span>, <span class="highligh">Scikit-learn</span>, and other Python libraries</li>
+<li>Designing and optimizing <span class="highligh">AI & ML Models</span> for real-world applications</li>
+<li>Deployment of trained <span class="highligh">AI Models</span> into web applications</li>
+<li>Exploration of cutting-edge <span class="highligh">Emerging Technologies</span> and data-driven solutions</li>
 
                 </ul>
               </div>
@@ -389,9 +389,9 @@ const Skill = () => {
                   Design & UX
                 </h4>
                 <ul className="focus-list">
-                  <li><span class="highlight">User Interface (UI) & User Experience (UX) Design</span> for intuitive digital applications</li>
-<li><span class="highlight">Design Systems & Components</span> for scalable and consistent applications</li>
-<li><span class="highlight">Accessibility & Inclusive Design</span> ensuring usability for all users</li>
+                  <li><span class="highligh">User Interface (UI) & User Experience (UX) Design</span> for intuitive digital applications</li>
+<li><span class="highligh">Design Systems & Components</span> for scalable and consistent applications</li>
+<li><span class="highligh">Accessibility & Inclusive Design</span> ensuring usability for all users</li>
 
                 </ul>
               </div>
@@ -402,9 +402,9 @@ const Skill = () => {
                   Performance & Quality
                 </h4>
                 <ul className="focus-list">
-                  <li><span class="highlight">Database Design & Optimization</span> for efficient data handling</li>
-<li><span class="highlight">Application Performance Tuning</span> to ensure fast and reliable apps</li>
-<li><span class="highlight">Clean Code, Best Practices & Test-Driven Development</span> for maintainable, high-quality software</li>
+                  <li><span class="highligh">Database Design & Optimization</span> for efficient data handling</li>
+<li><span class="highligh">Application Performance Tuning</span> to ensure fast and reliable apps</li>
+<li><span class="highligh">Clean Code, Best Practices & Test-Driven Development</span> for maintainable, high-quality software</li>
 
                 </ul>
               </div>
