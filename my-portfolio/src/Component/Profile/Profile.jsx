@@ -98,7 +98,7 @@ const Profile = () => {
             <h1>Hi There</h1>
             <h2>It's Me <span>Bhanuka Bandaranayake</span></h2>
             <h3>I'm a <span><TypedText textArray={roles} typingSpeed={80} deletingSpeed={40} delayBetweenTexts={1500} /></span></h3>
-            <p>"I'm an undergraduate computing student passionate about building scalable web apps and AI-powered solutions."</p>
+            <p>"I'm an undergraduate computing student passionate about developing scalable, AI-powered web applications using the MEAN stack and Laravel, with a strong focus on machine learning, model training, and data-driven innovation."</p>
             <button className='btn'>Download CV</button>
         </div>
     </div>
