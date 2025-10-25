@@ -284,7 +284,7 @@ const Skill = () => {
             </p>
           </div>
 
-          <div className="passion-values">
+          {/* <div className="passion-values">
             <h3 className="section-title">Core Values</h3>
             <div className="values-grid">
               <div className="value-card">
@@ -308,7 +308,7 @@ const Skill = () => {
                 <p>Embracing continuous learning as the foundation of professional development.</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="passion-focus">
             <h3 className="section-title">Areas of Expertise & Interest</h3>
@@ -319,10 +319,12 @@ const Skill = () => {
                   Web Development
                 </h4>
                 <ul className="focus-list">
-                  <li>Full-Stack Application Development</li>
-                  <li>Responsive & Progressive Web Apps</li>
-                  <li>Modern Frontend Frameworks </li>
-                  <li>RESTful API Design & Implementation</li>
+                  <li>Full-Stack Application Development with <span class="highlight">MERN Stack</span> and <span class="highlight">Laravel</span></li>
+<li>Responsive, Progressive, and <span class="highlight">AI-Powered Web Applications</span></li>
+<li>Modern Frontend Frameworks: <span class="highlight">React.js</span>, etc.</li>
+<li>RESTful API Design, Integration, and <span class="highlight">Data-Driven Solutions</span></li>
+<li>Machine Learning & <span class="highlight">AI Model Integration</span> in Web Applications</li>
+
                 </ul>
               </div>
               
@@ -332,10 +334,12 @@ const Skill = () => {
                   Emerging Technologies
                 </h4>
                 <ul className="focus-list">
-                  <li>AI-Powered Applications</li>
-                  <li>Machine Learning Integration</li>
-                  <li>Artificial Intelligence & Machine Learning Solutions</li>
-                  <li>Deployment of AI Models into Web & Mobile Applications</li>
+                  <li>Development of <span class="highlight">AI-Powered Applications</span></li>
+<li>Hands-on <span class="highlight">Machine Learning Model Training</span> using <span class="highlight">Pandas</span>, <span class="highlight">NumPy</span>, <span class="highlight">Scikit-learn</span>, and other Python libraries</li>
+<li>Designing and optimizing <span class="highlight">AI & ML Models</span> for real-world applications</li>
+<li>Deployment of trained <span class="highlight">AI Models</span> into web and mobile applications</li>
+<li>Exploration of cutting-edge <span class="highlight">Emerging Technologies</span> and data-driven solutions</li>
+
                 </ul>
               </div>
               
