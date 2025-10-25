@@ -57,6 +57,8 @@ const Projects = () => {
   // Function to handle explore button click
   const handleExploreClick = (project) => {
     navigate('/explore-project', { state: { project } });
+    // Scroll to top after navigation
+    window.scrollTo(0, 0);
   };
 
   return (

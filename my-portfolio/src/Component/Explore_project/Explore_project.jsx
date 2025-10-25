@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { 
   FaArrowLeft, 
@@ -28,6 +28,11 @@ const Explore_project = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Get project data from router state
   const project = location.state?.project;
