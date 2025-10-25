@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { 
   SiFlask, SiExpress, SiMysql, SiMongodb, 
-  SiPostman, SiTailwindcss
+  SiPostman, SiTailwindcss, SiJupyter
 } from "react-icons/si";
 import { DiIntellij } from "react-icons/di";
 import { VscCode } from "react-icons/vsc";
@@ -80,6 +80,7 @@ const Skill = () => {
     { name: "Postman", icon: <SiPostman />, proficiency: 70 },
     { name: "VS Code", icon: <VscCode />, proficiency: 90 },
     { name: "IntelliJ IDEA", icon: <DiIntellij />, proficiency: 70 },
+    { name: "Jupyter", icon: <SiJupyter />, proficiency: 90 },
   ];
 
   const topics = {
