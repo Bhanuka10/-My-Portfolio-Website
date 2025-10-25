@@ -29,11 +29,11 @@ Sahan Bhanuka Bandaranayake - Full Stack Developer & ML/AI Enthusiast from Kandy
 • GitHub: https://github.com/Bhanuka10
 
 **Skills:**
-Frontend: React, JavaScript, HTML, CSS
-Backend: Node.js, Express.js, Laravel, PHP
+Frontend: React, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap
+Backend: Node.js, Express.js, Laravel, PHP, Python, Flask
 Database: MongoDB, MySQL, Firebase
-AI/ML: Machine Learning, Deep Learning
-Tools: Git, Figma, API Integration
+AI/ML: Machine Learning, Deep Learning, PyTorch, Pandas, NumPy, SciPy, Matplotlib, Seaborn
+Tools: Git, GitHub, Figma, VS Code, IntelliJ IDEA, Jupyter, Postman, API Integration
 
 **Projects:**
 1. **Personalized Learning Web Application**
@@ -43,7 +43,7 @@ Tools: Git, Figma, API Integration
 
 2. **Hostel Management System**
    • Complete hostel administration and student management
-   • Tech: Laravel, PHP, MySQL
+   • Tech: Laravel, PHP, MySQL, Blade Templates
    • GitHub: https://github.com/Bhanuka10/Hostel-Management-System-Laravel-
 
 3. **Latest Movies Library**
@@ -51,10 +51,26 @@ Tools: Git, Figma, API Integration
    • Tech: React, JavaScript, Movie API
    • GitHub: https://github.com/Bhanuka10/Movies-collection
 
+4. **Expense Tracker System**
+   • MERN stack expense management with real-time updates
+   • Tech: MongoDB, Express.js, React.js, Node.js, REST API
+   • GitHub: https://github.com/Bhanuka10/MERN-Expense-Tracker-
+
+5. **Interactive Brand Website**
+   • First website project showcasing brands and shop details
+   • Tech: HTML, CSS, JavaScript
+   • GitHub: https://github.com/Bhanuka10/Bar_website
+
+6. **School Management System**
+   • Laravel-powered school operations management
+   • Tech: Laravel, PHP, MySQL, Blade Templates
+   • GitHub: https://github.com/Yasithb/EduBridge
+
 **UI/UX Designs:**
 1. **Capstone Interface Design** - Learning platform UI (Figma)
 2. **WET Hospital System** - Hospital management UI (Figma)
 3. **Learning Web Application** - Educational app UI (Figma)
+4. **Soul Sync App** - Emotional AI companion mobile app UI (Figma)
 
 IMPORTANT: Answer only what is asked. Keep responses concise and specific.
 `;
@@ -136,11 +152,12 @@ const FALLBACK_RESPONSES = {
 • React.js - Component-based UI development
 • JavaScript (ES6+) - Modern web programming
 • HTML5 & CSS3 - Responsive web design
-• Responsive Design - Mobile-first approach
+• Tailwind CSS & Bootstrap - UI frameworks
 
 **Backend Development:**
 • Node.js & Express.js - Server-side applications
 • Laravel & PHP - Web application frameworks
+• Python & Flask - API development
 • RESTful APIs - Backend service integration
 
 **Databases:**
@@ -148,12 +165,18 @@ const FALLBACK_RESPONSES = {
 • MySQL - Relational database design
 • Firebase - Real-time database & authentication
 
-**AI/ML & Tools:**
+**AI/ML & Data Science:**
 • Machine Learning & Deep Learning
-• AI Integration (Gemini API, OpenAI)
-• Git & Version Control
+• PyTorch, Pandas, NumPy, SciPy
+• Matplotlib, Seaborn - Data visualization
+• AI Integration (Gemini API)
+
+**Development Tools:**
+• Git & GitHub - Version control
+• VS Code, IntelliJ IDEA - IDEs
+• Jupyter Notebooks - Data analysis
 • Figma - UI/UX Design
-• API Integration & Optimization`,
+• Postman - API testing`,
   
   projects: `## 🚀 Bhanuka's Key Projects
 
@@ -167,14 +190,30 @@ const FALLBACK_RESPONSES = {
 • **Features:** Student registration, room allocation, fee tracking
 • **Role:** Project architect, backend developer, team coordinator
 
-**3. Latest Movies Library**
+**3. Expense Tracker System**
+• **Tech Stack:** MongoDB, Express.js, React.js, Node.js (MERN)
+• **Features:** Real-time expense tracking, data visualization
+• **Role:** Full-stack developer, database architect
+
+**4. Latest Movies Library**
 • **Tech Stack:** React, JavaScript, Movie API integration
 • **Features:** Responsive movie browsing, real-time data fetching
 • **Role:** Frontend developer, API integration specialist
 
+**5. School Management System**
+• **Tech Stack:** Laravel, PHP, MySQL, Blade templates
+• **Features:** Student/teacher management, class scheduling
+• **Role:** Backend developer, system architect
+
+**6. Interactive Brand Website**
+• **Tech Stack:** HTML, CSS, JavaScript (First project)
+• **Features:** Brand showcase, interactive elements
+• **Role:** Full-stack developer, UI designer
+
 **UI/UX Design Portfolio:**
 • Capstone Interface Design (Figma)
 • WET Hospital System (Figma)
+• Soul Sync AI Companion App (Figma)
 • Learning Web Application (Figma)
 
 🔗 **GitHub:** https://github.com/Bhanuka10`,
@@ -249,13 +288,23 @@ const FALLBACK_RESPONSES = {
 
 **Quick Overview:**
 • **Role:** Full Stack Developer & AI Enthusiast
-• **Specialties:** React, Laravel, AI integration, UI/UX design
+• **Specialties:** React, Laravel, MERN Stack, AI integration, UI/UX design
 • **Experience:** Team leadership, project architecture, scalable applications
 
 **Notable Projects:**
 • **AI-Powered Learning Platform** - React + Gemini API
 • **Hostel Management System** - Laravel + MySQL
+• **MERN Expense Tracker** - Full-stack financial management
 • **Movie Library Application** - React + API integration
+• **School Management System** - Laravel education platform
+• **Soul Sync AI App** - Emotional companion UI design
+
+**Technical Skills:**
+• **Frontend:** React, JavaScript, HTML, CSS, Tailwind
+• **Backend:** Node.js, Express, Laravel, PHP, Python
+• **Database:** MongoDB, MySQL, Firebase
+• **AI/ML:** PyTorch, Pandas, NumPy, Machine Learning
+• **Tools:** Git, Figma, Jupyter, VS Code, Postman
 
 **Get in Touch:**
 • **Email:** sahanbhanuka10@gmail.com
@@ -302,7 +351,12 @@ export default function Chatbot() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [requestCount, setRequestCount] = useState(0);
   const [quotaExceeded, setQuotaExceeded] = useState(false);
+  const [lastRequestTime, setLastRequestTime] = useState(0);
+  const [isThrottled, setIsThrottled] = useState(false);
   const listRef = useRef(null);
+
+  // Minimum time between requests (in milliseconds)
+  const REQUEST_THROTTLE_TIME = 2000; // 2 seconds between requests
 
   // Function to get daily request count from localStorage
   const getDailyRequestCount = () => {
@@ -331,9 +385,22 @@ export default function Chatbot() {
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
   }, [messages]);
 
-  // Function to generate response using Gemini API
-  const generateGeminiResponse = async (userText) => {
+  // Function to generate response using Gemini API with retry logic and rate limiting
+  const generateGeminiResponse = async (userText, retryCount = 0) => {
+    const maxRetries = 3;
+    const baseDelay = 1000; // 1 second base delay
+    
     try {
+      // Add delay between requests to avoid rate limiting
+      if (retryCount > 0) {
+        const delay = baseDelay * Math.pow(2, retryCount - 1); // Exponential backoff
+        console.log(`Retrying in ${delay}ms... (attempt ${retryCount + 1}/${maxRetries + 1})`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } else {
+        // Add a small delay even for first request to prevent rapid-fire requests
+        await new Promise(resolve => setTimeout(resolve, 300));
+      }
+
       // Get the Gemini 2.5 Flash model
       const model = ai.getGenerativeModel({
         model: "gemini-2.5-flash"
@@ -390,17 +457,30 @@ Provide a direct, point-wise answer based on their specific question.`;
 
       return response.text();
     } catch (error) {
-      console.error("Error calling Gemini API:", error);
+      console.error(`Error calling Gemini API (attempt ${retryCount + 1}):`, error);
       
-      // Handle GoogleGenerativeAIFetchError specifically
+      // Handle 429 rate limit errors with retry logic
+      if ((error.name === 'GoogleGenerativeAIFetchError' || 
+           error.message.includes('GoogleGenerativeAIFetchError') ||
+           error.message.includes('429') || 
+           error.message.includes('quota exceeded') ||
+           error.message.includes('RATE_LIMIT_EXCEEDED')) && 
+           retryCount < maxRetries) {
+        
+        console.log(`Rate limit hit, retrying... (${retryCount + 1}/${maxRetries})`);
+        return await generateGeminiResponse(userText, retryCount + 1);
+      }
+      
+      // Handle final failure after all retries or other errors
       if (error.name === 'GoogleGenerativeAIFetchError' || 
           error.message.includes('GoogleGenerativeAIFetchError') ||
           error.message.includes('429') || 
           error.message.includes('quota exceeded') ||
-          error.message.includes('current quota')) {
+          error.message.includes('current quota') ||
+          error.message.includes('RATE_LIMIT_EXCEEDED')) {
         
         const fallbackResponse = getFallbackResponse(userText);
-        return `🚫 **API Quota Exceeded** (250 requests/day limit reached)\n\nHere's what I can tell you without using the AI:\n\n${fallbackResponse}\n\n💡 **Options:**\n• Try again tomorrow when quota resets\n• Contact Bhanuka directly for immediate assistance\n• Explore the portfolio sections above for more info`;
+        return `🚫 **API Rate Limit Exceeded** ${retryCount > 0 ? `(after ${retryCount + 1} attempts)` : ''}\n\nThe Gemini API quota has been exceeded. Here's what I can tell you without using the AI:\n\n${fallbackResponse}\n\n💡 **Options:**\n• Wait a few minutes and try again\n• Try again later when quota resets\n• Contact Bhanuka directly for immediate assistance\n• Explore the portfolio sections above for more info`;
         
       } else if (error.message && error.message.includes('network')) {
         return "🌐 I'm having network connectivity issues. Please check your internet connection and try again.";
@@ -556,10 +636,35 @@ Provide a direct, point-wise answer based on their specific question.`;
     const text = input.trim();
     if (!text) return;
 
+    // Check for request throttling to prevent rapid-fire requests
+    const currentTime = Date.now();
+    const timeSinceLastRequest = currentTime - lastRequestTime;
+    
+    if (timeSinceLastRequest < REQUEST_THROTTLE_TIME && lastRequestTime > 0) {
+      const remainingTime = Math.ceil((REQUEST_THROTTLE_TIME - timeSinceLastRequest) / 1000);
+      setIsThrottled(true);
+      setMessages((m) => [
+        ...m,
+        { 
+          id: Date.now(), 
+          from: "bot", 
+          text: `⏳ Please wait ${remainingTime} more second${remainingTime > 1 ? 's' : ''} before sending another message to avoid rate limits.`
+        }
+      ]);
+      
+      // Clear throttle message after the remaining time
+      setTimeout(() => {
+        setIsThrottled(false);
+      }, REQUEST_THROTTLE_TIME - timeSinceLastRequest);
+      
+      return;
+    }
+
     // Add user message to the chat
     const userMsg = { id: Date.now(), from: "user", text };
     setMessages((m) => [...m, userMsg]);
     setInput("");
+    setLastRequestTime(currentTime);
 
     // Show typing indicator
     setIsTyping(true);
@@ -621,7 +726,8 @@ Provide a direct, point-wise answer based on their specific question.`;
       // If it's a quota error, set the flag and provide fallback
       if (error.name === 'GoogleGenerativeAIFetchError' || 
           error.message.includes('429') || 
-          error.message.includes('quota')) {
+          error.message.includes('quota') ||
+          error.message.includes('RATE_LIMIT_EXCEEDED')) {
         setQuotaExceeded(true);
         updateDailyRequestCount(250); // Mark as quota exceeded
       }
@@ -714,9 +820,10 @@ Provide a direct, point-wise answer based on their specific question.`;
                 className="send-btn" 
                 onClick={sendMessage} 
                 aria-label="send"
-                disabled={isTyping || !input.trim()}
+                disabled={isTyping || !input.trim() || isThrottled}
+                title={isThrottled ? "Please wait before sending another message" : "Send message"}
               >
-                Send
+                {isThrottled ? "⏳" : "Send"}
               </button>
             </div>
           </div>
@@ -772,9 +879,10 @@ Provide a direct, point-wise answer based on their specific question.`;
               className="send-btn" 
               onClick={sendMessage} 
               aria-label="send"
-              disabled={isTyping || !input.trim()}
+              disabled={isTyping || !input.trim() || isThrottled}
+              title={isThrottled ? "Please wait before sending another message" : "Send message"}
             >
-              Send
+              {isThrottled ? "⏳" : "Send"}
             </button>
           </div>
         </div>
