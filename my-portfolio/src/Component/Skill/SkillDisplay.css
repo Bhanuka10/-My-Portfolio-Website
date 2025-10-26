@@ -6,6 +6,24 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* Enhanced appear when scrolled into view */
+.skills-container.animate-on-scroll,
+.skills-container.in-view {
+  animation: enhancedAppear 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Enhanced appear animation */
+@keyframes enhancedAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Passion Section Styles */
 .passion-container {
   max-width: 100%;
@@ -17,6 +35,12 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   position: relative;
+}
+
+/* Enhanced appear when scrolled into view */
+.passion-container.animate-on-scroll,
+.passion-container.in-view {
+  animation: enhancedAppear 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .passion-hero {
@@ -105,6 +129,25 @@
 
 .passion-story {
   margin-bottom: 3rem;
+}
+
+/* Staggered animations for passion story */
+.passion-container.animate-on-scroll .passion-story,
+.passion-container.in-view .passion-story {
+  animation: passionElementAppear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.6s;
+}
+
+/* Passion element appear animation */
+@keyframes passionElementAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .story-text {
@@ -199,6 +242,42 @@
   border-radius: 15px;
   border: 1px solid rgba(0, 123, 255, 0.1);
   transition: all 0.3s ease;
+}
+
+/* Staggered animations for focus categories */
+.passion-container.animate-on-scroll .focus-category,
+.passion-container.in-view .focus-category {
+  animation: focusCategoryAppear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Staggered delays for focus categories */
+.passion-container.animate-on-scroll .focus-category:nth-child(1),
+.passion-container.in-view .focus-category:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.passion-container.animate-on-scroll .focus-category:nth-child(2),
+.passion-container.in-view .focus-category:nth-child(2) {
+  animation-delay: 1.0s;
+}
+.passion-container.animate-on-scroll .focus-category:nth-child(3),
+.passion-container.in-view .focus-category:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.passion-container.animate-on-scroll .focus-category:nth-child(4),
+.passion-container.in-view .focus-category:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+/* Focus category appear animation */
+@keyframes focusCategoryAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .focus-category:hover {
@@ -393,30 +472,63 @@
   border-top: 4px solid #007bff;
   overflow: hidden;
   position: relative;
-  animation: fadeIn 0.6s ease forwards;
-  opacity: 0;
+  /* Start visible for fallback */
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Enhanced staggered animations when container is in view */
+.skills-container.animate-on-scroll .skill-category,
+.skills-container.in-view .skill-category {
+  animation: skillCategoryPopup 1.0s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-.skill-category:nth-child(4) { animation-delay: 0.4s; }
-.skill-category:nth-child(5) { animation-delay: 0.5s; }
+/* Enhanced popup animation with bounce effect */
+@keyframes skillCategoryPopup {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.3) rotateX(-10deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1.05) rotateX(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+    }
+}
+
+/* Enhanced staggered delays */
+.skills-container.animate-on-scroll .skill-category:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(1) { 
+  animation-delay: 0.6s; 
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(2) { 
+  animation-delay: 0.8s; 
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(3),
+.skills-container.in-view .skill-category:nth-child(3) { 
+  animation-delay: 1.0s; 
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(4),
+.skills-container.in-view .skill-category:nth-child(4) { 
+  animation-delay: 1.2s; 
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(5),
+.skills-container.in-view .skill-category:nth-child(5) { 
+  animation-delay: 1.4s; 
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(6),
+.skills-container.in-view .skill-category:nth-child(6) { 
+  animation-delay: 1.6s; 
+}
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 123, 255, 0.15), 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-top: 4px solid #00c6ff;
 }
 
 .category-header {
@@ -429,6 +541,26 @@
   font-size: 2.2rem;
   margin-right: 0.8rem;
   color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* Add pulse effect to icons after popup animation */
+.skills-container.animate-on-scroll .category-icon,
+.skills-container.in-view .category-icon {
+  animation: iconPulse 2s ease-in-out 2s infinite;
+}
+
+/* Icon pulse animation */
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #007bff;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #00c6ff;
+        filter: drop-shadow(0 0 8px rgba(0, 198, 255, 0.6));
+    }
 }
 
 .category-title {
@@ -445,7 +577,131 @@
 
 .skill-item {
   width: 100%;
+  /* Start visible for fallback */
+  opacity: 1;
+  transform: translateX(0);
 }
+
+/* Individual skill item animations when category is in view */
+.skills-container.animate-on-scroll .skill-item,
+.skills-container.in-view .skill-item {
+  animation: skillItemPopup 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Enhanced skill item popup animation */
+@keyframes skillItemPopup {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.6) rotateY(-15deg);
+    }
+    60% {
+        opacity: 0.9;
+        transform: translateY(-5px) scale(1.05) rotateY(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateY(0deg);
+    }
+}
+
+/* Staggered delays for skill items within each category - start after category popup */
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(1) { 
+  animation-delay: 1.2s; 
+  --skill-item-delay: 1.2s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(2) { 
+  animation-delay: 1.3s; 
+  --skill-item-delay: 1.3s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(3),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(3) { 
+  animation-delay: 1.4s; 
+  --skill-item-delay: 1.4s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(4),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(4) { 
+  animation-delay: 1.5s; 
+  --skill-item-delay: 1.5s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(5),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(5) { 
+  animation-delay: 1.6s; 
+  --skill-item-delay: 1.6s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(1) .skill-item:nth-child(6),
+.skills-container.in-view .skill-category:nth-child(1) .skill-item:nth-child(6) { 
+  animation-delay: 1.7s; 
+  --skill-item-delay: 1.7s;
+}
+
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(1) { 
+  animation-delay: 1.4s; 
+  --skill-item-delay: 1.4s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(2) { 
+  animation-delay: 1.5s; 
+  --skill-item-delay: 1.5s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(3),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(3) { 
+  animation-delay: 1.6s; 
+  --skill-item-delay: 1.6s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(4),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(4) { 
+  animation-delay: 1.7s; 
+  --skill-item-delay: 1.7s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(5),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(5) { 
+  animation-delay: 1.8s; 
+  --skill-item-delay: 1.8s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(6),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(6) { 
+  animation-delay: 1.9s; 
+  --skill-item-delay: 1.9s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(2) .skill-item:nth-child(7),
+.skills-container.in-view .skill-category:nth-child(2) .skill-item:nth-child(7) { 
+  animation-delay: 2.0s; 
+  --skill-item-delay: 2.0s;
+}
+.skills-container.animate-on-scroll .skill-category:nth-child(3) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(3) .skill-item:nth-child(1) { animation-delay: 1.6s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(3) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(3) .skill-item:nth-child(2) { animation-delay: 1.7s; }
+
+.skills-container.animate-on-scroll .skill-category:nth-child(4) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(4) .skill-item:nth-child(1) { animation-delay: 1.8s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(4) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(4) .skill-item:nth-child(2) { animation-delay: 1.9s; }
+
+.skills-container.animate-on-scroll .skill-category:nth-child(5) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(5) .skill-item:nth-child(1) { animation-delay: 2.0s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(5) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(5) .skill-item:nth-child(2) { animation-delay: 2.1s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(5) .skill-item:nth-child(3),
+.skills-container.in-view .skill-category:nth-child(5) .skill-item:nth-child(3) { animation-delay: 2.2s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(5) .skill-item:nth-child(4),
+.skills-container.in-view .skill-category:nth-child(5) .skill-item:nth-child(4) { animation-delay: 2.3s; }
+
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(1),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(1) { animation-delay: 2.2s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(2),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(2) { animation-delay: 2.3s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(3),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(3) { animation-delay: 2.4s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(4),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(4) { animation-delay: 2.5s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(5),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(5) { animation-delay: 2.6s; }
+.skills-container.animate-on-scroll .skill-category:nth-child(6) .skill-item:nth-child(6),
+.skills-container.in-view .skill-category:nth-child(6) .skill-item:nth-child(6) { animation-delay: 2.7s; }
 
 .skill-info {
   display: flex;
@@ -459,12 +715,68 @@
   font-weight: 500;
   font-size: 1rem;
   color: #e7eaec;
+  transition: all 0.3s ease;
+}
+
+/* Skill name popup effect with staggered timing */
+.skills-container.animate-on-scroll .skill-name,
+.skills-container.in-view .skill-name {
+  animation: skillNamePopup 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: inherit;
+}
+
+/* Skill name popup animation */
+@keyframes skillNamePopup {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.8);
+    }
+    60% {
+        opacity: 0.9;
+        transform: translateX(5px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 .skill-icon {
   font-size: 1.2rem;
   margin-right: 0.6rem;
   color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* Skill icon dramatic popup effect with extra delay */
+.skills-container.animate-on-scroll .skill-icon,
+.skills-container.in-view .skill-icon {
+  animation: skillIconDramaticPopup 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+  animation-delay: calc(var(--skill-item-delay, 0s) + 0.2s);
+}
+
+/* Dramatic skill icon popup animation */
+@keyframes skillIconDramaticPopup {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg) translateY(10px);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.4) rotate(10deg) translateY(-3px);
+        filter: blur(1px);
+    }
+    80% {
+        opacity: 0.95;
+        transform: scale(0.9) rotate(-5deg) translateY(0px);
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg) translateY(0px);
+        filter: blur(0px);
+    }
 }
 
 .skill-bar {
@@ -473,6 +785,33 @@
   background-color: #f1f1f1;
   border-radius: 4px;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Skill bar popup effect with delay after icon */
+.skills-container.animate-on-scroll .skill-bar,
+.skills-container.in-view .skill-bar {
+  animation: skillBarPopup 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: calc(var(--skill-item-delay, 0s) + 0.3s);
+}
+
+/* Skill bar popup animation */
+@keyframes skillBarPopup {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.3) translateY(8px);
+        border-radius: 20px;
+    }
+    60% {
+        opacity: 0.8;
+        transform: scaleX(1.05) translateY(-2px);
+        border-radius: 6px;
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1) translateY(0px);
+        border-radius: 4px;
+    }
 }
 
 .skill-level {
@@ -481,17 +820,40 @@
   border-radius: 4px;
   position: relative;
   transition: all 0.3s ease;
-  animation: slideIn 1.5s ease-out;
 }
 
-@keyframes slideIn {
-  0% {
-    width: 0%;
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Enhanced skill level animation with dramatic effect */
+.skills-container.animate-on-scroll .skill-level,
+.skills-container.in-view .skill-level {
+  animation: skillLevelDramaticFill 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+  animation-delay: calc(var(--skill-item-delay, 0s) + 0.5s);
+}
+
+/* Dramatic skill level fill animation */
+@keyframes skillLevelDramaticFill {
+    0% {
+        width: 0% !important;
+        opacity: 0;
+        transform: scaleY(0.3);
+        background: linear-gradient(to right, #007bff, #007bff);
+    }
+    30% {
+        width: 10% !important;
+        opacity: 0.7;
+        transform: scaleY(1.8);
+        background: linear-gradient(to right, #007bff, #00c6ff);
+    }
+    70% {
+        opacity: 0.9;
+        transform: scaleY(1.2);
+        background: linear-gradient(to right, #007bff, #00c6ff, #007bff);
+    }
+    100% {
+        width: var(--skill-width) !important;
+        opacity: 1;
+        transform: scaleY(1);
+        background: linear-gradient(to right, #007bff, #00c6ff);
+    }
 }
 
 .skill-level:after {

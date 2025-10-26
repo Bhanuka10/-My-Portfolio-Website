@@ -17,29 +17,104 @@ import { VscCode } from "react-icons/vsc";
 const Skill = () => {
   const [active, setActive] = useState("skills");
   const skillsRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(true); // Set to true by default
-  
+  const educationRef = useRef(null);
+  const passionRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [educationAnimated, setEducationAnimated] = useState(false);
+  const [passionAnimated, setPassionAnimated] = useState(false);
+
+  // Setup intersection observer for skills
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            entry.target.classList.add('in-view');
+            entry.target.classList.add('animate-on-scroll');
+            setHasAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+      }
     );
-    
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+
+    const currentRef = skillsRef.current;
+    if (currentRef && !hasAnimated) {
+      observer.observe(currentRef);
     }
-    
+
     return () => {
-      if (skillsRef.current) {
-        observer.disconnect();
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, [hasAnimated]);
+
+  // Setup intersection observer for education
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !educationAnimated) {
+            entry.target.classList.add('in-view');
+            entry.target.classList.add('animate-on-scroll');
+            setEducationAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+      }
+    );
+
+    const currentRef = educationRef.current;
+    if (currentRef && !educationAnimated && active === 'education') {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [educationAnimated, active]);
+
+  // Setup intersection observer for passion
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !passionAnimated) {
+            entry.target.classList.add('in-view');
+            entry.target.classList.add('animate-on-scroll');
+            setPassionAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -100px 0px'
+      }
+    );
+
+    const currentRef = passionRef.current;
+    if (currentRef && !passionAnimated && active === 'passion') {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [passionAnimated, active]);
 
   // Frontend skills with proficiency percentages
   const frontendSkills = [
@@ -96,7 +171,7 @@ const Skill = () => {
 
   const topics = {
     education: (
-      <div className="education-roadmap">
+      <div className="education-roadmap" ref={educationRef}>
         <div className="roadmap-item completed">
           <div className="roadmap-content">
             <h3>Dharmaraja College Kandy</h3>
@@ -132,7 +207,7 @@ const Skill = () => {
           
         </div>
         
-        <div className={`skills-categories ${isVisible ? 'visible' : ''}`}>
+        <div className="skills-categories">
           {/* Frontend Category */}
           <div className="skill-category">
             <div className="category-header">
@@ -310,7 +385,7 @@ const Skill = () => {
       </div>
     ),
     passion: (
-      <div className="passion-container">
+      <div className="passion-container" ref={passionRef}>
         
 
         <div className="passion-body">
