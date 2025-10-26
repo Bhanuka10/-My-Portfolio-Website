@@ -272,6 +272,9 @@
 /* Tech Stack */
 .tech-stack {
   margin-bottom: 1rem;
+  opacity: 0; /* Hidden by default - show on hover */
+  transform: translateY(15px);
+  transition: all 0.3s ease;
 }
 
 /* Tech stack step animation */
@@ -351,9 +354,12 @@
   padding-bottom: 10px;
   gap: 1rem;
   margin-top: auto;
-  opacity: 0;
+  opacity: 0; /* Hidden by default - show on hover */
   transform: translateY(20px);
   transition: all 0.3s ease;
+  visibility: hidden;
+  position: relative;
+  z-index: 5;
 }
 
 /* Project actions step animation */
@@ -368,12 +374,20 @@
         transform: translateY(15px);
     }
     100% {
-        opacity: 0; /* Keep initial opacity as 0 for hover effect */
+        opacity: 0; /* Keep hidden for hover effect */
         transform: translateY(20px);
     }
 }
 
 .project-card:hover .project-actions {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible;
+  z-index: 10;
+}
+
+/* Tech stack hover effect */
+.project-card:hover .tech-stack {
   opacity: 1;
   transform: translateY(0);
 }
@@ -392,6 +406,10 @@
   font-size: 0.85rem;
   flex: 1;
   justify-content: center;
+  min-height: 5px;
+  position: relative;
+  z-index: 15;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .github-btn {

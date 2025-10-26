@@ -112,7 +112,7 @@ const UisData=[
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Wet",
     description: "I created the UI/UX design for the WET Hospital system in Figma, ensuring a clear and professional interface for both patients and administrators. The design includes pages such as the home page, apply for medicine, doctor dashboard all connected with interactive prototypes to reflect a smooth hospital workflow.",
     indetails:"The UI/UX design for the WET Hospital system was meticulously crafted using Figma to ensure a clear and professional interface for both patients and administrators. The design encompasses key pages such as the home page, application for medicine, and doctor dashboard, all interconnected with interactive prototypes to facilitate a seamless hospital workflow. Emphasizing usability and accessibility, the design incorporates intuitive navigation, consistent color schemes, and clear typography to enhance user experience. The goal was to create an efficient and user-friendly platform that meets the needs of its diverse users while maintaining a cohesive visual identity.",
@@ -124,7 +124,7 @@ const UisData=[
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Learning web",
     description: "A modern and user-friendly UI/UX design for a learning web application, created using Figma. The design focuses on intuitive navigation, clean layouts, and engaging visuals to enhance the user experience for learners.",
     indetails:"A modern and user-friendly UI/UX design for a learning web application, created using Figma. The design focuses on intuitive navigation, clean layouts, and engaging visuals to enhance the user experience for learners. Key features include a personalized dashboard, course catalog with filtering options, progress tracking, and interactive elements to boost engagement. The color scheme and typography were carefully selected to create a visually appealing interface that aligns with the brand identity. Overall, the design aims to provide an enjoyable and effective learning journey for users.",
@@ -134,7 +134,7 @@ const UisData=[
     explore_link: "https://github.com/Bhanuka10/Mobile-App-UI-Kit" 
   },
   {
-  id: 4,
+  id: 2,
   title: "Soul Sync – Emotional AI Companion App",
   description: "A mobile app UI/UX design for Soul Sync, an AI-powered emotional companion that provides empathy, support, and connection through realistic avatars and voices.",
   indetails: "Soul Sync’s Figma design showcases a sleek, emotionally engaging interface for an AI companion mobile app. The design includes key screens such as onboarding, emotion setup, avatar and voice selection, chat interface, and digital twin creation. Each element focuses on emotional comfort, simplicity, and personalization. Soft gradients, warm tones, and fluid layouts were used to evoke calmness and trust, while smooth transitions enhance user engagement. The design ensures users feel connected, supported, and safe while interacting with their AI companion.",
