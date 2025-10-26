@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Contact.css'
 import { FaWhatsapp, FaLinkedinIn, FaGithub, FaFacebookF, FaEnvelope, FaMapMarkerAlt, FaPhone, FaUser } from 'react-icons/fa'
+import { getImagePath, profileImage } from '../../utils/imagePaths'
 
 const Contact = () => {
   const contactRef = useRef(null);
@@ -51,7 +52,7 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-left">
             <div className="contact-image">
-              <img src="src\assets\profile.png" alt="Profile" />
+              <img src={getImagePath(profileImage)} alt="Profile" />
             </div>
             
             <div className='social-icons'>

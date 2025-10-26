@@ -4,6 +4,7 @@ import './KeywordPositions.css'
 import TypedText from '../TypedText/TypedText'
 import SpaceAnimation from './SpaceAnimation'
 import { FaMapMarkerAlt } from 'react-icons/fa'
+import { getImagePath, fullBodyImage } from '../../utils/imagePaths'
 
 const Profile = () => {
   const roles = [
@@ -92,7 +93,7 @@ const Profile = () => {
             {/* Profile pic container */}
             <div className='profile-pic-container'>
                 {/* Removed the old background image */}
-                <img className="profile-picture" src="src\assets\Full body.png" alt="Profile" />
+                <img className="profile-picture" src={getImagePath(fullBodyImage)} alt="Profile" />
             </div>
         </div>
         <div className="profile-content">

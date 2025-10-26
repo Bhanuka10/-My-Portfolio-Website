@@ -37,9 +37,12 @@ const Home = () => {
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  // Get the base path from environment or use default for GitHub Pages
+  const basename = import.meta.env.VITE_BASE_PATH || '/-My-Portfolio-Website';
 
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
