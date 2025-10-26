@@ -1,3 +1,15 @@
+/* Enhanced appear animation with slide-up and scale */
+@keyframes enhancedAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .contact {
     /* background: linear-gradient(to left, #0a0a0a 0%, #1a1a2e 50%,#16213eb5 100%);    */
     background: linear-gradient(90deg, #1c22377f);
@@ -10,6 +22,17 @@
     box-sizing: border-box;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
+    /* Initial state - hidden until scroll triggers */
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+}
+
+/* Enhanced appear when scrolled into view */
+.contact.animate-on-scroll,
+.contact.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: enhancedAppear 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .contact-container {

@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Contact.css'
 import { FaWhatsapp, FaLinkedinIn, FaGithub, FaFacebookF, FaEnvelope, FaMapMarkerAlt, FaPhone, FaUser } from 'react-icons/fa'
 
 const Contact = () => {
+  const contactRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            // Add animation class only once when component comes into view
+            entry.target.classList.add('in-view');
+            entry.target.classList.add('animate-on-scroll');
+            setHasAnimated(true);
+            
+            // Stop observing after animation is triggered
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the component is visible
+        rootMargin: '-100px 0px -100px 0px' // More precise triggering
+      }
+    );
+
+    const currentRef = contactRef.current;
+    if (currentRef && !hasAnimated) {
+      observer.observe(currentRef);
+    }
+
+    // Cleanup
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [hasAnimated]);
+
   return (
-    <div className='contact' id='contact'>
+    <div className='contact' id='contact' ref={contactRef}>
       <div className="contact-container">
         <div className="contact-header">
           

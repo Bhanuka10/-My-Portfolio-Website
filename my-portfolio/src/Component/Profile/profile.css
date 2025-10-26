@@ -1,3 +1,70 @@
+/* Professional Load Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleInProfile {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes professionalPulse {
+    0%, 100% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
 /* Profile Container */
 .profile {
     width: 100%;
@@ -19,6 +86,8 @@
     border-radius: 10px;
     background: #05081762;
      /* Dark background for space effect */
+    /* Professional load animation */
+    animation: fadeInUp 1s ease-out;
 }
 
 /* Location Info */
@@ -37,6 +106,8 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 10;
     transition: all 0.3s ease;
+    /* Professional slide-in animation */
+    animation: slideInFromTop 1.2s ease-out 0.2s both;
 }
 
 .location-info:hover {
@@ -143,6 +214,8 @@
         0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     z-index: 2;
+    /* Professional scale-in animation */
+    animation: scaleInProfile 1.2s ease-out 0.8s both;
 }
 
 .profile-pic-container:hover {
@@ -179,6 +252,8 @@
     transition: all 0.3s ease;
     animation: floatAnimation 3s ease-in-out infinite;
     z-index: 2; /* Ensure it's above the background but below the floating keywords */
+    /* Professional fade-in animation */
+    animation: fadeInRight 1.4s ease-out 1s both, floatAnimation 3s ease-in-out 2.5s infinite;
 }
 .profile-pictu{
     width: auto;
@@ -187,6 +262,8 @@
     transition: all 0.5s ease;
     animation: floatAnimation 5s ease-in-out infinite; /* Removed cosmicGlow animation */
     z-index: 3;
+    /* Professional entrance animation */
+    animation: fadeInRight 1.6s ease-out 1.2s both, floatAnimation 5s ease-in-out 3s infinite;
 }
 
 .profile-pictu:hover {
@@ -229,9 +306,8 @@
     max-width: 50%;
     position: relative;
     z-index: 2; /* Ensure content appears above the space animation */
-    
-    
-   
+    /* Professional slide-in animation */
+    animation: fadeInLeft 1.2s ease-out 0.4s both;
 }
 
 .profile-content h1 {
@@ -247,6 +323,8 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 1;
     transform: translateY(0);
+    /* Professional staggered animation */
+    animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .profile-content h2 {
@@ -258,6 +336,8 @@
     opacity: 1;
     transform: translateY(0);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /* Professional staggered animation */
+    animation: fadeInUp 1s ease-out 0.8s both;
 }
 
 .profile-content h2 span {
@@ -303,7 +383,7 @@
     letter-spacing: 0.3px;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out 0.8s forwards;
+    animation: fadeInUp 1s ease-out 1.2s forwards;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -330,7 +410,8 @@
     overflow: hidden;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out 1s forwards, professionalButtonGlow 3s ease-in-out infinite 2s;
+    /* Professional entrance animation followed by glow */
+    animation: fadeInUp 1s ease-out 1.4s both, professionalButtonGlow 3s ease-in-out 2.5s infinite;
 }
 
 .btn::before {

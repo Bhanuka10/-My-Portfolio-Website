@@ -99,6 +99,14 @@ const Navigation = () => {
     
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Add active class for special animations
+      if (linkName === 'email') {
+        targetElement.classList.add('active');
+        setTimeout(() => {
+          targetElement.classList.remove('active');
+        }, 3000); // Remove after 3 seconds
+      }
     }
   };
 

@@ -1,6 +1,17 @@
+/* Enhanced appear animation with slide-up and scale */
+@keyframes enhancedAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .about-me {
     padding: 20px;
-    
     background: linear-gradient(45deg, #1c22377f);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.148);
     display: flex;
@@ -10,6 +21,17 @@
     align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
+    /* Initial state - hidden until scroll triggers */
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+}
+
+/* Enhanced appear when scrolled into view */
+.about-me.animate-on-scroll,
+.about-me.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: enhancedAppear 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /* Tablet responsive */
@@ -30,11 +52,9 @@
         min-height: 100vh;
         height: auto;
         overflow: visible;
-        background: linear-gradient(45deg, #1c22377f)
-        
+        background: linear-gradient(45deg, #1c22377f);
     }
 }
-
 /* Small mobile */
 @media screen and (max-width: 480px) {
     .about-me {
@@ -43,6 +63,5 @@
         min-height: 200vh;
         height: auto;
         overflow: visible;
-        
     }
 }
