@@ -1,5 +1,6 @@
 .contact {
-    background: linear-gradient(to left, #0a0a0a 0%, #1a1a2e 50%,#16213eb5 100%);   
+    /* background: linear-gradient(to left, #0a0a0a 0%, #1a1a2e 50%,#16213eb5 100%);    */
+    background: linear-gradient(90deg, #1c22377f);
     color: #fff;
     padding: 10px 20px;
     height: 100vh;

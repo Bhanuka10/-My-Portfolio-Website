@@ -89,6 +89,10 @@ const Navigation = () => {
         // Scroll to Contact component
         targetElement = document.querySelector('.contact') || document.querySelector('#contact');
         break;
+      case 'email':
+        // Scroll to Email component
+        targetElement = document.querySelector('.email-contact-section') || document.querySelector('.email') || document.querySelector('#email');
+        break;
       default:
         targetElement = document.querySelector(`#${linkName}`);
     }
@@ -190,8 +194,8 @@ const Navigation = () => {
         <div className="nav-cta">
           <button className="hire-btn" onClick={(e) => {
             e.preventDefault();
-            setActiveLink('contact');
-            scrollToSection('contact');
+            setActiveLink('email');
+            scrollToSection('email');
           }}>
             <span className="btn-text">Let's Work</span>
           </button>

@@ -33,9 +33,9 @@
 /* Email Header Styling - Simple Professional Design */
 .email-contact-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   position: relative;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 /* .email-contact-header::before {
