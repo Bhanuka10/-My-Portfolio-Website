@@ -271,6 +271,8 @@ const FALLBACK_RESPONSES = {
 • **Name:** Sahan Bhanuka Bandaranayake
 • **Role:** Full Stack Developer & ML/AI Enthusiast
 • **Location:** Kandy, Sri Lanka
+• **Hobbies:** Coding, Reading, watching tv series, playing cricket
+
 
 **Passion & Expertise:**
 • **Problem Solving:** Tackling challenging technical problems
@@ -311,6 +313,123 @@ const FALLBACK_RESPONSES = {
 • **GitHub:** https://github.com/Bhanuka10
 
 💡 **Ask me about:** Specific projects, technical skills, or contact information!`
+};
+
+// Function to filter projects by technology/language
+const filterProjectsByTech = (userText) => {
+  const text = userText.toLowerCase();
+  const filteredProjects = [];
+  
+  // Combine both web projects and UI projects
+  const allProjects = [...projectsData, ...UisData];
+  
+  // Technology keywords mapping
+  const techKeywords = {
+    'laravel': ['laravel', 'php'],
+    'mern': ['mern', 'mongodb', 'express', 'react', 'node'],
+    'react': ['react', 'react.js'],
+    'node': ['node', 'node.js', 'nodejs'],
+    'mongodb': ['mongodb', 'mongo'],
+    'mysql': ['mysql'],
+    'php': ['php', 'laravel'],
+    'javascript': ['javascript', 'js'],
+    'html': ['html', 'html5'],
+    'css': ['css', 'css3'],
+    'firebase': ['firebase'],
+    'python': ['python'],
+    'ai': ['ai', 'artificial intelligence', 'gemini', 'api'],
+    'ml': ['ml', 'machine learning'],
+    'api': ['api', 'integration'],
+    'figma': ['figma', 'ui', 'ux', 'design']
+  };
+  
+  // Check each project's tech stack
+  allProjects.forEach(project => {
+    const projectTech = project.techStack.map(tech => tech.toLowerCase());
+    
+    // Check if user query matches any technology in the project
+    for (const [tech, keywords] of Object.entries(techKeywords)) {
+      if (keywords.some(keyword => text.includes(keyword))) {
+        // Check if this technology exists in project's tech stack
+        if (projectTech.some(pTech => 
+          keywords.some(keyword => pTech.includes(keyword)) || 
+          pTech.includes(tech)
+        )) {
+          if (!filteredProjects.find(p => p.id === project.id)) {
+            filteredProjects.push(project);
+          }
+        }
+      }
+    }
+  });
+  
+  return filteredProjects;
+};
+
+// Function to format project response
+const formatProjectResponse = (projects, technology) => {
+  if (projects.length === 0) {
+    return `## 🔍 No Projects Found\n\n**Sorry!** I couldn't find any projects using **${technology}** in Bhanuka's portfolio.\n\n**Available Technologies:**\n• **Frontend:** React, JavaScript, HTML, CSS\n• **Backend:** Laravel (PHP), Node.js, Express.js\n• **Database:** MongoDB, MySQL, Firebase\n• **AI/ML:** Gemini API, Machine Learning\n• **Design:** Figma (UI/UX)\n\n💡 **Try asking about:** "React projects", "Laravel projects", "MERN projects", or "AI projects"`;
+  }
+
+  let response = `## 🚀 ${technology.charAt(0).toUpperCase() + technology.slice(1)} Projects\n\n**Found ${projects.length} project${projects.length > 1 ? 's' : ''} using ${technology}:**\n\n`;
+  
+  projects.forEach((project, index) => {
+    response += `**${index + 1}. ${project.title}**\n`;
+    response += `• **Description:** ${project.description.slice(0, 120)}${project.description.length > 120 ? '...' : ''}\n`;
+    response += `• **Tech Stack:** ${project.techStack.join(', ')}\n`;
+    if (project.link) {
+      response += `• **GitHub:** ${project.link}\n`;
+    }
+    response += '\n';
+  });
+  
+  response += `💡 **Want to know more?** Ask about specific projects or other technologies!`;
+  
+  return response;
+};
+
+// Enhanced function to detect project queries by technology
+const detectProjectQuery = (userText) => {
+  const text = userText.toLowerCase();
+  
+  // Pattern matching for project queries
+  const projectPatterns = [
+    /(?:show me|give me|what are|list|find).*?(laravel|php).*?project/i,
+    /(?:show me|give me|what are|list|find).*?mern.*?project/i,
+    /(?:show me|give me|what are|list|find).*?(react|react\.js).*?project/i,
+    /(?:show me|give me|what are|list|find).*?(node|nodejs|node\.js).*?project/i,
+    /(?:show me|give me|what are|list|find).*?(mongodb|mongo).*?project/i,
+    /(?:show me|give me|what are|list|find).*?mysql.*?project/i,
+    /(?:show me|give me|what are|list|find).*?(javascript|js).*?project/i,
+    /(?:show me|give me|what are|list|find).*?(ai|artificial intelligence).*?project/i,
+    /(?:show me|give me|what are|list|find).*?(ml|machine learning).*?project/i,
+    /(?:show me|give me|what are|list|find).*?api.*?project/i,
+    /(?:show me|give me|what are|list|find).*?(figma|ui|ux|design).*?project/i,
+    /(laravel|php).*?project/i,
+    /mern.*?project/i,
+    /(react|react\.js).*?project/i,
+    /(node|nodejs|node\.js).*?project/i,
+    /(mongodb|mongo).*?project/i,
+    /mysql.*?project/i,
+    /(javascript|js).*?project/i,
+    /(ai|artificial intelligence).*?project/i,
+    /(ml|machine learning).*?project/i,
+    /api.*?project/i,
+    /(figma|ui|ux|design).*?project/i
+  ];
+  
+  for (const pattern of projectPatterns) {
+    const match = text.match(pattern);
+    if (match) {
+      // Extract the technology from the match
+      let tech = match[1] || match[0];
+      tech = tech.replace(/.*?(laravel|php|mern|react|node|mongodb|mongo|mysql|javascript|js|ai|artificial intelligence|ml|machine learning|api|figma|ui|ux|design).*?/i, '$1');
+      return tech.toLowerCase().trim();
+    }
+  }
+  
+  return null;
 };
 
 // Function to get fallback response based on user input
@@ -668,6 +787,24 @@ Provide a direct, point-wise answer based on their specific question.`;
 
     // Show typing indicator
     setIsTyping(true);
+    
+    // Check for project technology queries first (before API call)
+    const detectedTech = detectProjectQuery(text);
+    if (detectedTech) {
+      const filteredProjects = filterProjectsByTech(text);
+      const projectResponse = formatProjectResponse(filteredProjects, detectedTech);
+      
+      // Add bot response with project information
+      setTimeout(() => {
+        setMessages((m) => [
+          ...m,
+          { id: Date.now() + 1, from: "bot", text: projectResponse }
+        ]);
+        setIsTyping(false);
+      }, 1000); // Simulate typing delay
+      
+      return;
+    }
     
     // Check if quota is likely exceeded
     const currentDailyCount = getDailyRequestCount();
