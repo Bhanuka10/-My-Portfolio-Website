@@ -4,6 +4,16 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import "./Chatbot.css";
 import projectsData, { UisData } from "../../Data/projectsData.js";
 
+// Quick topic suggestions
+const QUICK_TOPICS = [
+  { label: "👨‍💻 About Me", query: "Tell me about Bhanuka" },
+  { label: "🚀 Projects", query: "What are Bhanuka's main projects?" },
+  { label: "💻 Skills", query: "What are Bhanuka's technical skills?" },
+  { label: "📞 Contact", query: "How can I contact Bhanuka?" },
+  { label: "🎨 UI/UX", query: "Tell me about Bhanuka's UI/UX designs" },
+  { label: "🤖 AI/ML", query: "What AI/ML experience does Bhanuka have?" }
+];
+
 // Initialize the Google GenerativeAI with API key from environment variable
 const ai = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
