@@ -1,18 +1,50 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiUser, FiMessageSquare, FiSend, FiCheck, FiAlertCircle, FiPhone, FiMapPin } from 'react-icons/fi';
 import './Email.css';
 
 const Email = () => {
   const form = useRef();
+  const sectionRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [isAnimated, setIsAnimated] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     message: ''
   });
+
+  // Setup intersection observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isAnimated) {
+            entry.target.classList.add('email-animate');
+            setIsAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef && !isAnimated) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [isAnimated]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +86,7 @@ const Email = () => {
   };
 
   return (
-    <section className="email-contact-section">
+    <section className="email-contact-section email-section-animate" ref={sectionRef}>
       <div className="email-container">
         <div className="email-contact-header">
           <h2 className="email-contact-title-main">Get In Touch</h2>

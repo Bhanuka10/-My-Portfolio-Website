@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import projectsData, { UisData } from "../../Data/projectsData";
@@ -10,7 +10,54 @@ import { SiMysql, SiBlazor, SiJavascript, SiFirebase, SiMongodb, SiExpress, SiNo
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('web');
+  const [animatedProjects, setAnimatedProjects] = useState(new Set());
+  const projectRefs = useRef([]);
+  const containerRef = useRef(null);
   const navigate = useNavigate();
+
+  // Setup intersection observer for smooth project animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const projectIndex = projectRefs.current.indexOf(entry.target);
+            if (projectIndex !== -1) {
+              entry.target.classList.add('project-animate');
+              setAnimatedProjects(prev => new Set(prev.add(projectIndex)));
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+      }
+    );
+
+    // Observe all project cards
+    projectRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      projectRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, [activeTab]); // Re-run when tab changes
+
+  // Reset animations when tab changes
+  useEffect(() => {
+    setAnimatedProjects(new Set());
+    projectRefs.current = [];
+  }, [activeTab]);
+
   // Function to get tech stack icon
   const getTechIcon = (tech) => {
     const techLower = tech.toLowerCase();
@@ -62,7 +109,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="projects-container">
+    <div className="projects-container" ref={containerRef}>
       {/* Tab Navigation */}
       <div className="projects-header">
         <div className="tab-navigation">
@@ -85,8 +132,13 @@ const Projects = () => {
 
       {/* Projects List */}
       <div className="projects-list">
-        {currentData.map((project) => (
-          <div className="project-card" key={project.id}>
+        {currentData.map((project, index) => (
+          <div 
+            className="project-card project-card-animate" 
+            key={project.id}
+            ref={(el) => projectRefs.current[index] = el}
+            style={{'--animation-delay': `${index * 0.1}s`}}
+          >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} className="project-image" />
             </div>
