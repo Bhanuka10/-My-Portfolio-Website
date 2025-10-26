@@ -312,7 +312,7 @@
 .focus-list li {
   position: relative;
   padding: 0.6rem 0 0.6rem 2rem;
-  color: #adaaaa;
+  color: #f9f9f9;
   transition: all 0.3s ease;
   border-radius: 8px;
   margin-bottom: 0.3rem;
