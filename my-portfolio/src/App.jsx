@@ -38,8 +38,8 @@ const Home = () => {
 function App() {
   const [count, setCount] = useState(0)
   
-  // Get the base path from environment or use default for GitHub Pages
-  const basename = import.meta.env.VITE_BASE_PATH || '/-My-Portfolio-Website';
+  // Get the base path from environment or use default for Vercel deployment
+  const basename = import.meta.env.VITE_BASE_PATH || '/';
 
   return (
     <Router basename={basename}>
