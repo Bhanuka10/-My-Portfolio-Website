@@ -1,7 +1,8 @@
-/* Keyword positioning classes */
+/* Enhanced Keyword positioning classes - Perfect Responsive */
 /* Ensure keywords are visible by default on desktop */
 .tech-keyword {
     display: block;
+    transition: all 0.3s ease !important;
 }
 
 .keyword-top-left {
@@ -28,8 +29,8 @@
     right: 10%;
 }
 
-/* Responsive positions for the keywords */
-@media (max-width: 1200px) {
+/* Large Desktop screens */
+@media (max-width: 1400px) {
     .keyword-top-left {
         top: 15%;
         left: 8%;
@@ -42,7 +43,7 @@
     
     .keyword-bottom-left {
         bottom: 15%;
-        left: 0;
+        left: 0%;
     }
     
     .keyword-bottom-right {
@@ -51,34 +52,138 @@
     }
 }
 
-@media (max-width: 992px) {
+/* Desktop screens */
+@media (max-width: 1200px) {
+    .keyword-top-left {
+        top: 15%;
+        left: 6%;
+    }
+    
+    .keyword-top-right {
+        top: 17%;
+        right: 6%;
+    }
+    
+    .keyword-bottom-left {
+        bottom: 15%;
+        left: 0%;
+    }
+    
+    .keyword-bottom-right {
+        bottom: 19%;
+        right: 6%;
+    }
+    
+    .tech-keyword {
+        padding: 7px 14px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Laptop screens */
+@media (max-width: 1024px) {
     .keyword-top-left {
         top: 12%;
-        left: 5%;
+        left: 4%;
     }
     
     .keyword-top-right {
         top: 12%;
-        right: 5%;
+        right: 4%;
     }
     
     .keyword-bottom-left {
         bottom: 12%;
-        left: 0;
+        left: 0%;
     }
     
     .keyword-bottom-right {
         bottom: 12%;
-        right: 5%;
+        right: 4%;
+    }
+    
+    .tech-keyword {
+        padding: 6px 12px !important;
+        font-size: 0.7rem !important;
     }
 }
 
+/* Small laptop/large tablet screens */
+@media (max-width: 992px) {
+    .keyword-top-left {
+        top: 10%;
+        left: 2%;
+    }
+    
+    .keyword-top-right {
+        top: 10%;
+        right: 2%;
+    }
+    
+    .keyword-bottom-left {
+        bottom: 10%;
+        left: 0%;
+    }
+    
+    .keyword-bottom-right {
+        bottom: 10%;
+        right: 2%;
+    }
+    
+    .tech-keyword {
+        padding: 5px 10px !important;
+        font-size: 0.65rem !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* Tablet screens - Keep keywords visible but smaller */
 @media (max-width: 768px) {
-    /* Hide keywords on mobile devices and tablets */
+    .keyword-top-left {
+        top: 8%;
+        left: 1%;
+    }
+    
+    .keyword-top-right {
+        top: 8%;
+        right: 1%;
+    }
+    
+    .keyword-bottom-left {
+        bottom: 8%;
+        left: 0%;
+    }
+    
+    .keyword-bottom-right {
+        bottom: 8%;
+        right: 1%;
+    }
+    
+    .tech-keyword {
+        padding: 4px 8px !important;
+        font-size: 0.6rem !important;
+        border-radius: 6px !important;
+        opacity: 0.9 !important;
+    }
+}
+
+/* Small tablet screens - Hide keywords for better mobile experience */
+@media (max-width: 640px) {
     .tech-keyword {
         display: none !important;
     }
 }
 
-/* These media queries are not needed since keywords are hidden on mobile */
-/* We're keeping the desktop and tablet (992px+) positioning */
+/* Mobile screens - Keywords hidden */
+@media (max-width: 480px) {
+    .tech-keyword {
+        display: none !important;
+    }
+}
+
+/* Small mobile screens - Keywords hidden */
+@media (max-width: 360px) {
+    .tech-keyword {
+        display: none !important;
+    }
+}
